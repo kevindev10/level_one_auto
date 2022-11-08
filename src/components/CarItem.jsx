@@ -8,10 +8,10 @@ function CarItem({ car, id, onEdit, onDelete }) {
   return (
     <li className='categoryListing'>
       <Link
-        to={`/Car/${id}`}
+        to={`/car/${id}`}
         className='categoryListingLink'
       >
-         {console.log(car)}
+       
         <img
          src={car.imageUrls[0]}
          

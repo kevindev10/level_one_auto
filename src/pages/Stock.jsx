@@ -13,8 +13,8 @@ import { db } from '../firebase.config'
 import { toast } from 'react-toastify'
 import Spinner from '../components/Spinner'
 import CarItem from '../components/CarItem'
-
-
+import Select from 'react-select';
+import {makes, minPrice, maxPrice} from '../assets/carData'
 
 
 
@@ -29,6 +29,9 @@ function Stock() {
   const [cars, setCars] = useState(null)
   const [loading, setLoading] = useState(true)
   //const [lastFetchedListing, setLastFetchedListing] = useState(null)
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption2, setSelectedOption2] = useState(null);
+  const [selectedOption3, setSelectedOption3] = useState(null);
 
  // const params = useParams()
 
@@ -41,7 +44,7 @@ function Stock() {
         // Create a query
         const q = query(
           carsRef,
-          where('sold', '==', false),
+         // where('sold', '==', false),
           orderBy('timestamp', 'desc'),
           limit(10)
         )
@@ -64,6 +67,7 @@ function Stock() {
         })
 
         setCars(cars)
+       
         setLoading(false)
        
       } catch (error) {
@@ -111,6 +115,12 @@ function Stock() {
   //   }
   //}
 
+  const handleSelectSearchSubmit = (e) => {
+
+    console.log(e.target)
+    console.log(selectedOption.value, selectedOption2.value, selectedOption3.value)
+  
+  }
 
 
 
@@ -128,8 +138,52 @@ function Stock() {
       ) : cars && cars.length > 0 ? (
         <>
           <main>
+          <div style={{display: 'flex', padding: '1.5%', marginBottom:'5%'  }}>
+            <div  style={{padding: '2.5%', width :'25%'}}>
+              <label className='formLabel'>Make</label>
+              <Select
+                defaultValue={selectedOption}
+                onChange={setSelectedOption}
+                options={makes}
+                required
+              />
+            </div>
+        
+            <div  style={{padding: '2.5%', width :'25%'}}> 
+              <label className='formLabel'>Min Price &nbsp; Ksh: </label>
+              <Select
+                defaultValue={selectedOption}
+                onChange={setSelectedOption2}
+                options={minPrice}
+                required
+            />
+
+          </div>
+          <div  style={{padding: '2.5%', width :'25%' }}>
+            <label className='formLabel'>Max Price &nbsp; Ksh: </label>
+              <Select
+              defaultValue={selectedOption}
+              onChange={setSelectedOption3}
+              options={maxPrice}
+              required
+            />
+          </div>
+
+          <button  onClick={handleSelectSearchSubmit}  style={{padding: '0.6%', width :'20%', height:'4%', marginTop:'5.6%' , fontSize:'17px', backgroundColor:'grey'}}  >
+            Search
+          </button>
+       
+        
+
+          </div>
+      
+
+
+            
             <ul className='categoryListings'>
+              {/* {console.log(cars)} */}
               {cars.map((car) => (
+             
                 <CarItem
                   car={car.data}
                   id={car.id}
@@ -137,6 +191,12 @@ function Stock() {
                 />
               ))}
             </ul>
+
+
+
+
+
+
           </main>
 
           <br />

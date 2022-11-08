@@ -7,7 +7,7 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from 'firebase/storage'
-import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
+import { addDoc, collection, doc, serverTimestamp } from 'firebase/firestore'
 import { db } from '../firebase.config'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
@@ -124,11 +124,7 @@ function AddCar() {
        return
      }
  
-     if (images.length > 6) {
-       setLoading(false)
-       toast.error('Max 6 images')
-       return
-     }
+    
  
     //  let geolocation = {}
     //  let location
@@ -219,10 +215,12 @@ function AddCar() {
      delete formDataCopy.address
      !formDataCopy.offer && delete formDataCopy.discountedPrice
  
-     const docRef = await addDoc(collection(db, 'listings'), formDataCopy)
+     const docRef = await addDoc(collection(db, 'cars'), formDataCopy)
+     
      setLoading(false)
-     toast.success('Listing saved')
-     navigate(`/category/${formDataCopy.type}/${docRef.id}`)
+     toast.success('Car saved')
+     //navigate(`/category/${formDataCopy.type}/${docRef.id}`)
+     navigate(`/car/${docRef.id}`)
    }
  
    const onMutate = (e) => {
