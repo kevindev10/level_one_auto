@@ -1,4 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.home,
+.contactus,
+.products,
+.services,
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  font-size: 4rem;
+}
+
+
+
 * {
   box-sizing: border-box;
 }
@@ -8,7 +30,7 @@ html::-webkit-scrollbar {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+
   background-color: #f2f4f8;
   margin: 0;
   box-sizing: border-box;
@@ -78,6 +100,7 @@ button {
   top: -3%;
   right: -2%;
 }
+
 .editIcon {
   cursor: pointer;
   position: absolute;
@@ -139,7 +162,7 @@ button {
   font-weight: 800;
 }
 
-.navbar {
+/* .navbar {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -150,8 +173,8 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
+} */
+/* 
 .navbarNav {
   width: 100%;
   margin-top: 0.75rem;
@@ -182,7 +205,7 @@ button {
 }
 .navbarListItemNameActive {
   color: #2c2c2c;
-}
+} */
 
 .nameInput {
   margin-bottom: 2rem;
@@ -722,7 +745,7 @@ button {
 
 .formButton,
 .formInput,
-.formInputAddress,
+.formInputLargeData,
 .formInputName,
 .formInputSmall,
 .formInputFile,
@@ -747,7 +770,7 @@ button {
 }
 
 .formInput,
-.formInputAddress,
+.formInputLargeData,
 .formInputName,
 .formInputSmall,
 .formInputFile {
@@ -768,7 +791,7 @@ button {
   max-width: 326px;
 }
 
-.formInputAddress {
+.formInputLargeData {
   padding: 0.9rem 1rem;
   width: 90%;
   max-width: 326px;
