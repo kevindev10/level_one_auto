@@ -205,17 +205,40 @@ function AddCar() {
  
      const formDataCopy = {
        ...formData,
-       imageUrls,
+          imageUrls,
       //  geolocation,
+     
        timestamp: serverTimestamp(),
      }
+
+     
  
     //  formDataCopy.location = address
-     delete formDataCopy.images
-     delete formDataCopy.address
-     !formDataCopy.offer && delete formDataCopy.discountedPrice
- 
-     const docRef = await addDoc(collection(db, 'cars'), formDataCopy)
+        delete formDataCopy.images
+    //  delete formDataCopy.address
+    
+      !formDataCopy.offer && delete formDataCopy.discountedPrice
+
+      delete formDataCopy.make
+      delete formDataCopy.regularPrice
+   
+
+      
+   
+     
+     
+     const formDataCopy2 = {
+      ...formDataCopy, 
+      make: formData.make.toLocaleLowerCase(),
+      regularPrice: parseInt(formData.regularPrice)
+
+     }
+
+    
+
+    
+     
+     const docRef = await addDoc(collection(db, 'cars'), formDataCopy2)
      
      setLoading(false)
      toast.success('Car saved')
