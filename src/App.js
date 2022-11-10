@@ -16,6 +16,8 @@ import ForgotPassword from './pages/ForgotPassword'
 import Car from "./pages/Car"
 import AddCar from './pages/AddCar'
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 
