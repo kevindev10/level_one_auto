@@ -11,7 +11,7 @@ function CarItem({ car, id, onEdit, onDelete }) {
         to={`/car/${id}`}
         className='categoryListingLink'
       >
-       
+      
         <img
          src={car.imageUrls[0]}
          
