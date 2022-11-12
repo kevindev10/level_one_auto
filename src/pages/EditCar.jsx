@@ -211,7 +211,7 @@ function EditCar() {
 
   
       // Update listing
-      const docRef = doc(db, 'cars', params.listingId)
+      const docRef = doc(db, 'cars', params.carId)
       await updateDoc(docRef, formDataCopy2)
       setLoading(false)
       toast.success('Car Listing Saved')
