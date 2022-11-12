@@ -15,6 +15,7 @@ import SignIn from './pages/SignIn'
 import ForgotPassword from './pages/ForgotPassword'
 import Car from "./pages/Car"
 import AddCar from './pages/AddCar'
+import EditCar from './pages/EditCar'
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -36,6 +37,10 @@ function App() {
 
           <Route path='/add-car' element={<PrivateRoute />}>
             <Route path='/add-car' element={<AddCar/>} />
+          </Route> 
+
+          <Route path='/edit-car/:carId' element={<PrivateRoute />}>
+            <Route path='/edit-car/:carId' element={<EditCar/>} />
           </Route> 
 
 

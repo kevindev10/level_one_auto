@@ -15,13 +15,11 @@ import Spinner from '../components/Spinner'
 import CarItem from '../components/CarItem'
 import Select from 'react-select';
 import {makes, minPrice, maxPrice} from '../assets/carData'
-
-
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
-import Button from '@mui/material/Button';
+//import Button from '@mui/material/Button';
 
 
 
@@ -33,7 +31,7 @@ function Stock() {
 
   const [cars, setCars] = useState(null)
   const [loading, setLoading] = useState(true)
-  //const [lastFetchedListing, setLastFetchedListing] = useState(null)
+  const [lastFetchedListing, setLastFetchedListing] = useState(null)
   const [selectedOption, setSelectedOption] = useState(null);
   const [selectedOption2, setSelectedOption2] = useState(null);
   const [selectedOption3, setSelectedOption3] = useState(null);
@@ -100,14 +98,14 @@ function Stock() {
           carsRef,
          // where('sold', '==', false),
           orderBy('timestamp', 'desc'),
-          limit(10)
+          limit(2)
         )
 
         // Execute query
         const querySnap = await getDocs(q)
 
-        // const lastVisible = querySnap.docs[querySnap.docs.length - 1]
-        // setLastFetchedListing(lastVisible)
+        const lastVisible = querySnap.docs[querySnap.docs.length - 1]
+        setLastFetchedListing(lastVisible)
 
         const cars = []
 
@@ -130,54 +128,44 @@ function Stock() {
     fetchCars()
   }, [])
 
-  // // Pagination / Load More
-  // const onFetchMoreListings = async () => {
-  //   try {
-  //     // Get reference
-  //     const listingsRef = collection(db, 'listings')
-
-  //     // Create a query
-  //     const q = query(
-  //       listingsRef,
-  //       where('type', '==', params.categoryName),
-  //       orderBy('timestamp', 'desc'),
-  //       startAfter(lastFetchedListing),
-  //       limit(10)
-  //     )
-
-  //     // Execute query
-  //     const querySnap = await getDocs(q)
-
-  //     const lastVisible = querySnap.docs[querySnap.docs.length - 1]
-  //     setLastFetchedListing(lastVisible)
-
-  //     const listings = []
-
-  //     querySnap.forEach((doc) => {
-  //       return listings.push({
-  //         id: doc.id,
-  //         data: doc.data(),
-  //       })
-  //     })
-
-  //     setListings((prevState) => [...prevState, ...listings])
-  //     setLoading(false)
-  //   } catch (error) {
-  //     toast.error('Could not fetch listings')
-  //   }
-  //}
 
 
+  // Pagination / Load More
+  const onFetchMoreListings = async () => {
+    try {
+      // Get reference
+      const carsRef = collection(db, 'cars')
 
+      // Create a query
+      const q = query(
+        carsRef,
+        // where('sold', '==', false),
+        orderBy('timestamp', 'desc'),
+        startAfter(lastFetchedListing),
+        limit(2)
+      )
 
+      // Execute query
+      const querySnap = await getDocs(q)
 
+      const lastVisible = querySnap.docs[querySnap.docs.length - 1]
+      setLastFetchedListing(lastVisible)
 
+      const cars = []
 
+      querySnap.forEach((doc) => {
+        return cars.push({
+          id: doc.id,
+          data: doc.data(),
+        })
+      })
 
-
-
-
-
+      setCars((prevState) => [...prevState, ...cars])
+      setLoading(false)
+    } catch (error) {
+      toast.error('Could not fetch car listings')
+    }
+  }
 
 
   // Handle search component
@@ -207,8 +195,7 @@ function Stock() {
           // Execute query
           const querySnap = await getDocs(q)
   
-          // const lastVisible = querySnap.docs[querySnap.docs.length - 1]
-          // setLastFetchedListing(lastVisible)
+      
   
           const selectSearchCars = []
   
@@ -260,8 +247,7 @@ function Stock() {
           // Execute query
           const querySnap = await getDocs(q)
   
-          // const lastVisible = querySnap.docs[querySnap.docs.length - 1]
-          // setLastFetchedListing(lastVisible)
+       
   
           const selectSearchCars = []
   
@@ -312,9 +298,7 @@ function Stock() {
           // Execute query
           const querySnap = await getDocs(q)
   
-          // const lastVisible = querySnap.docs[querySnap.docs.length - 1]
-          // setLastFetchedListing(lastVisible)
-  
+       
           const selectSearchCars = []
   
           querySnap.forEach((doc) => {
@@ -365,8 +349,7 @@ function Stock() {
           // Execute query
           const querySnap = await getDocs(q)
   
-          // const lastVisible = querySnap.docs[querySnap.docs.length - 1]
-          // setLastFetchedListing(lastVisible)
+         
   
           const selectSearchCars = []
   
@@ -402,26 +385,6 @@ function Stock() {
    clearSelectRef()
   
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -477,25 +440,6 @@ function Stock() {
         </Fade>
       </Modal>
     </div>
-
-
-
-
-
-
-
-
-
-
-  
-      
-
-
-
-
-
-
-
 
 
 
@@ -588,11 +532,11 @@ function Stock() {
        
                 <br />
                 <br />
-                {/* {lastFetchedListing && (
+                {lastFetchedListing && (
                   <p className='loadMore' onClick={onFetchMoreListings}>
                     Load More
                   </p>
-                )} */}
+                )}
               </>
 
             ): ( <p>No Cars In Stock</p>)
