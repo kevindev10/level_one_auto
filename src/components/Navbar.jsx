@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import * as Icons from "react-icons/fa";
-import { IoCarSportSharp } from "react-icons/io5";
 import "./Navbar.css";
-// import Button from "./Button";
+import Button from "./Button";
 import { navItems } from "./NavItems.jsx";
+import logo from '../assets/Logos/Logo.jpg'
+
+
 
 function Navbar() {
   const [mobile, setMobile] = useState(false);
@@ -36,8 +38,7 @@ function Navbar() {
     <>
       <nav className="navbar">
         <Link to="/" className="navbar-logo" onClick={() => setSidebar(false)}>
-          <IoCarSportSharp className="icon_size"/>
-          <h2 className="navbar-title">LEVEL ONE AUTO</h2>
+         <img src={logo} alt="Company logo" width= '100%' />
         </Link>
         {!mobile && (
           <ul className="nav-items">
