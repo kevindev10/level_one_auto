@@ -9,9 +9,10 @@
 
 .home,
 .contactus,
-.products,
-.services,
-.signup {
+.stock,
+.previouslySold,
+.faq
+.sellYourCar {
   display: flex;
   justify-content: center;
   align-items: center;

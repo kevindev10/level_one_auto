@@ -38,10 +38,16 @@ function Navbar() {
     <>
       <nav className="navbar">
         <Link to="/" className="navbar-logo" onClick={() => setSidebar(false)}>
-         <img src={logo} alt="Company logo" width= '100%' />
+         <img src={logo} alt="Company logo" width= '100%'  />
         </Link>
+      
         {!mobile && (
+          
+        
+          
           <ul className="nav-items">
+
+
             {navItems.map((item) => {
               return (
                 <li key={item.id} className={item.nName}>
@@ -53,6 +59,8 @@ function Navbar() {
               );
             })}
           </ul>
+
+         
         )}
         {/* {!mobile && <Button />} */}
 
