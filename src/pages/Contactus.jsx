@@ -1,11 +1,11 @@
 import React from "react";
 
-function Contactus() {
+function ContactUs() {
   return (
-    <div>
-      <h1 className="contactus">Contact Us</h1>
+    <div className="contactus">
+      Contact Us
     </div>
   );
 }
 
-export default Contactus;
+export default ContactUs;

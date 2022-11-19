@@ -1,5 +1,4 @@
 import * as Icons from "react-icons/fa";
-import CarRentalIcon from '@mui/icons-material/CarRental';
 import { FaWallet } from "react-icons/fa";
 import { FaTruckLoading } from "react-icons/fa";
 import { FaQuestionCircle } from "react-icons/fa";
@@ -52,7 +51,7 @@ export const navItems = [
   {
     id:6,
     title: "Contact Us",
-    path: "./contactus",
+    path: "./contact-us",
     nName: "nav-item",
     sName: "sidebar-item",
     icon: <Icons.FaPhone/>,

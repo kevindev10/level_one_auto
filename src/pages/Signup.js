@@ -117,7 +117,7 @@ function SignUp() {
 
         <OAuth />
 
-        <Link to='/sign-in' className='registerLink'>
+        <Link to='/login' className='registerLink'>
           Sign In Instead
         </Link>
       </div>

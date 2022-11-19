@@ -1,0 +1,205 @@
+
+.container1{
+	height:73vh
+}
+
+
+
+.background-img{
+	background: no-repeat center;
+	background-size: cover;
+	width: 100%  !important;
+	max-height: 100% !important;
+	height:100vh !important;
+
+}
+
+.centered1{
+	position: relative;
+	top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.6rem;
+	z-index: 105;
+	width: 30% !important;
+
+}
+
+
+.background-cover{
+  background: #543938;
+  z-index:85;
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  opacity:0.1;
+}
+
+
+
+
+
+/* ~~~~~~~ INIT. BTN ~~~~~~~ */
+
+.btn {		
+	position: relative;	
+	padding: 1.4rem 4.2rem;
+	padding-right: 3.1rem;
+	font-size: 1.3rem;
+	color: gray;
+	letter-spacing: 0.4rem;
+	text-transform: uppercase;
+	transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);	
+	cursor: pointer;
+	user-select: none;
+  background-color: rgba(118, 116, 116, 0.17);
+}
+
+.btn:before, .btn:after {
+	content: '';
+	position: absolute;	
+	transition: inherit;
+	z-index: -1;
+  background-color:  maroon;
+}
+
+.btn:hover {
+	color: white;
+	transition-delay: .5s;
+  background-color:  maroon !important;
+}
+
+.btn:hover:before {
+	transition-delay: 0s;
+}
+
+.btn:hover:after {
+	background: var(--inv);
+	transition-delay: .35s;
+  
+}
+
+
+
+
+
+
+/* From Left */
+
+.from-left:before, 
+.from-left:after {
+	top: 0;
+	width: 0;
+	height: 100%;
+ 
+}
+
+.from-left:before {
+	right: 0;
+	border: 1px solid var(--inv);
+	border-left: 0;
+	border-right: 0;	
+ 
+}
+
+.from-left:after {
+	left: 0;
+
+}
+
+.from-left:hover:before,
+.from-left:hover:after {
+	width: 100%;
+  background-color: black;
+}
+
+
+
+
+.slick-dots{
+	
+	top:90%;
+	
+	
+	
+}
+.slick-dots li button:before {
+	font-size: 0.7rem !important;
+    color: black !important;
+		
+  }
+
+
+.slick-dots li.slick-active button:before{
+  font-size:1.2rem !important;
+  color:white !important;
+}
+
+
+
+
+@media screen and (max-width: 960px) {
+
+	
+ 	
+
+	.slick-dots{
+	 
+	 display: none !important;
+	 }
+
+
+ .container1{
+	height:33vh;
+	
+}
+
+
+
+
+.btn {		
+
+	font-size: 1.2rem;
+	color: white;
+	letter-spacing: 0.3rem;
+	background-color: rgba(118, 116, 116, 0.18);
+
+	padding: 1.4rem 4.2rem;
+	padding-right: 3.1rem;
+	
+
+	
+}
+
+.background-img{
+
+	overflow: hidden;
+
+
+}
+
+
+ /* .background-img{
+	background: no-repeat center;
+	background-size: cover;
+	width: 100%  !important;
+	max-height: 100% !important;
+	height:100vh !important;
+}
+ 
+ .banner-slider-paragraph-positioning{
+
+	 margin-left: 8.8%;
+	 margin-right: 8.8%;
+	 margin-top: 30vh;
+	 display: flex;
+	 flex-direction: column;
+	 justify-content: flex-start;
+	 align-items: flex-start;
+
+ } */
+
+
+}

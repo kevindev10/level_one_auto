@@ -64,7 +64,7 @@
 
 .sidebar-toggle-logo {
   font-size: 2.3rem;
-  color: whitesmoke;
+  color: gray;
   cursor: pointer;
   margin-right: 1.2rem;
   
@@ -72,12 +72,13 @@
 
 .sidebar {
   width: 16rem;
-  background: #1b1919;
+  background:white;
   height: 90vh;
   position: absolute;
   top: 27vh;
   left: -100%;
   transition: 0.3s all ease-in-out;
+  z-index: 125;
 }
 
 .sidebar.active {
@@ -101,7 +102,7 @@
 
 .sidebar-item a {
   text-decoration: none;
-  color: whitesmoke;
+  color: gray;
   font-size: 1.2rem;
   display: flex;
   align-items: center;
@@ -126,24 +127,48 @@
   width: 100%;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 960px) {
+  .sidebar {
+   
+    top: 14vh;
+ 
+  }
+
   .sidebar.active {
     width: 5rem;
   }
+  
 
   .sidebar-item a span {
     display: none;
   }
 
+  .navbar {
+    height: 14vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
   .navbar-logo {
    font-size: 2.3rem;
-   width: 60rem;
+   width: 16rem;
    margin-left: 1.2rem;
 
 
 }
 
-
+.sidebar-toggle-logo {
+  font-size: 1.8rem;
+  margin-right: 1.5rem;
+  
+}
 
 
 }
+
+
+
+

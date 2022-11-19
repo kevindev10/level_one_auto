@@ -5,17 +5,19 @@ import 'react-toastify/dist/ReactToastify.css'
 import Navbar from './components/Navbar'
 import PrivateRoute from './components/PrivateRoute'
 import Home from './pages/Home'
-import Contactus from "./pages/Contactus";
+import ContactUs from "./pages/ContactUs";
 import Stock from "./pages/Stock";
-import Services from "./pages/Services";
+import PreviouslySold from "./pages/PreviouslySold";
 import Signup from "./pages/Signup";
-import Offers from './pages/Offers'
+import SellYourCar from './pages/SellYourCar'
 import Admin from './pages/Admin'
 import SignIn from './pages/SignIn'
 import ForgotPassword from './pages/ForgotPassword'
 import Car from "./pages/Car"
 import AddCar from './pages/AddCar'
 import EditCar from './pages/EditCar'
+import FAQ from './pages/FAQ'
+
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -44,14 +46,15 @@ function App() {
           </Route> 
 
 
-          <Route path="/contactus" element={<Contactus/>}></Route>
+          <Route path="/contact-us" element={<ContactUs/>}/>
           <Route path="/stock" element={<Stock/>}></Route>
-          <Route path="/services" element={<Services/>}></Route>
-          <Route path="/sign-up" element={<Signup/>}></Route>
-          <Route path='/offers' element={<Offers />} />
+          <Route path="/previously-sold" element={<PreviouslySold/>}/>
+          <Route path="/sign-up" element={<Signup/>}/>
+          <Route path='/sell-your-car' element={<SellYourCar/>} />
           <Route path='/login' element={<SignIn />} />
           <Route path='/forgot-password' element={<ForgotPassword />} />
           <Route path='/car/:carId' element={<Car/>} />
+          <Route path='/frequently-asked-questions' element={<FAQ/>} />
          
 
         </Routes>
