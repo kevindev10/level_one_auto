@@ -64,8 +64,8 @@ function Footer() {
 
             <Grid item xs={12} sm={4}>
               <Box className ='footer-heading'>Get In touch</Box>
-              <div>
-
+              <div className='footerSocialIconsFlexDivs'>
+                  <div>
               <Box>
                   <a href="tel:+000000000" className='social-navlinks'>
                   <i className="fas fa-phone-alt fa-3x footer-phone"></i>
@@ -80,8 +80,10 @@ function Footer() {
               <Box>
                  <a href="https://web.facebook.com/" target="blank" rel="noreferrer" className='social-navlinks' aria-label="Facebook link" >	<i className=" fab fa-facebook-square fa-3x footer-social-facebook"></i></a>
               </Box>
+               </div>
 
-             
+
+                <div>
 
               <Box>
                  <a href="https://twitter.com/" target="blank" rel="noreferrer" className='social-navlinks' aria-label=" Twitter link">   <i className="fab fa-twitter-square  fa-3x  footer-social-twitter"></i> </a>
@@ -99,8 +101,8 @@ function Footer() {
               <a href="https://wa.me/message/" target="blank" rel="noreferrer" className='social-navlinks' aria-label="WhatsApp chat link">	<i className=" fab fa-whatsapp-square fa-3x   footer-social-whatsapp"></i> </a>
 
               </Box>
-
-
+               </div>
+ 
               </div>
               
 

@@ -92,6 +92,15 @@ line-height: 35px;
 
 @media screen and (max-width: 960px) {
 
- 
+
+  .footerSocialIconsFlexDivs{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 13%;
+    margin-right: 13%;
+  }
+  .social-navlinks{
+    margin: 25% !important;
+  }
 
 }
