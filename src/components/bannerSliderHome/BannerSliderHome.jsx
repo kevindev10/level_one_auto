@@ -69,8 +69,8 @@ function BannerSliderHome() {
         <div className="container1">
 
           <div className="background-img" style={{"backgroundImage": "url(" + a2+ ") ", "objectFit":"100%" , }} >
-{/*               
-                <div className='background-cover'></div> */}
+              
+                <div className='background-cover'></div>
                 <div className="centered1">
                   <Link to='/stock'>
                     <div className="btn from-left">View Our Stock</div>
@@ -91,7 +91,7 @@ function BannerSliderHome() {
 
               <div className="background-img" style={{"backgroundImage": "url(" + a3+ ") ", "objectFit":"100%" , }} >
                   
-                    {/* <div className='background-cover'></div> */}
+                    <div className='background-cover'></div>
                     <div className="centered1">
                       <Link to='/stock'>
                         <div className="btn from-left">View Our Stock</div>
@@ -116,7 +116,7 @@ function BannerSliderHome() {
 
           <div className="background-img" style={{"backgroundImage": "url(" + a4+ ") ", "objectFit":"100%" , }} >
               
-                {/* <div className='background-cover'></div> */}
+                <div className='background-cover'></div>
                 <div className="centered1">
                   <Link to='/stock'>
                     <div className="btn from-left">View Our Stock</div>
@@ -140,7 +140,7 @@ function BannerSliderHome() {
 
             <div className="background-img" style={{"backgroundImage": "url(" + a5+ ") ", "objectFit":"100%" , }} >
                 
-                  {/* <div className='background-cover'></div> */}
+                  <div className='background-cover'></div>
                   <div className="centered1">
                     <Link to='/stock'>
                       <div className="btn from-left">View Our Stock</div>
@@ -162,7 +162,7 @@ function BannerSliderHome() {
 
           <div className="background-img" style={{"backgroundImage": "url(" + a6+ ") ", "objectFit":"100%" , }} >
               
-                {/* <div className='background-cover'></div> */}
+                <div className='background-cover'></div>
                 <div className="centered1">
                   <Link to='/stock'>
                     <div className="btn from-left">View Our Stock</div>
@@ -187,7 +187,7 @@ function BannerSliderHome() {
 
           <div className="background-img" style={{"backgroundImage": "url(" + a7+ ") ", "objectFit":"100%" , }} >
               
-                {/* <div className='background-cover'></div> */}
+                <div className='background-cover'></div>
                 <div className="centered1">
                   <Link to='/stock'>
                     <div className="btn from-left">View Our Stock</div>

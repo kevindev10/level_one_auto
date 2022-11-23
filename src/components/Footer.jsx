@@ -65,7 +65,7 @@ function Footer() {
             <Grid item xs={12} sm={4}>
               <Box className ='footer-heading'>Get In touch</Box>
               <div className='footerSocialIconsFlexDivs'>
-                  <div>
+                  <div className='footerSocialIconsFlexDivsOnMobile'>
               <Box>
                   <a href="tel:+000000000" className='social-navlinks'>
                   <i className="fas fa-phone-alt fa-3x footer-phone"></i>
