@@ -9,9 +9,9 @@ import {
   collection,
   getDocs,
   query,
-  where,
+  // where,
   orderBy,
-  limit,
+  
 
 } from 'firebase/firestore'
 
@@ -22,7 +22,7 @@ import Slider from "react-slick";
 import feedbackBackground from '../assets/homepagePhotos/feedbackBackground.jpg'
 import StarsIcon from '@mui/icons-material/Stars';
 import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
-import { margin } from '@mui/system'
+
 
 
 
@@ -87,17 +87,6 @@ function Home() {
    // Slider settings
 
 
-   const settings = {
-      dots: false,
-      infinite: true,
-      slidesToShow: 4,
-      slidesToScroll: 3,
-      autoplay: true,
-      speed: 15000,
-      autoplaySpeed: 15000,
-  };
-
-
   const settings2 = {
     arrow:false,
     dots: true,
@@ -111,43 +100,76 @@ function Home() {
   };
 
 
-  // get bottom banner photo slides
-     
+  const settings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    autoplay: true,
+    speed: 15000,
+    autoplaySpeed: 15000,
+    initialSlide: 0,
+      responsive: [
+        {
+          breakpoint: 960,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: true,
+            dots: false
+          }
+        },
+       
+      ]
+  
+};
 
-      const getSlides = () =>{
-        return newArrivals.map ((newArrival) =>{
-      return <>
-                 <div key ={newArrival.id}>
-                    <h3  className='newArrivalsWidth'>
-                      <div className='newArrivalImageDiv'>
-                         <img src={newArrival.data.imageUrls[0]} alt="New Arrivals" width='100%' height='100%'  className='newArrivalImages' style={{paddingLeft :'1.5%'}} />
+
+
+
+
+      const getSlides1 = () => {
+        return newArrivals.map((newArrival) => {
+          return  <div key={newArrival.id}>
+                <h3>
+                  <div >
+
+                    <div className='newArrivalImageDiv' >
+                        
+                    <img src={newArrival.data.imageUrls[0]} alt={newArrival.data.title} width='100%' height='100%'  className='newArrivalImages' style={{paddingLeft :'1.5%'}} /> 
+                          <div className='background-cover-new-arrivals'></div>
+                          <div className="centered1-new-arrivals">
+                            <Link to={`/car/${newArrival.id}`}>
+                              <div className="btn-new-arrivals from-left-new-arrivals">More Details</div>
+                            </Link>
+                          </div>
                       </div>
-                 
-                    
-                    <p>{newArrival.data.description}</p>
-                    <p>Ksh &nbsp; {newArrival.data.discountedPrice?  newArrival.data.discountedPrice.toString()
+                       
+                    <p style={{fontSize:'1.0rem', fontWeight:'100', paddingTop:'3.5%', paddingLeft: '1.5%', paddingRight:'1.5%'}} className='new-arrival-title'>{newArrival.data.title}</p>
+                    <p  style={{fontSize:'1.0rem', fontWeight:'100', paddingTop:'3.5%', paddingLeft: '1.5%', paddingRight:'1.5%'
+                    , color:'maroon'}} className='new-arrival-price'>Ksh&nbsp; {newArrival.data.discountedPrice?  newArrival.data.discountedPrice.toString()
                   .replace(/\B(?=(\d{3})+(?!\d))/g, ',') : newArrival.data.regularPrice.toString()
                   .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</p>
-                    </h3>
-                    
-                  </div>
 
+                  </div>
                   
-        
-            </>     
+
+                </h3>
+              </div>
+                  
+          
+          
+          
+                  
+             
 
         })
+
       }
 
 
 
-
-
-
-
-
-
-
+   
 
 
 
@@ -207,70 +229,70 @@ function Home() {
 
 
 
-           
-       
-     
+
+
+ <div>
+          <h2 className='new-arrivals-h2' style={{paddingTop:'2.0%' , paddingBottom:'2.6%' , textAlign:'center',fontWeight:'100', fontSize:'1.7rem' }}>Latest Arrivals</h2>
+
+          {loading ? (
+              <Spinner/>
+          ):(
+            newArrivals && newArrivals.length > 0 ?(
+                <div className="container1-new-arrivals"  >
+
+                                <Slider {...settings} >
+                                {getSlides1()}
+                              
+                                </Slider>
+
+                </div>
+
+            )  : ( <p>No Cars In Stock</p>)
+
+
+          )}
+
+              <h2 >
+              <Link to='/stock' style={{paddingBottom:'2.6%' , paddingTop:'2.6%' ,  display: 'flex' ,  alignItems: 'center',justifyContent:'center' ,  flexWrap: 'wrap'}} className="viewAllStock">
+              <span style={{fontWeight:'100',fontSize:'1.7rem', paddingRight:'1%'  }}  className='new-arrivals-span'>View All Stock</span> 
+              
+              < DoubleArrowIcon sx={{ fontSize: 32 }} className='new-arrivals-icon' />
+            </Link>
+              </h2>
+
+
+  
+
+    </div>
 
 
 
-  <div className='mainNewArrivalsDiv' >
-
-
-    
-  <h2 style={{paddingBottom:'2.7%' , textAlign:'center',fontWeight:'100', fontSize:'1.8rem' }}> Latest Arrivals </h2>
-
-      { loading ? (
-        <Spinner/>
-      ):(
-        newArrivals && newArrivals.length > 0 ? (
-
-          <div>        
-
-           
-               
-             <Slider {...settings}>
-                        {getSlides()}
-                      
-                        </Slider>
-
-           </div>
-
-        ) : ( <p>No Cars In Stock</p>)
-        
-       
 
 
 
-      )
-
-
-      }
-
-
-      <h2 >
-   
-
-        <Link to='/stock' style={{paddingTop:'2.7%' ,  display: 'flex' , alignItems: 'center', alignItems: 'center',justifyContent:'center' ,  flexWrap: 'wrap'}} className="viewAllStock">
-           <span style={{fontWeight:'100',fontSize:'1.8rem'}}>View All Stock</span> 
-           
-           < DoubleArrowIcon sx={{ fontSize: 40 }} />
-          
-      
-        </Link>
-
-     
-      
-         
-         
-       </h2>
-
-
-    
-   </div>
 
 
 
-     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

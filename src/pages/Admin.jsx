@@ -48,7 +48,7 @@ function Admin() {
   const [ collectionCount, setCollectionCount] = useState(0)
   const [ totalCarsForSale, setTotalCarsForSale] = useState(0)
   const [ totalCarsSold, setTotalCarsSold ] = useState(0)
-
+  const [featuredVehicle, setFeaturedVehicle] = useState(null)
 
 
 
@@ -220,15 +220,59 @@ useEffect(() =>{
     setTotalCarsSold(snapshot.data().count);
       
   }
+
+ 
+
   
   collectionCount()
   totalCarsForSale()
   totalCarsSold ()
-      
+  
 })
 
 
+// Fetch featured vehicle from firestore
 
+useEffect(() =>{
+
+
+ 
+
+    const getFeaturedVehicle = async() =>{
+      try {
+          const carsRef = collection(db, "cars");
+          const q = query(
+            carsRef,
+            where('featuredVehicle', '==', true),
+            where('userRef', '==', auth.currentUser.uid),
+            orderBy('timestamp', 'desc')
+            )
+        
+            const querySnap = await getDocs(q)
+      
+            let featuredCar= []
+            querySnap.forEach((doc) => {
+              return featuredCar.push({
+                id: doc.id,
+                data: doc.data(),
+              })
+            })
+            
+            setFeaturedVehicle(featuredCar)
+            setLoading(false)
+  
+  
+  
+  
+    
+    
+        } catch (error) {
+          console.log(error)
+        }
+      } 
+
+  getFeaturedVehicle()      
+}, [])
 
 
 
@@ -296,6 +340,9 @@ useEffect(() =>{
       <p className='pageHeader'>Total Cars: {collectionCount} </p>
       <p className='pageHeader'>Total Cars For Sale: {totalCarsForSale} </p>
       <p className='pageHeader'>Total Cars Sold: {totalCarsSold} </p>
+      {/* <p className='pageHeader'>Featured Car: {featuredVehicle[0].data.title} </p> */}
+
+
 
                 <div>
 
@@ -311,6 +358,7 @@ useEffect(() =>{
                   <Tabs value={value} onChange={(event, newValue) => {setValue(newValue)}} aria-label="basic tabs example">
                     <Tab label="For Sale" {...a11yProps(0)} />
                     <Tab label="Sold" {...a11yProps(1)} />
+                    <Tab label="FEATURED" {...a11yProps(2)} />
                   </Tabs>
                 </Box>
                 <TabPanel value={value} index={0}>
@@ -322,7 +370,8 @@ useEffect(() =>{
                     <p className='listingText'>Your Car Listings</p>
                     <ul className='listingsList'>
                       {cars.map((car) => (
-                        car.data.sold === false &&
+                        car.data.sold === false && ! car.data.featuredVehicle &&
+                        // car.data.featuredVehicle && car.data.featuredVehicle === true &&
                         <CarItem
                           key={car.id}
                           car={car.data}
@@ -361,6 +410,38 @@ useEffect(() =>{
 
 
                 </TabPanel>
+
+
+
+
+                <TabPanel value={value} index={2}>
+                 
+                 {!loading && cars?.length > 0 && (
+      
+                   <>
+                       
+                     <p className='listingText'>Your Car Listings</p>
+                     <ul className='listingsList'>
+                       {cars.map((car) => (
+                        car.data.featuredVehicle && car.data.featuredVehicle === true &&
+                     
+                         <CarItem
+                           key={car.id}
+                           car={car.data}
+                           id={car.id}
+                          //  onDelete={() => onDelete(car.id)}
+                           onEdit={() => onEdit(car.id)}
+                         />
+                       ))}
+                     </ul>
+                   </>
+                 )} 
+ 
+ 
+                 </TabPanel>     
+
+
+
      
               </Box>
 
