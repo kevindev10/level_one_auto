@@ -267,12 +267,12 @@ useEffect(() =>{
     
     
         } catch (error) {
-          console.log(error)
+         
         }
       } 
 
   getFeaturedVehicle()      
-}, [])
+}, [auth.currentUser.uid])
 
 
 
@@ -341,6 +341,10 @@ useEffect(() =>{
       <p className='pageHeader'>Total Cars For Sale: {totalCarsForSale} </p>
       <p className='pageHeader'>Total Cars Sold: {totalCarsSold} </p>
       {/* <p className='pageHeader'>Featured Car: {featuredVehicle[0].data.title} </p> */}
+      {featuredVehicle !== null && 
+         <p className='pageHeader'>Featured Car: {featuredVehicle[0].data.title} </p>
+      
+      }
 
 
 

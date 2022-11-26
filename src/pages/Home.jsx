@@ -23,10 +23,10 @@ import feedbackBackground from '../assets/homepagePhotos/feedbackBackground.jpg'
 import StarsIcon from '@mui/icons-material/Stars';
 import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 
-
-
-
-
+import { GiGasPump } from "react-icons/gi";
+import { GiGearStickPattern } from "react-icons/gi";
+import { TbEngine} from "react-icons/tb";
+import {GiCalendarHalfYear} from "react-icons/gi";
 
 
 
@@ -157,19 +157,12 @@ function Home() {
                 </h3>
               </div>
                   
-          
-          
-          
-                  
+         
              
 
         })
 
       }
-
-
-
-   
 
 
 
@@ -209,26 +202,10 @@ function Home() {
             
             </div>
             
-          
-       
-            
-        
-
-       
-           
-       
-          
+               
          </section>
 
         </div>
-
-        
-
-
-
-
-
-
 
 
  <div>
@@ -264,40 +241,6 @@ function Home() {
   
 
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
               <div>
@@ -395,10 +338,6 @@ function Home() {
 
                     </div>
 
-
-
-
-
                     </h3>
                   </div>
                   <div>
@@ -421,18 +360,138 @@ function Home() {
 
                     </div>
 
-
-
-
-
-
                     </h3>
                   </div>
                 
                 </Slider>
-      </div>
+              </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+              <div className='featured-vehicle-main'>
+                <div  className='featured-vehicle-heading'>
+                  <h3 style={{paddingTop:'2.0%' , paddingBottom:'2.6%' , textAlign:'center',fontWeight:'100', fontSize:'1.7rem'}} >Featured Vehicle</h3>
+                </div>
+                
+                <div className='featured-vehicle-main-flex'>
+
+
+                  <div className='featured-vehicle-image' >
+                    <div className='featured-vehicle-image-container' >
+                      <img src={mainHome}alt=""  width='100%' height='100%' style={{objectFit:'cover'}} />
+                    </div>
+                   
+
+                  </div>
+
+
+                  <div className='featured-vehicle-paragraph'>
+                    <div className='featured-vehicle-paragraph-heading'>
+                      <div  >
+                        <h4 className='featured-vehicle-paragraph-heading-description'>Land Rover Range Rover Sport P575 V8 SVR</h4>
+                      </div>
+                      <div >
+                        <h4 className='featured-vehicle-paragraph-heading-price'>Ksh &nbsp;12345678</h4>
+                      </div>
+                      
+                        
+                    </div>
+                   
+                    <div>
+                      
+
+                                <div className='featured-vehicle-icons'>
+
+                                      <div className='' style={{paddingLeft:'4.0%', paddingRight:'4.0%'}} > 
+                                          < GiGearStickPattern size='42'/> 
+                                          <p>Automatic</p>
+                                      </div>
+                                      <div className=''  style={{paddingLeft:'4.0%', paddingRight:'4.0%'}} > 
+                                          < GiGasPump size='42'/> 
+                                          <p>Petrol</p>
+                                      </div>
+                                      <div className='' style={{paddingLeft:'4.0%', paddingRight:'4.0%'}}  > 
+                                          < TbEngine size='42'/> 
+                                          <p>3.0L</p>
+                                      </div>
+                                      <div className=''  style={{paddingLeft:'4.0%', paddingRight:'4.0%'}}  > 
+                                          < GiCalendarHalfYear size='42'/> 
+                                          <p>2022</p>
+                                      </div>
+                                      <div className='' style={{paddingLeft:'4.0%', paddingRight:'4.0%'}} > 
+                                          < GiGearStickPattern size='42'/> 
+                                          <p>Automatic</p>
+                                      </div>
+                                      <div className=''  style={{paddingLeft:'4.0%', paddingRight:'4.0%'}} > 
+                                          < GiGasPump size='42'/> 
+                                          <p>Petrol</p>
+                                      </div>
+                                    
+                                  
+
+                                </div>
+
+
+                          <p style={{paddingbottom:'2.5%', paddingTop:'2.5%', fontSize:'1.05rem' }}>
+                          A beautiful example presented in exceptional condition. Supported by a full Land Rover service history. Stunning colour combination. High specification example. Drives without fault, superb value. Eiger Grey Metallic | Windsor Perforated Leather Cirrus/Ebony | Black Contrast Roof | Ebony Suadecloth Headlining | 22" Style 5083 5 Split-Spoke Gloss Black Wheels | Red SV Brake Callipers | Exte...
+                          </p>
+
+
+                          <div style={{paddingbottom:'2.5%', paddingTop:'2.5%'}}>
+                            <button> 
+                              <span>More Details</span>
+                             < DoubleArrowIcon sx={{ fontSize: 32 }} className='new-arrivals-icon' />
+                            </button>
+                          </div>
+
+
+                    </div>
+                   
+                   
+
+                  </div>
+
+                </div>
 
               </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -28,8 +28,8 @@ function BannerSliderHome() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 4000,
-    autoplaySpeed: 10000,
+    speed: 15000,
+    autoplaySpeed: 15000,
     fade: true,
   };
 
