@@ -202,12 +202,6 @@
   padding-bottom: 5.0%;
 }
 
-.featured-vehicle-heading{
-
-  padding-top: 1.5%;
-  padding-bottom: 1.5%;
-  text-align: center;
-}
 
 
 .featured-vehicle-image{
@@ -262,25 +256,100 @@
 
 
 
+.featured-vehicle-icons-on-mobile{
+  display: none;
+}
 
 
 
 
 
 
+.div-btn-featured-vehicle{
+  width : 50%;
+  margin: auto;
+}
+
+/* ~~~~~~~ INIT. BTN ~~~~~~~ */
+
+.btn-featured-vehicle {		
+	position: relative;	
+  text-align: center;
+	padding: 5%;
+	color: gray;
+	letter-spacing:0.15rem ;
+	transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);	
+	cursor: pointer;
+	user-select: none;
+  background-color: rgba(118, 116, 116, 0.2);
+  border: 2px solid transparent;
+ 
+ 
+
+}
+
+.btn-featured-vehicle:before, .btn-featured-vehicle:after {
+	content: '';
+	position: absolute;	
+	transition: inherit;
+	z-index: -1;
+  background-color:  rgba(118, 116, 116, 0.2);
+}
+
+.btn-featured-vehicle:hover {
+	color: white;
+	transition-delay: .5s;
+  background-color:  rgba(118, 116, 116, 0.2);
+  border: 2px solid white;
+}
+
+.btn-featured-vehicle:hover:before {
+	transition-delay: 0s;
+}
+
+.btn-featured-vehicle:hover:after {
+	background: var(--inv);
+	transition-delay: .35s;
+}
+
+
+/* From center */
+
+.from-center-featured-vehicle:before {
+	top: 0;
+	left: 50%;
+	height: 100%;
+	width: 0;
+	border: 1px solid var(--inv);
+	border-left: 0;
+	border-right: 0;
+}
+
+.from-center-featured-vehicle:after {
+	bottom: 0;
+	left: 0;
+	height: 0;
+	width: 100%;
+	background: var(--inv);
+}
+
+.from-center-featured-vehicle:hover:before {
+	left: 0;
+	width: 100%;
+  background-color: black;
+}
+
+.from-center-featured-vehicle:hover:after {
+	top: 0;
+	height: 100%;
+  background-color: black;
+}
 
 
 
-
-
-
-
-
-
-
-
-
-
+.lastBannerHome{
+  display: flex;
+}
 
 
 
@@ -428,4 +497,114 @@
     font-size: 0.8rem !important;
     padding-left: 4.0% !important;
   }
+
+.featured-vehicle-main{
+   text-align: center;
+  
+}
+
+  .featured-vehicle-heading{
+
+    padding-top:3.5% !important;
+    padding-bottom: 3.5% !important;
+    font-size: 1.2rem !important;
+   
+  }
+
+
+  .featured-vehicle-main-flex{
+    display: block;
+    padding-left: 2.5%;
+    padding-right:2.5%;
+    padding-bottom: 5.0%;
+   
+   
+  }
+
+
+
+  .featured-vehicle-image{
+    width: 100%;
+    
+    
+  }
+  
+  .featured-vehicle-image-container{
+    width: 100%;
+    height: 100%;
+   
+  
+  }
+
+
+  .featured-vehicle-paragraph{
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+  
+ 
+
+.featured-vehicle-paragraph-heading{
+  display:block;
+  
+  
+}
+
+.featured-vehicle-paragraph-heading-description{
+font-size: 1.2rem;
+font-weight: 100;
+margin-top: 2.5%;
+margin-bottom: 2.5%;
+text-align: center;
+
+}
+
+.featured-vehicle-paragraph-heading-price{
+font-size: 1.0rem;
+font-weight: bold;
+margin-top: 2.5%;
+margin-bottom: 2.5%;
+text-align: center;
+
+}
+
+
+.featured-vehicle-icons{
+display: none;
+}
+ 
+
+.featured-vehicle-icons-on-mobile{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+
+}
+
+
+.featurd-vehicle-main-paragraph-on-mobile{
+  font-size: 1.0rem !important;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: center;
+}
+
+.btn-featured-vehicle {		
+	color: white;
+  background-color:black;
+  font-size: 0.9rem !important;
+ 
+ 
+}
+
+.featured-vehicle-icon{
+  font-size: 0.9rem !important;
+}
+
+
 }

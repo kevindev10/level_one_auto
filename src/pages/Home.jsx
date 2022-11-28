@@ -37,6 +37,7 @@ function Home() {
 
   const [newArrivals, setNewArrivals ] = useState(null)
   const [loading, setLoading] = useState(false)
+  const [featuredVehicle, setFeaturedVehicle] = useState(null)
 
    useEffect(() =>{
         const fetchlatestArrivals = async () => {
@@ -69,7 +70,22 @@ function Home() {
         })
    
        
+        const featuredCar = []
+
+        vehicles !== null && vehicles.length > 0 && vehicles.forEach((vehicle) =>{
+          // car.data.featuredVehicle && car.data.featuredVehicle === true &&
+          vehicle.data.featuredVehicle && vehicle.data.featuredVehicle === true &&
+          featuredCar.push({
+            id:vehicle.id,
+            data: vehicle.data
+          })
+        })
+
+
         setNewArrivals(vehicles)
+       setFeaturedVehicle(featuredCar)
+
+
         setLoading(false)
        
       } catch (error) {
@@ -104,17 +120,17 @@ function Home() {
     dots: false,
     infinite: true,
     slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToScroll: 1,
     autoplay: true,
-    speed: 15000,
-    autoplaySpeed: 15000,
+    speed: 5000,
+    autoplaySpeed: 5000,
     initialSlide: 0,
       responsive: [
         {
           breakpoint: 960,
           settings: {
             slidesToShow: 2,
-            slidesToScroll: 2,
+            slidesToScroll: 1,
             infinite: true,
             dots: false
           }
@@ -374,100 +390,205 @@ function Home() {
 
 
 
-
-
-
-
-              <div className='featured-vehicle-main'>
-                <div  className='featured-vehicle-heading'>
-                  <h3 style={{paddingTop:'2.0%' , paddingBottom:'2.6%' , textAlign:'center',fontWeight:'100', fontSize:'1.7rem'}} >Featured Vehicle</h3>
-                </div>
+                {
+                featuredVehicle !== null && featuredVehicle[0].data.featuredVehicle === true &&
                 
-                <div className='featured-vehicle-main-flex'>
-
-
-                  <div className='featured-vehicle-image' >
-                    <div className='featured-vehicle-image-container' >
-                      <img src={mainHome}alt=""  width='100%' height='100%' style={{objectFit:'cover'}} />
-                    </div>
-                   
-
-                  </div>
-
-
-                  <div className='featured-vehicle-paragraph'>
-                    <div className='featured-vehicle-paragraph-heading'>
+                                        
+                      <div className='featured-vehicle-main'>
                       <div  >
-                        <h4 className='featured-vehicle-paragraph-heading-description'>Land Rover Range Rover Sport P575 V8 SVR</h4>
-                      </div>
-                      <div >
-                        <h4 className='featured-vehicle-paragraph-heading-price'>Ksh &nbsp;12345678</h4>
+                        <h3 className='featured-vehicle-heading' style={{paddingTop:'2.0%' , paddingBottom:'2.6%' , textAlign:'center',fontWeight:'100', fontSize:'1.7rem'}} >Featured Vehicle</h3>
                       </div>
                       
-                        
-                    </div>
-                   
-                    <div>
-                      
-
-                                <div className='featured-vehicle-icons'>
-
-                                      <div className='' style={{paddingLeft:'4.0%', paddingRight:'4.0%'}} > 
-                                          < GiGearStickPattern size='42'/> 
-                                          <p>Automatic</p>
-                                      </div>
-                                      <div className=''  style={{paddingLeft:'4.0%', paddingRight:'4.0%'}} > 
-                                          < GiGasPump size='42'/> 
-                                          <p>Petrol</p>
-                                      </div>
-                                      <div className='' style={{paddingLeft:'4.0%', paddingRight:'4.0%'}}  > 
-                                          < TbEngine size='42'/> 
-                                          <p>3.0L</p>
-                                      </div>
-                                      <div className=''  style={{paddingLeft:'4.0%', paddingRight:'4.0%'}}  > 
-                                          < GiCalendarHalfYear size='42'/> 
-                                          <p>2022</p>
-                                      </div>
-                                      <div className='' style={{paddingLeft:'4.0%', paddingRight:'4.0%'}} > 
-                                          < GiGearStickPattern size='42'/> 
-                                          <p>Automatic</p>
-                                      </div>
-                                      <div className=''  style={{paddingLeft:'4.0%', paddingRight:'4.0%'}} > 
-                                          < GiGasPump size='42'/> 
-                                          <p>Petrol</p>
-                                      </div>
-                                    
-                                  
-
-                                </div>
+                      <div className='featured-vehicle-main-flex'>
 
 
-                          <p style={{paddingbottom:'2.5%', paddingTop:'2.5%', fontSize:'1.05rem' }}>
-                          A beautiful example presented in exceptional condition. Supported by a full Land Rover service history. Stunning colour combination. High specification example. Drives without fault, superb value. Eiger Grey Metallic | Windsor Perforated Leather Cirrus/Ebony | Black Contrast Roof | Ebony Suadecloth Headlining | 22" Style 5083 5 Split-Spoke Gloss Black Wheels | Red SV Brake Callipers | Exte...
-                          </p>
-
-
-                          <div style={{paddingbottom:'2.5%', paddingTop:'2.5%'}}>
-                            <button> 
-                              <span>More Details</span>
-                             < DoubleArrowIcon sx={{ fontSize: 32 }} className='new-arrivals-icon' />
-                            </button>
+                        <div className='featured-vehicle-image' >
+                          <div className='featured-vehicle-image-container' >
+                          <img src={featuredVehicle[0].data.imageUrls[0]}alt={featuredVehicle[0].data.title}  width='100%' height='100%' style={{objectFit:'cover'}} />
                           </div>
+                        
 
+                        </div>
+
+
+                        <div className='featured-vehicle-paragraph'>
+                          <div className='featured-vehicle-paragraph-heading'>
+                            <div  >
+                              <h4 className='featured-vehicle-paragraph-heading-description'>{featuredVehicle[0].data.title}</h4>
+                            </div>
+                            <div >
+                              <h4 className='featured-vehicle-paragraph-heading-price'>
+                                Ksh &nbsp;{featuredVehicle[0].data.offer
+                                            ? featuredVehicle[0].data.discountedPrice
+                                                .toString()
+                                                .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+                                            : featuredVehicle[0].data.regularPrice
+                                                .toString()
+                                                .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+                                          }
+                              </h4>
+                            </div>
+                            
+                              
+                          </div>
+                        
+                          <div>
+                            
+
+                                      <div className='featured-vehicle-icons'>
+                                            
+
+                                            <div className='' style={{paddingLeft:'4.0%', paddingRight:'4.0%'}} > 
+                                                < GiGearStickPattern size='42'/> 
+                                                <p>{featuredVehicle[0].data.gearbox}</p>
+                                            </div>
+                                            <div className=''  style={{paddingLeft:'4.0%', paddingRight:'4.0%'}} > 
+                                                < GiGasPump size='42'/> 
+                                                <p>{featuredVehicle[0].data.fuelType}</p>
+                                            </div>
+                                            <div className='' style={{paddingLeft:'4.0%', paddingRight:'4.0%'}}  > 
+                                                < TbEngine size='42'/> 
+                                                <p>{featuredVehicle[0].data.engineCapacity}.0L</p>
+                                            </div>
+                                            <div className=''  style={{paddingLeft:'4.0%', paddingRight:'4.0%'}}  > 
+                                                < GiCalendarHalfYear size='42'/> 
+                                                <p>{featuredVehicle[0].data.year}</p>
+                                            </div>
+                                            <div className='' style={{paddingLeft:'4.0%', paddingRight:'4.0%'}} > 
+                                                < GiGearStickPattern size='42'/> 
+                                                <p>{featuredVehicle[0].data.gearbox}</p>
+                                            </div>
+                                            <div className=''  style={{paddingLeft:'4.0%', paddingRight:'4.0%'}} > 
+                                                < GiGasPump size='42'/> 
+                                                <p>{featuredVehicle[0].data.fuelType}</p>
+                                            </div>
+                                          
+                                        
+
+                                      </div>
+
+                                      
+                                      <div className='featured-vehicle-icons-on-mobile'>
+                                            
+                                        <div>
+                                                <div className='' style={{paddingLeft:'4.0%', paddingRight:'4.0%'}} > 
+                                                    < GiGearStickPattern size='42'/> 
+                                                    <p>{featuredVehicle[0].data.gearbox}</p>
+                                                </div>
+                                                <div className=''  style={{paddingLeft:'4.0%', paddingRight:'4.0%'}} > 
+                                                    < GiGasPump size='42'/> 
+                                                    <p>{featuredVehicle[0].data.fuelType}</p>
+                                                </div>
+                                                <div className='' style={{paddingLeft:'4.0%', paddingRight:'4.0%'}}  > 
+                                                    < TbEngine size='42'/> 
+                                                    <p>{featuredVehicle[0].data.engineCapacity}.0L</p>
+                                                </div>
+
+                                        </div>
+
+                                        <div>
+                                                  <div className=''  style={{paddingLeft:'4.0%', paddingRight:'4.0%'}}  > 
+                                                        < GiCalendarHalfYear size='42'/> 
+                                                        <p>{featuredVehicle[0].data.year}</p>
+                                                    </div>
+                                                    <div className='' style={{paddingLeft:'4.0%', paddingRight:'4.0%'}} > 
+                                                        < GiGearStickPattern size='42'/> 
+                                                        <p>{featuredVehicle[0].data.gearbox}</p>
+                                                    </div>
+                                                    <div className=''  style={{paddingLeft:'4.0%', paddingRight:'4.0%'}} > 
+                                                        < GiGasPump size='42'/> 
+                                                        <p>{featuredVehicle[0].data.fuelType}</p>
+                                                    </div>
+                                          
+
+                                        </div>
+                                          
+                                          
+                                        
+
+                                      </div>
+
+
+                                <p style={{paddingbottom:'2.5%', paddingTop:'2.5%', fontSize:'1.05rem' }} className='featurd-vehicle-main-paragraph-on-mobile'>
+                                {featuredVehicle[0].data.vdOverview}
+                                </p>
+
+
+                                <div className='div-btn-featured-vehicle' style={{ paddingTop:'2.5%', paddingbottom:'2.5%'}}>
+                                  <Link to={`/car/${featuredVehicle[0].id}`}>
+                                      <div className="btn-featured-vehicle from-center-featured-vehicle" style={{fontSize:'1.05rem'}}>More Details
+                                      < DoubleArrowIcon  className='featured-vehicle-icon' style={{verticalAlign:'middle', fontSize:'1.05rem', marginLeft:'1.5%'}} />
+                                      </div>
+                                      
+                                  </Link>
+                                  
+                                </div>
+                    
+
+
+                          </div>
+                        
+                        
+
+                        </div>
+
+                      </div>
 
                     </div>
-                   
-                   
 
-                  </div>
 
-                </div>
+                        
+                
+                
+                }
 
+
+
+
+
+
+
+
+        <div>
+
+
+          <div className='lastBannerHome' style={{"backgroundImage": "url(" + mainHome+ ") ", "objectFit":"100%" , }}>
+
+
+            <div>
+              <h4 style={{color:'maroon'}}>Finance</h4>
+              <p  style={{color:'white'}}>No matter what your requirements we have finance options that will suit you</p>
+              <div>
+                <p  style={{color:'white'}}>More Info</p>
+                <DoubleArrowIcon style={{color:'maroon'}}/>
               </div>
+            </div>
+
+            <div>
+              <h4>Sell Your Car</h4>
+              <p>A better offer than any other car buying service guaranteed.
+                  A lower sale on return commission fee than any other dealership guaranteed.
+                  A quick, secure and no hassle process whichever option you choose.</p>
+                  <div>
+                <p>More Info</p>
+                <DoubleArrowIcon/>
+              </div>
+            </div>
+
+            <div>
+              <h4>Preparation</h4>
+              <p>We prepare all vehicles to our exacting standards using only the best products. We offer a ceramic coat service to ensure that your new car stays protected and looks it’s best for years to come</p>
+              <div>
+                <p>More Info</p>
+                <DoubleArrowIcon/>
+              </div>
+            </div>
 
 
+          </div>
 
 
+        </div>
 
 
 

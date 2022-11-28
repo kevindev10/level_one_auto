@@ -95,9 +95,8 @@ line-height: 35px;
 
   .footerSocialIconsFlexDivs{
     display: flex;
-    justify-content: space-between;
-    margin-left: 13%;
-    margin-right: 13%;
+    justify-content: space-around;
+    
   }
   .social-navlinks{
     margin: 25% !important;
