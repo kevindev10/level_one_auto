@@ -31,11 +31,21 @@ function BannerSliderHome() {
     speed: 15000,
     autoplaySpeed: 15000,
     fade: true,
+    responsive: [
+      {
+        breakpoint: 960,
+        settings: {
+          speed: 3000,
+          autoplaySpeed: 3000,
+        }
+      },
+     
+    ]
   };
 
 
   return (
-    <div>
+    <div >
 
       <Slider {...settings}>
 

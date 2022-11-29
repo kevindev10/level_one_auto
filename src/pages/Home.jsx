@@ -5,6 +5,7 @@ import Footer from '../components/Footer'
 import BannerSliderHome from  '../components/bannerSliderHome/BannerSliderHome'
 import mainHome from '../assets/homepagePhotos/mainHome.jpg'
 import homeX from '../assets/homepagePhotos/homeX.jpg'
+import audi  from '../assets/homepagePhotos/audi-r8.jpg'
 import {
   collection,
   getDocs,
@@ -549,40 +550,77 @@ function Home() {
 
 
 
-        <div>
+        <div className='main-div-lastBannerHome'>
 
 
-          <div className='lastBannerHome' style={{"backgroundImage": "url(" + mainHome+ ") ", "objectFit":"100%" , }}>
+          <div className='lastBannerHome' style={{"backgroundImage": "url(" +audi+ ") ", }}>
+                <div className='lastBannerHome-background-cover'>
 
 
-            <div>
-              <h4 style={{color:'maroon'}}>Finance</h4>
-              <p  style={{color:'white'}}>No matter what your requirements we have finance options that will suit you</p>
-              <div>
-                <p  style={{color:'white'}}>More Info</p>
-                <DoubleArrowIcon style={{color:'maroon'}}/>
-              </div>
-            </div>
 
-            <div>
-              <h4>Sell Your Car</h4>
-              <p>A better offer than any other car buying service guaranteed.
-                  A lower sale on return commission fee than any other dealership guaranteed.
-                  A quick, secure and no hassle process whichever option you choose.</p>
-                  <div>
-                <p>More Info</p>
-                <DoubleArrowIcon/>
-              </div>
-            </div>
 
-            <div>
-              <h4>Preparation</h4>
-              <p>We prepare all vehicles to our exacting standards using only the best products. We offer a ceramic coat service to ensure that your new car stays protected and looks it’s best for years to come</p>
-              <div>
-                <p>More Info</p>
-                <DoubleArrowIcon/>
-              </div>
-            </div>
+                      <div className='lastBannerHome-card-width'>
+                        <div className='lastBannerHome-card-background'>
+
+                              <div className='lastBannerHome-card-flex-column'>
+                                <h4 style={{color:'rgb(178,34,34)', fontSize:'2.2rem', flex:'1'}}>Finance</h4>
+                                <p  style={{color:'white', flex:'1', paddingBottom: '25%'}}>No matter what your requirements we have finance options that will suit you</p>
+                                <div>
+                                  <p  style={{color:'white' , flex:'1'}}>More Info</p>
+                                  <DoubleArrowIcon style={{color:'rgb(178,34,34)'}}/>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    
+                   
+                    <div className='lastBannerHome-card-width'>
+                        <div className='lastBannerHome-card-background'>
+
+                              <div className='lastBannerHome-card-flex-column'>
+                                <h4 style={{color:'rgb(178,34,34)', fontSize:'2.2rem', flex:'1'}}>Sell Your Car</h4>
+                                <p  style={{color:'white', flex:'1', paddingBottom: '25%'}}>A better offer than any other car buying service guaranteed.A lower sale on return commission fee than any other dealership guaranteed.A quick, secure and no hassle process whichever option you choose.</p>
+                                <div>
+                                  <p  style={{color:'white' , flex:'1'}}>More Info</p>
+                                  <DoubleArrowIcon style={{color:'rgb(178,34,34)'}}/>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                
+
+
+
+                
+                  
+                    <div className='lastBannerHome-card-width'>
+                        <div className='lastBannerHome-card-background'>
+
+                              <div className='lastBannerHome-card-flex-column'>
+                                <h4 style={{color:'rgb(178,34,34)', fontSize:'2.2rem', flex:'1'}}>Preparation</h4>
+                                <p  style={{color:'white', flex:'1', paddingBottom: '25%'}}>We prepare all vehicles to our exacting standards using only the best products. We offer a ceramic coat service to ensure that your new car stays protected and looks it’s best for years to come.</p>
+                                <div>
+                                  <p  style={{color:'white' , flex:'1'}}>More Info</p>
+                                  <DoubleArrowIcon style={{color:'rgb(178,34,34)'}}/>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
 
 
           </div>

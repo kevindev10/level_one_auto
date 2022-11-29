@@ -1,4 +1,6 @@
 
+
+
 .firstDivAfterSLider{
   display: flex;
   padding-top: 5%;
@@ -347,14 +349,63 @@
 
 
 
-.lastBannerHome{
-  display: flex;
+.main-div-lastBannerHome{
+  width: 100%;
+  height:610px;
+
+ 
 }
 
 
 
+.lastBannerHome{
+  
+  background: no-repeat center;
+	background-size: cover;
+	width: 100%  !important;
+	max-height: 100% !important;
+	height:100vh !important;
+  
+  
 
 
+}
+
+.lastBannerHome-background-cover{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 7%;
+  padding-bottom: 7%;
+  width: 100%;
+  height:100%;
+  
+  background-color: rgba(0,0,0, 0.05);
+}
+
+
+.lastBannerHome-card-width{
+   width: 20%;
+   text-align: center;
+
+}
+
+.lastBannerHome-card-background{
+ 
+  background-color: rgba(24, 24, 24, 0.65);
+  width: 100%;
+  height: 100%;
+}
+
+.lastBannerHome-card-flex-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  padding: 8%;
+}
 
 
 
@@ -604,6 +655,57 @@ display: none;
 
 .featured-vehicle-icon{
   font-size: 0.9rem !important;
+}
+
+.main-div-lastBannerHome{
+  width: 100%;
+  height:100% !important ;
+  padding: 5%;
+  overflow: hidden;
+}
+
+.lastBannerHome{
+  
+  background-image: none !important;
+   width: 100%  !important;
+	height:100% !important;
+
+}
+
+.lastBannerHome-background-cover{
+  display: block;
+  margin-top: 0% !important;
+  margin-bottom: 0% !important;
+  width: 100%;
+  height:100% !important;
+  padding-top: 0% !important;
+  background-color: rgb(255,255,255);
+}
+
+
+.lastBannerHome-card-width{
+  width: 100%;
+  text-align: center;
+
+}
+
+.lastBannerHome-card-flex-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+  height: 100% ;
+  width: 100%;
+  margin-bottom: 5%;
+
+}
+
+.lastBannerHome-card-background{
+  background-color: rgb(24, 24, 24);
+  width: 100%;
+  height: 100%;
+ 
 }
 
 
