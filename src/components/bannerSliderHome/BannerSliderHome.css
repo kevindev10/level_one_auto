@@ -180,26 +180,28 @@
 
 .btn {		
 
-	font-size: 1.2rem;
+	font-size: 0.8rem;
 	color: white;
-	letter-spacing: 0.3rem;
-	background-color: rgba(118, 116, 116, 0.18);
+	letter-spacing: 0.15rem;
+	background-color: rgba(118, 116, 116, 0.35) !important;
 
-	padding: 1.4rem 4.2rem;
-	padding-right: 3.1rem;
+	
 	
 
 	
 }
 
-.background-img{
 
-	overflow: hidden;
-
-
+.btn:hover {
+	color: white;
+	transition-delay: .5s;
+  background-color:  rgba(118, 116, 116, 0.25) !important;
 }
 
+.btn:before, .btn:after {
 
+  background-color: rgba(118, 116, 116, 0.25) !important;
+}
 
 
 

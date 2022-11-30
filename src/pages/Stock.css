@@ -1,0 +1,83 @@
+
+.main-div-select-search-background{
+  width: 100%;
+  height: 315px !important;
+  display: flex;
+  
+
+
+}
+
+.select-search-div-background-photo{
+
+   
+  background: no-repeat center;
+	background-size: cover;
+	width: 100%  !important;
+	max-height: 100% !important;
+ 
+  
+	
+
+}
+
+.select-search-button-stock-page:hover{
+   background-color: rgba(128,0,0, 0.75) !important;
+   color: white !important;
+   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+
+
+.main-div-select-search-background-on-mobile{
+  display: none ;
+}
+
+.stock-main-content{
+  width: 100%;
+  height: 100% !important;
+  padding: 5%;
+}
+
+
+.stock-page-car-item-main-container{
+  
+ 
+}
+
+.stock-page-car-item-main-container-row{
+  
+ 
+  
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 960px) {
+
+  .main-div-select-search-background{
+     display: none ;
+  }
+
+
+  .main-div-select-search-background-on-mobile{
+    width: 100%;
+    height: 315px !important;
+    display: flex;
+  }
+
+  .select-search-div-background-photo-on-mobile{
+    background: no-repeat center;
+    background-size: cover;
+    width: 100%  !important;
+    max-height: 100% !important;
+  }
+
+
+}

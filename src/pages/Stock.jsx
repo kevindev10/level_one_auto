@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 //import { useParams } from 'react-router-dom'
+import './Stock.css';
 import {
   collection,
   getDocs,
@@ -19,8 +20,7 @@ import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
-//import Button from '@mui/material/Button';
-
+import audi  from '../assets/stockPagePhotos/audi-r83.jpg'
 
 
 
@@ -395,14 +395,9 @@ function Stock() {
 
 
 
-
   return (
     <div className='category'>
-      <header>
-        <p className='pageHeader'>
-          STOCK
-        </p>
-      </header>
+    
 
 
 
@@ -452,53 +447,232 @@ function Stock() {
 
 
 
-      <div style={{display: 'flex', padding: '1.5%', marginBottom:'5%'  }}>
-                  <div  style={{padding: '2.5%', width :'25%'}}>
-                    <label className='formLabel'>Make</label>
-                    <Select
-                      ref= {selectRef}
-                      defaultValue={selectedOption}
-                      onChange={setSelectedOption}
-                      options={makes}
-                      required
-                    
-                    />
+
+
+
+        <div className='main-div-select-search-background'  >
+
+          
+
+          <div className='select-search-div-background-photo' style={{"backgroundImage": "url(" +audi+ ") ", }}>
+
+
+
+
+                                          
+                        <div  style={{display: 'flex' , justifyContent:'space-around', paddingTop:'8.7%', }}>
+                          <div  style={{ width :'20%'}}>
+                            <label className='formLabel'></label>
+                            <Select
+                              ref= {selectRef}
+                              defaultValue={selectedOption}
+                              onChange={setSelectedOption}
+                              options={makes}
+                              required
+                              placeholder='Make'
+                            
+                            />
+                          </div>
+                      
+                          <div  style={{width :'20%'}}> 
+                            <label className='formLabel'></label>
+                            <Select
+                              ref= {selectRef1}
+                              defaultValue={selectedOption}
+                              onChange={setSelectedOption2}
+                              options={minPrice}
+                              required
+                              placeholder='Min Price &nbsp; Ksh:'
+                          />
+              
+                          </div>
+                          <div  style={{ width :'20%',}}>
+                            <label className='formLabel'> </label>
+                              <Select
+                              ref= {selectRef2}
+                              defaultValue={selectedOption}
+                              onChange={setSelectedOption3}
+                              options={maxPrice}
+                              required
+                              placeholder='Max Price &nbsp; Ksh:'
+                             
+                            />
+                          </div>
+                
+                     
+                      
+                          <button className='select-search-button-stock-page' onClick={handleSelectSearchSubmit}  variant="contained"  style={{width:'20%', height:'38px', fontSize:'1.08rem',color:'grey', backgroundColor:'white', marginTop:'1.2%', borderRadius: '5px'}}>Search</button>
+              
+                        </div>
+
+
+
+
+          </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div className='main-div-select-search-background-on-mobile'  >
+
+          
+
+<div className='select-search-div-background-photo-on-mobile' style={{"backgroundImage": "url(" +audi+ ") ", }}>
+
+
+
+
+                                
+              <div  style={{paddingTop:'16.7%'}} >
+
+                  <div style={{display:'flex', justifyContent:'space-around'}}>
+
+                      <div  style={{ width :'44%'}}>
+                          <label className='formLabel'></label>
+                          <Select
+                            ref= {selectRef}
+                            defaultValue={selectedOption}
+                            onChange={setSelectedOption}
+                            options={makes}
+                            required
+                            placeholder='Make'
+                          
+                          />
+                      </div>
+                
+                      <div  style={{width :'44%'}}> 
+                          <label className='formLabel'></label>
+                          <Select
+                            ref= {selectRef1}
+                            defaultValue={selectedOption}
+                            onChange={setSelectedOption2}
+                            options={minPrice}
+                            required
+                            placeholder='Min Price &nbsp; Ksh:'
+                        />
+      
+                      </div>
+
                   </div>
+
+         
+                  <div style={{display:'flex', justifyContent:'space-around'}}>
+
+                      <div  style={{ width :'44%',}}>
+                          <label className='formLabel'> </label>
+                            <Select
+                            ref= {selectRef2}
+                            defaultValue={selectedOption}
+                            onChange={setSelectedOption3}
+                            options={maxPrice}
+                            required
+                            placeholder='Max Price &nbsp; Ksh:'
+                          
+                          />
+                      </div>
+          
+
+                  </div>
+
+
+                    <div style={{display:'flex', justifyContent:'space-around'}}>
+
+                       <button className='select-search-button-stock-page' onClick={handleSelectSearchSubmit}  variant="contained"  style={{width:'64%', height:'38px', fontSize:'1.08rem',color:'grey', backgroundColor:'white', marginTop:'4.2%', borderRadius: '5px'}}>Search</button>
+
+                    </div>
+
               
-                  <div  style={{padding: '2.5%', width :'25%'}}> 
-                    <label className='formLabel'>Min Price &nbsp; Ksh: </label>
-                    <Select
-                      ref= {selectRef1}
-                      defaultValue={selectedOption}
-                      onChange={setSelectedOption2}
-                      options={minPrice}
-                      required
-                  />
-       
-                </div>
-                <div  style={{padding: '2.5%', width :'25%' }}>
-                  <label className='formLabel'>Max Price &nbsp; Ksh: </label>
-                    <Select
-                    ref= {selectRef2}
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption3}
-                    options={maxPrice}
-                    required
-                  />
-                </div>
-       
-                <button  onClick={handleSelectSearchSubmit}  style={{padding: '0.6%', width :'20%', height:'4%', marginTop:'5.6%' , fontSize:'17px', backgroundColor:'grey'}}  >
-                  Search
-                </button>
-             
-              
-       
-                </div>
+           
+            
+               
+    
+              </div>
 
 
-   
 
 
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div className='stock-main-content' style={{backgroundColor:'white'}}>
+
+              <div>
+
+
+                    
       {loading ?(
          <Spinner />
       ):(
@@ -508,20 +682,33 @@ function Stock() {
                 <main>
               
             
-       
-       
+              
+
+                          
+
+
+
+                            <ul className='categoryListings' style={{display:'flex'}} >
+                              {/* {console.log(cars)} */}
+                              
+                              {cars.map((car) => (
+                            
+                                <CarItem
+                                  car={car.data}
+                                  id={car.id}
+                                  key={car.id}
+                                />
+                              ))}
+                            </ul>
+
+
+
+
+
+
+                
                   
-                  <ul className='categoryListings'>
-                    {/* {console.log(cars)} */}
-                    {cars.map((car) => (
-                   
-                      <CarItem
-                        car={car.data}
-                        id={car.id}
-                        key={car.id}
-                      />
-                    ))}
-                  </ul>
+             
        
        
        
@@ -548,6 +735,30 @@ function Stock() {
 
       
       }
+
+
+
+
+
+
+
+                
+              </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+   
+
 
 
 
