@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 //import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './Stock.css';
 import {
   collection,
@@ -22,6 +23,9 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import audi  from '../assets/stockPagePhotos/audi-r83.jpg'
 
+import mainHome from '../assets/homepagePhotos/mainHome.jpg'
+import { margin } from '@mui/system';
+
 
 
 
@@ -36,7 +40,11 @@ function Stock() {
   const [selectedOption2, setSelectedOption2] = useState(null);
   const [selectedOption3, setSelectedOption3] = useState(null);
   const [open, setOpen] = useState(false);
-  const [selectSearchResults, setSelectSearchResults] = useState(null)
+  const [selectSearchResults, setSelectSearchResults] = useState(null);
+
+
+ 
+
 
    // const params = useParams()
 
@@ -98,7 +106,7 @@ function Stock() {
           carsRef,
          // where('sold', '==', false),
           orderBy('timestamp', 'desc'),
-          limit(2)
+          limit(3)
         )
 
         // Execute query
@@ -142,7 +150,7 @@ function Stock() {
         // where('sold', '==', false),
         orderBy('timestamp', 'desc'),
         startAfter(lastFetchedListing),
-        limit(2)
+        limit(3)
       )
 
       // Execute query
@@ -679,7 +687,7 @@ function Stock() {
            
             cars && cars.length > 0 ? (
               <>
-                <main>
+                <main style={{ display:'flex', justifyContent:'center' }}>
               
             
               
@@ -688,16 +696,23 @@ function Stock() {
 
 
 
-                            <ul className='categoryListings' style={{display:'flex'}} >
+                            <ul style={{display:'flex',  flexWrap:'wrap', listStyle:'none', paddingTop:'2.5%', width:'100%', paddingleft:'2.5%', paddingRight:'2.5%', paddingBottom:'2.5%'}} >
                               {/* {console.log(cars)} */}
+                           
                               
                               {cars.map((car) => (
                             
+                            <div  style={{flex:'33.33%', width:'100%', marginBottom:'2.5%', paddingLeft:'2.5%', paddingRight:'2.5%' }}>
+
                                 <CarItem
+                               
                                   car={car.data}
                                   id={car.id}
                                   key={car.id}
                                 />
+
+                            </div>
+                              
                               ))}
                             </ul>
 
@@ -757,7 +772,58 @@ function Stock() {
 
 
 
-   
+
+
+
+
+
+        <ul style={{listStyle:'none' }} >
+          <Link to='/stock' >
+
+            
+
+          <li style={{width:'29.5%', height:'80%', padding:'1.5%' }}>
+            <img src={mainHome} alt="car1"  width='100%' height='240px' style={{objectFit:'cover'}}/>
+            <h3 style={{paddingTop:'5.5%',  fontSize:'1.4rem'}}>McLaren 600LT T V8 Spider</h3>
+            <p style={{paddingTop:'2.5%'}}>Elite Paint - Chicane Grey with Alcantara Carbon Black / Graphite</p>
+
+            <div style={{display:'flex', justifyContent:'space-between', backgroundColor:'rgb(211,211,211)' , padding:'2.5%' ,
+          marginBottom:'1.5%'   }}>
+                <p style={{margin:'auto', marginLeft:'1.5%'}}>Year</p>
+                <p style={{margin:'auto', marginRight:'1.5%'}}>2022</p>
+            </div>
+
+
+            <div style={{display:'flex', justifyContent:'space-between', paddingTop:'1.5%', paddingBottom:'1.5%',
+          paddingLeft:'2.5%', paddingRight:'2.5%' }}>
+                <p style={{margin:'auto', marginLeft:'1.5%'}}>Mileage</p>
+                <p style={{margin:'auto', marginRight:'1.5%'}}>10500</p>
+            </div>
+
+
+            <div style={{display:'flex', justifyContent:'space-between', backgroundColor:'rgb(211,211,211)' , padding:'2.5%' ,
+          marginBottom:'1.5%'   }}>
+                <p style={{margin:'auto', marginLeft:'1.5%'}}>Gearbox</p>
+                <p style={{margin:'auto', marginRight:'1.5%'}}>Automatic</p>
+            </div>
+
+            <div style={{textAlign:'right', paddingTop:'1.5%', paddingBottom:'1.5%',}}>
+              <p style={{fontSize:'1.4rem', fontWeight:'bold', color:'rgb(128,0,0)' }}>£154,280</p>
+            </div>
+        
+
+          </li>
+          
+          </Link>
+
+
+
+
+
+        </ul>
+
+
+  
 
 
 

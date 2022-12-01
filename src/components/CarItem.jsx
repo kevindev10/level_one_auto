@@ -7,9 +7,9 @@ import { ReactComponent as EditIcon } from '../assets/svg/editIcon.svg'
 function CarItem({ car, id, onEdit, onDelete }) {
   return (
 
-  
+    <div>
 
-
+{/* 
 
       <li className='categoryListing'>
               <Link
@@ -111,7 +111,8 @@ function CarItem({ car, id, onEdit, onDelete }) {
               )}
 
               {onEdit && <EditIcon className='editIcon' onClick={() => onEdit(id)} />}
-    </li>
+     </li>
+ */}
 
 
 
@@ -123,6 +124,144 @@ function CarItem({ car, id, onEdit, onDelete }) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+     <Link  to={`/car/${id}`} >
+
+            
+
+            <li style={{ height:'80%', }}>
+              <img src={car.imageUrls[0]} alt={car.title}  width='100%' height='200px' style={{objectFit:'cover'}}/>
+              <h3 style={{paddingTop:'5.5%',  fontSize:'1.4rem'}}>{car.title}</h3>
+              <p style={{paddingTop:'2.5%'}}>{car.description}</p>
+
+              <div style={{display:'flex', justifyContent:'space-between', backgroundColor:'rgb(211,211,211)' , padding:'2.5%' ,
+            marginBottom:'1.5%'   }}>
+                  <p style={{margin:'auto', marginLeft:'1.5%'}}>Year</p>
+                  <p style={{margin:'auto', marginRight:'1.5%'}}>{car.year}</p>
+              </div>
+
+
+              <div style={{display:'flex', justifyContent:'space-between', paddingTop:'1.5%', paddingBottom:'1.5%',
+            paddingLeft:'2.5%', paddingRight:'2.5%' }}>
+                  <p style={{margin:'auto', marginLeft:'1.5%'}}>Engine Capacity</p>
+                  <p style={{margin:'auto', marginRight:'1.5%'}}>{car.engineCapacity}</p>
+              </div>
+
+
+              <div style={{display:'flex', justifyContent:'space-between', backgroundColor:'rgb(211,211,211)' , padding:'2.5%' ,
+            marginBottom:'1.5%'   }}>
+                  <p style={{margin:'auto', marginLeft:'1.5%'}}>Gearbox</p>
+                  <p style={{margin:'auto', marginRight:'1.5%'}}> {car.gearbox}</p>
+              </div>
+
+             
+            {car.offer? 
+
+                    <div style={{textAlign:'right', paddingTop:'1.5%', paddingBottom:'1.5%',}}>
+                      <p  style={{fontSize:'1.25rem', fontWeight:'bold', color:'black'}}>
+                      Was : &nbsp; 
+                        <s >
+                        Ksh &nbsp; 
+                      { car.regularPrice
+                            .toString()
+                            .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                        </s>
+
+                                  
+                      </p>
+                        
+                      
+                      <p style={{fontSize:'1.25rem', fontWeight:'bold', color:'rgb(128,0,0)' }}>
+                      Now : &nbsp;  Ksh &nbsp; 
+                        { car.discountedPrice
+                          .toString()
+                          .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+
+                      </p>
+
+                    </div>
+                    
+                    
+                    :
+                    <div style={{textAlign:'right', paddingTop:'1.5%', paddingBottom:'1.5%',}}>
+                            <p style={{fontSize:'1.25rem', fontWeight:'bold', color:'rgb(128,0,0)' }}></p>
+                            <p style={{fontSize:'1.25rem', fontWeight:'bold', color:'rgb(128,0,0)' }}>
+                              Ksh &nbsp; 
+                                { car.regularPrice
+                                  .toString()
+                                  .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+
+                            </p>
+                    </div>
+                
+
+             }
+
+
+            </li>
+
+    </Link>
+
+
+
+              {onDelete && (
+                <DeleteIcon
+                  className='removeIcon'
+                  fill='rgb(231, 76,60)'
+                  onClick={() => onDelete(car.id, car.name)}
+                />
+              )}
+
+              {onEdit && <EditIcon className='editIcon' onClick={() => onEdit(id)} />}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
 
 
 
