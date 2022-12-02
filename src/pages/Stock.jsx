@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
+import Footer from '../components/Footer'
 //import { useParams } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+
 import './Stock.css';
 import {
   collection,
@@ -23,8 +24,7 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import audi  from '../assets/stockPagePhotos/audi-r83.jpg'
 
-import mainHome from '../assets/homepagePhotos/mainHome.jpg'
-import { margin } from '@mui/system';
+
 
 
 
@@ -53,6 +53,11 @@ function Stock() {
   const selectRef1 = useRef();
   const selectRef2 = useRef();
 
+  const selectRefMobile = useRef();
+  const selectRef1Mobile = useRef();
+  const selectRef2Mobile = useRef();
+
+
 
  // Clear select ref function
 
@@ -60,6 +65,9 @@ function Stock() {
     selectRef.current.clearValue()
     selectRef1.current.clearValue()
     selectRef2.current.clearValue()
+    selectRefMobile.current.clearValue()
+    selectRef1Mobile.current.clearValue()
+    selectRef2Mobile.current.clearValue()
   }
 
 
@@ -426,23 +434,30 @@ function Stock() {
           <Box sx={style}>
                     
             {selectSearchResults && (
-              <ul className='categoryListings'>
-                {/* {console.log(cars)} */}
-                {selectSearchResults.map((car) => (
-
-                  <CarItem
-                    car={car.data}
-                    id={car.id}
-                    key={car.id}
-                  />
-                ))}
-              </ul>
+              <div className='stock-card-main' style={{ display:'flex', justifyContent:'center' }}>
+                  <ul className='stock-card-ul' style={{display:'flex',  flexWrap:'wrap', listStyle:'none', paddingTop:'2.5%', width:'100%', paddingleft:'2.5%', paddingRight:'2.5%', paddingBottom:'2.5%'}} >
+                    {/* {console.log(cars)} */}
+                    {selectSearchResults.map((car) => (
+                        <div className='stock-card-div' key={car.id} style={{flex:'33.33%', width:'100%', marginBottom:'7.5%', paddingLeft:'7.5%', paddingRight:'7.5%' }}>
+                          <CarItem
+                            car={car.data}
+                            id={car.id}
+                            key={car.id}
+                          />
+                        </div>
+                    ))}
+                  </ul>
+              </div>
             )}
 
           </Box>
         </Fade>
       </Modal>
     </div>
+
+
+
+
 
 
 
@@ -548,14 +563,16 @@ function Stock() {
 
 
                                 
-              <div  style={{paddingTop:'16.7%'}} >
+              <div  style={{paddingTop:'16.7%',  zIndex:'300'}} >
 
                   <div style={{display:'flex', justifyContent:'space-around'}}>
 
                       <div  style={{ width :'44%'}}>
                           <label className='formLabel'></label>
                           <Select
-                            ref= {selectRef}
+                            
+                          
+                            ref= {selectRefMobile}
                             defaultValue={selectedOption}
                             onChange={setSelectedOption}
                             options={makes}
@@ -568,7 +585,7 @@ function Stock() {
                       <div  style={{width :'44%'}}> 
                           <label className='formLabel'></label>
                           <Select
-                            ref= {selectRef1}
+                            ref= {selectRef1Mobile}
                             defaultValue={selectedOption}
                             onChange={setSelectedOption2}
                             options={minPrice}
@@ -586,7 +603,7 @@ function Stock() {
                       <div  style={{ width :'44%',}}>
                           <label className='formLabel'> </label>
                             <Select
-                            ref= {selectRef2}
+                            ref= {selectRef2Mobile}
                             defaultValue={selectedOption}
                             onChange={setSelectedOption3}
                             options={maxPrice}
@@ -637,44 +654,6 @@ function Stock() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div className='stock-main-content' style={{backgroundColor:'white'}}>
 
               <div>
@@ -687,7 +666,7 @@ function Stock() {
            
             cars && cars.length > 0 ? (
               <>
-                <main style={{ display:'flex', justifyContent:'center' }}>
+                <main className='stock-card-main' style={{ display:'flex', justifyContent:'center' }}>
               
             
               
@@ -696,19 +675,19 @@ function Stock() {
 
 
 
-                            <ul style={{display:'flex',  flexWrap:'wrap', listStyle:'none', paddingTop:'2.5%', width:'100%', paddingleft:'2.5%', paddingRight:'2.5%', paddingBottom:'2.5%'}} >
+                            <ul className='stock-card-ul' style={{display:'flex',  flexWrap:'wrap', listStyle:'none', paddingTop:'2.5%', width:'100%', paddingleft:'2.5%', paddingRight:'2.5%', paddingBottom:'2.5%'}} >
                               {/* {console.log(cars)} */}
                            
                               
                               {cars.map((car) => (
                             
-                            <div  style={{flex:'33.33%', width:'100%', marginBottom:'2.5%', paddingLeft:'2.5%', paddingRight:'2.5%' }}>
+                            <div className='stock-card-div' key={car.id} style={{flex:'33.33%', width:'100%', marginBottom:'2.5%', paddingLeft:'2.5%', paddingRight:'2.5%' }}>
 
                                 <CarItem
                                
                                   car={car.data}
                                   id={car.id}
-                                  key={car.id}
+                                 
                                 />
 
                             </div>
@@ -735,9 +714,15 @@ function Stock() {
                 <br />
                 <br />
                 {lastFetchedListing && (
-                  <p className='loadMore' onClick={onFetchMoreListings}>
-                    Load More
-                  </p>
+                  <div className='div-btn-load-more-stock-card' style={{ paddingTop:'2.5%', paddingbottom:'2.5%'}}>
+                      <div 
+                       className='btn-load-more-stock-card  from-center-load-more-stock-card'
+                       onClick={onFetchMoreListings}
+                       style={{fontSize:'1.05rem'}}
+                       >
+                        Load More
+                      </div>
+                  </div>
                 )}
               </>
 
@@ -775,61 +760,13 @@ function Stock() {
 
 
 
-
-
-        <ul style={{listStyle:'none' }} >
-          <Link to='/stock' >
-
-            
-
-          <li style={{width:'29.5%', height:'80%', padding:'1.5%' }}>
-            <img src={mainHome} alt="car1"  width='100%' height='240px' style={{objectFit:'cover'}}/>
-            <h3 style={{paddingTop:'5.5%',  fontSize:'1.4rem'}}>McLaren 600LT T V8 Spider</h3>
-            <p style={{paddingTop:'2.5%'}}>Elite Paint - Chicane Grey with Alcantara Carbon Black / Graphite</p>
-
-            <div style={{display:'flex', justifyContent:'space-between', backgroundColor:'rgb(211,211,211)' , padding:'2.5%' ,
-          marginBottom:'1.5%'   }}>
-                <p style={{margin:'auto', marginLeft:'1.5%'}}>Year</p>
-                <p style={{margin:'auto', marginRight:'1.5%'}}>2022</p>
-            </div>
-
-
-            <div style={{display:'flex', justifyContent:'space-between', paddingTop:'1.5%', paddingBottom:'1.5%',
-          paddingLeft:'2.5%', paddingRight:'2.5%' }}>
-                <p style={{margin:'auto', marginLeft:'1.5%'}}>Mileage</p>
-                <p style={{margin:'auto', marginRight:'1.5%'}}>10500</p>
-            </div>
-
-
-            <div style={{display:'flex', justifyContent:'space-between', backgroundColor:'rgb(211,211,211)' , padding:'2.5%' ,
-          marginBottom:'1.5%'   }}>
-                <p style={{margin:'auto', marginLeft:'1.5%'}}>Gearbox</p>
-                <p style={{margin:'auto', marginRight:'1.5%'}}>Automatic</p>
-            </div>
-
-            <div style={{textAlign:'right', paddingTop:'1.5%', paddingBottom:'1.5%',}}>
-              <p style={{fontSize:'1.4rem', fontWeight:'bold', color:'rgb(128,0,0)' }}>£154,280</p>
-            </div>
-        
-
-          </li>
-          
-          </Link>
+       
 
 
 
 
 
-        </ul>
-
-
-  
-
-
-
-
-
-
+        <Footer/>
 
 
 

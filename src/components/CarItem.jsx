@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import { ReactComponent as DeleteIcon } from '../assets/svg/deleteIcon.svg'
 import { ReactComponent as EditIcon } from '../assets/svg/editIcon.svg'
-//import bedIcon from '../assets/svg/bedIcon.svg'
-//import bathtubIcon from '../assets/svg/bathtubIcon.svg'
+import './CarItem.css'
+
 
 function CarItem({ car, id, onEdit, onDelete }) {
   return (
@@ -136,14 +136,30 @@ function CarItem({ car, id, onEdit, onDelete }) {
 
 
 
-     <Link  to={`/car/${id}`} >
+    
 
             
 
             <li style={{ height:'80%', }}>
-              <img src={car.imageUrls[0]} alt={car.title}  width='100%' height='200px' style={{objectFit:'cover'}}/>
-              <h3 style={{paddingTop:'5.5%',  fontSize:'1.4rem'}}>{car.title}</h3>
-              <p style={{paddingTop:'2.5%'}}>{car.description}</p>
+            <div style={{width:'100%', height:'235px'}}>
+              <img src={car.imageUrls[0]} alt={car.title}  width='100%' height='235px' style={{objectFit:'cover'}}/>
+ 
+
+ 
+                       <div className=''></div>
+                          <div className="centered1-stock-card">
+                            <Link to={`/car/${id}`}>
+                              <div className="btn-stock-card from-left-stock-card">More Details</div>
+                            </Link>
+                          </div>
+
+
+
+            </div>
+              <h3 style={{paddingTop:'5.5%', fontSize:'1.4rem',  width: '15em', whiteSpace: 'nowrap',
+              overflow: 'hidden', textOverflow: 'ellipsis' }}>{car.title}</h3>
+              <p style={{paddingTop:'2.5%',  width: '20.8em', whiteSpace: 'nowrap',
+              overflow: 'hidden', textOverflow: 'ellipsis'}}>{car.description}</p>
 
               <div style={{display:'flex', justifyContent:'space-between', backgroundColor:'rgb(211,211,211)' , padding:'2.5%' ,
             marginBottom:'1.5%'   }}>
@@ -169,7 +185,7 @@ function CarItem({ car, id, onEdit, onDelete }) {
             {car.offer? 
 
                     <div style={{textAlign:'right', paddingTop:'1.5%', paddingBottom:'1.5%',}}>
-                      <p  style={{fontSize:'1.25rem', fontWeight:'bold', color:'black'}}>
+                      <p  style={{fontSize:'1.05rem', fontWeight:'bold', color:'black'}}>
                       Was : &nbsp; 
                         <s >
                         Ksh &nbsp; 
@@ -182,7 +198,7 @@ function CarItem({ car, id, onEdit, onDelete }) {
                       </p>
                         
                       
-                      <p style={{fontSize:'1.25rem', fontWeight:'bold', color:'rgb(128,0,0)' }}>
+                      <p style={{fontSize:'1.05rem', fontWeight:'bold', color:'rgb(128,0,0)' }}>
                       Now : &nbsp;  Ksh &nbsp; 
                         { car.discountedPrice
                           .toString()
@@ -195,8 +211,8 @@ function CarItem({ car, id, onEdit, onDelete }) {
                     
                     :
                     <div style={{textAlign:'right', paddingTop:'1.5%', paddingBottom:'1.5%',}}>
-                            <p style={{fontSize:'1.25rem', fontWeight:'bold', color:'rgb(128,0,0)' }}></p>
-                            <p style={{fontSize:'1.25rem', fontWeight:'bold', color:'rgb(128,0,0)' }}>
+                            <p style={{fontSize:'1.05rem', fontWeight:'bold', color:'rgb(128,0,0)' }}></p>
+                            <p style={{fontSize:'1.05rem', fontWeight:'bold', color:'rgb(128,0,0)' }}>
                               Ksh &nbsp; 
                                 { car.regularPrice
                                   .toString()
@@ -211,7 +227,7 @@ function CarItem({ car, id, onEdit, onDelete }) {
 
             </li>
 
-    </Link>
+
 
 
 

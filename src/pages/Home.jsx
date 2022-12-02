@@ -368,7 +368,7 @@ function Home() {
                           <div className="centered1-bottom-banner">
                               <h4 className='banner-heading'>Don't just take our word for it, read what our customers say about us:</h4>
                               <p className='bannersubHeading'>J. Doe</p>
-                              <p className='banner-paragraph'>Very happy with my purchase of my BMW 650I. Never had any dealings with this company before, but they had a car I was interested in. It was exactly as described and Alex even replaced one tyre with a new one due to a slight bulge . Overall, I can recommend Level One Auto as the cars are described as they are with no nasty surprises and most importantly Alex is an honest car dealer.</p>
+                              <p className='banner-paragraph'>Very happy with my purchase of my BMW 650I. Never had any dealings with this company before, but they had a car I was interested in. It was exactly as described and Alex even replaced one tyre with a new one due to a slight bulge . Overall, I can recommend Level One Auto.</p>
                             
                             <p className='banner-rating'><StarsIcon className='rating-icon'/><StarsIcon className='rating-icon'/><StarsIcon className='rating-icon'/><StarsIcon className='rating-icon '/><StarsIcon className='rating-icon'/></p>
                           
