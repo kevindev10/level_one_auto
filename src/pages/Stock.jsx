@@ -23,6 +23,7 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import audi  from '../assets/stockPagePhotos/audi-r83.jpg'
+import { margin } from '@mui/system';
 
 
 
@@ -85,7 +86,7 @@ function Stock() {
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
-    p: 4,
+    p: 0,
     overflowY: "auto"
 
   };
@@ -434,11 +435,11 @@ function Stock() {
           <Box sx={style}>
                     
             {selectSearchResults && (
-              <div className='stock-card-main' style={{ display:'flex', justifyContent:'center' }}>
-                  <ul className='stock-card-ul' style={{display:'flex',  flexWrap:'wrap', listStyle:'none', paddingTop:'2.5%', width:'100%', paddingleft:'2.5%', paddingRight:'2.5%', paddingBottom:'2.5%'}} >
+              <div className='stock-card-main ' style={{ display:'flex', justifyContent:'center' }}>
+                  <ul className='stock-card-ul' style={{display:'flex',  flexWrap:'wrap', listStyle:'none', paddingTop:'2.5%', width:'100%', paddingBottom:'2.5%'}} >
                     {/* {console.log(cars)} */}
                     {selectSearchResults.map((car) => (
-                        <div className='stock-card-div' key={car.id} style={{flex:'33.33%', width:'100%', marginBottom:'7.5%', paddingLeft:'7.5%', paddingRight:'7.5%' }}>
+                        <div className='stock-card-div' key={car.id} style={{flex:'43.33%', width:'100%', marginBottom:'7.5%', paddingLeft:'7.5%', paddingRight:'7.5%' }}>
                           <CarItem
                             car={car.data}
                             id={car.id}
@@ -675,7 +676,7 @@ function Stock() {
 
 
 
-                            <ul className='stock-card-ul' style={{display:'flex',  flexWrap:'wrap', listStyle:'none', paddingTop:'2.5%', width:'100%', paddingleft:'2.5%', paddingRight:'2.5%', paddingBottom:'2.5%'}} >
+                            <ul className='stock-card-ul' style={{display:'flex',  flexWrap:'wrap', listStyle:'none', paddingTop:'2.5%', width:'100%', paddingBottom:'2.5%'}} >
                               {/* {console.log(cars)} */}
                            
                               

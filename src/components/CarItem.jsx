@@ -140,9 +140,9 @@ function CarItem({ car, id, onEdit, onDelete }) {
 
             
 
-            <li style={{ height:'80%', }}>
-            <div style={{width:'100%', height:'235px'}}>
-              <img src={car.imageUrls[0]} alt={car.title}  width='100%' height='235px' style={{objectFit:'cover'}}/>
+            <li style={{ height:'80%', padding:'3%'}}>
+            <div style={{width:'100%', height:'215px'}}>
+              <img src={car.imageUrls[0]} alt={car.title}  width='100%' height='215px' style={{objectFit:'cover'}}/>
  
 
  
@@ -156,10 +156,15 @@ function CarItem({ car, id, onEdit, onDelete }) {
 
 
             </div>
-              <h3 style={{paddingTop:'5.5%', fontSize:'1.4rem',  width: '15em', whiteSpace: 'nowrap',
-              overflow: 'hidden', textOverflow: 'ellipsis' }}>{car.title}</h3>
-              <p style={{paddingTop:'2.5%',  width: '20.8em', whiteSpace: 'nowrap',
-              overflow: 'hidden', textOverflow: 'ellipsis'}}>{car.description}</p>
+              <div style={{height: 'auto !important', height: '77px', }}>
+              <h3 style={{paddingTop:'5.5%', fontSize:'1.2rem', }}>{car.title}</h3>
+              </div>
+              
+              <div style={{height: 'auto !important', height: '57px',}}>
+              <p>{car.description}</p>
+              </div>
+
+
 
               <div style={{display:'flex', justifyContent:'space-between', backgroundColor:'rgb(211,211,211)' , padding:'2.5%' ,
             marginBottom:'1.5%'   }}>
