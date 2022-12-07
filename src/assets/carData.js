@@ -19,6 +19,7 @@
     { value: 'Hyundai', label: 'Hyundai' },
     { value: 'Isuzu', label: 'Isuzu' },
     { value: 'Jaguar', label: 'Jaguar' },
+    { value: 'Jeep', label: 'Jeep' },
     { value: 'Lamborghini', label: 'Lamborghini' },
     { value: 'Land Rover', label: 'Land Rover' },
     { value: 'Lexus', label: 'Lexus' },

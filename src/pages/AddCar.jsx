@@ -287,7 +287,7 @@ function AddCar() {
 
 
   return (
-    <div className='profile'>
+    <div className='profile' style={{padding:'5%'}}>
     <header>
       <p className='pageHeader'>Add Car</p>
     </header>

@@ -139,7 +139,7 @@
 	cursor: pointer;
 	user-select: none;
   background-color: rgba(118, 116, 116, 0.2);
-  
+  border: 1px solid transparent;
   text-align: center;
 }
 
@@ -154,8 +154,8 @@
 .btn-new-arrivals:hover {
 	color: white;
 	transition-delay: .5s;
-  background-color: rgba(118, 116, 116, 0.2);
-  border: 2px solid white;
+  background-color: rgba(118, 116, 116, 0.5);
+  border: 1px solid white;
 }
 
 .btn-new-arrivals:hover:before {
