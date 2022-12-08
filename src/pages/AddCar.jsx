@@ -448,6 +448,9 @@ function AddCar() {
               placeholder='4.5'
               onChange={onMutate}
               required
+              min="0"
+              max="10" 
+              step="0.1"
             />
           </div>
         </div>

@@ -23,7 +23,7 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import audi  from '../assets/stockPagePhotos/audi-r83.jpg'
-import { margin } from '@mui/system';
+
 
 
 
@@ -82,7 +82,7 @@ function Stock() {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: "90%",
-    height: "90%",
+    height: "95%",
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
@@ -433,13 +433,15 @@ function Stock() {
       >
         <Fade in={open}>
           <Box sx={style}>
-                    
+            <div>
+              <button onClick={handleClose}>X</button>
+            </div>      
             {selectSearchResults && (
               <div className='stock-card-main ' style={{ display:'flex', justifyContent:'center' }}>
                   <ul className='stock-card-ul' style={{display:'flex',  flexWrap:'wrap', listStyle:'none', paddingTop:'2.5%', width:'100%', paddingBottom:'2.5%'}} >
                     {/* {console.log(cars)} */}
                     {selectSearchResults.map((car) => (
-                        <div className='stock-card-div' key={car.id} style={{flex:'43.33%', width:'100%', marginBottom:'7.5%', paddingLeft:'7.5%', paddingRight:'7.5%',  maxWidth:'50%'}}>
+                        <div className='stock-card-div' key={car.id} style={{flex:'43.33%', width:'100%', marginBottom:'7.5%', paddingLeft:'7.5%', paddingRight:'7.5%',   maxWidth:'50%'}}>
                           <CarItem
                             car={car.data}
                             id={car.id}

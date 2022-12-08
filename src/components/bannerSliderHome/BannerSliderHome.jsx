@@ -62,7 +62,7 @@ function BannerSliderHome() {
                  
                   <div className='background-cover'></div>
                   <div className="centered1">
-                    <Link to='/stock'>
+                    <Link to='/stock' onClick={() => window.scrollTo(0, 0)}>
                       <div className="btn from-left">View Our Stock</div>
                     </Link>
                   </div>
@@ -82,7 +82,7 @@ function BannerSliderHome() {
               
                 <div className='background-cover'></div>
                 <div className="centered1">
-                  <Link to='/stock'>
+                  <Link to='/stock' onClick={() => window.scrollTo(0, 0)}>
                     <div className="btn from-left">View Our Stock</div>
                   </Link>
                 </div>
@@ -103,7 +103,7 @@ function BannerSliderHome() {
                   
                     <div className='background-cover'></div>
                     <div className="centered1">
-                      <Link to='/stock'>
+                      <Link to='/stock' onClick={() => window.scrollTo(0, 0)}>
                         <div className="btn from-left">View Our Stock</div>
                       </Link>
                     </div>
@@ -128,7 +128,7 @@ function BannerSliderHome() {
               
                 <div className='background-cover'></div>
                 <div className="centered1">
-                  <Link to='/stock'>
+                  <Link to='/stock' onClick={() => window.scrollTo(0, 0)}>
                     <div className="btn from-left">View Our Stock</div>
                   </Link>
                 </div>
@@ -152,7 +152,7 @@ function BannerSliderHome() {
                 
                   <div className='background-cover'></div>
                   <div className="centered1">
-                    <Link to='/stock'>
+                    <Link to='/stock' onClick={() => window.scrollTo(0, 0)}>
                       <div className="btn from-left">View Our Stock</div>
                     </Link>
                   </div>
@@ -174,7 +174,7 @@ function BannerSliderHome() {
               
                 <div className='background-cover'></div>
                 <div className="centered1">
-                  <Link to='/stock'>
+                  <Link to='/stock' onClick={() => window.scrollTo(0, 0)}>
                     <div className="btn from-left">View Our Stock</div>
                   </Link>
                 </div>
@@ -199,7 +199,7 @@ function BannerSliderHome() {
               
                 <div className='background-cover'></div>
                 <div className="centered1">
-                  <Link to='/stock'>
+                  <Link to='/stock' onClick={() => window.scrollTo(0, 0)}>
                     <div className="btn from-left">View Our Stock</div>
                   </Link>
                 </div>

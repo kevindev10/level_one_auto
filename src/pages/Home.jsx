@@ -247,7 +247,7 @@ function Home() {
           )}
 
               <h2 >
-              <Link to='/stock' style={{paddingBottom:'2.6%' , paddingTop:'2.6%' ,  display: 'flex' ,  alignItems: 'center',justifyContent:'center' ,  flexWrap: 'wrap'}} className="viewAllStock">
+              <Link to='/stock'  onClick={() => window.scrollTo(0, 0)}  style={{paddingBottom:'2.6%' , paddingTop:'2.6%' ,  display: 'flex' ,  alignItems: 'center',justifyContent:'center' ,  flexWrap: 'wrap'}} className="viewAllStock">
               <span style={{fontWeight:'100',fontSize:'1.7rem', paddingRight:'1%'  }}  className='new-arrivals-span'>View All Stock</span> 
               
               < DoubleArrowIcon sx={{ fontSize: 32 }} className='new-arrivals-icon' />
