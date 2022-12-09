@@ -10,7 +10,7 @@ import {
   collection,
   getDocs,
   query,
-  // where,
+  where,
   orderBy,
   
 
@@ -40,6 +40,75 @@ function Home() {
   const [loading, setLoading] = useState(false)
   const [featuredVehicle, setFeaturedVehicle] = useState(null)
 
+
+
+    // Fetch for sale cars
+
+  //  useEffect(() =>{
+  //       const fetchlatestArrivals = async () => {
+  //     try {
+
+  //       // Get reference
+  //       const carsRef = collection(db, 'cars')
+
+  //       // Create a query
+  //       const q = query(
+  //         carsRef,
+  //         // where('sold', '==', false),
+  //         orderBy('timestamp', 'desc'),
+          
+  //       )
+
+  //       // Execute query
+  //       const querySnap = await getDocs(q)
+      
+      
+  //       const vehicles = []
+       
+
+  //       querySnap.forEach((doc) => {
+  //           return vehicles.push({
+  //           id: doc.id,
+  //           data: doc.data(),
+         
+  //         })
+  //       })
+   
+       
+  //       const featuredCar = []
+
+  //       vehicles !== null && vehicles.length > 0 && vehicles.forEach((vehicle) =>{
+  //         // car.data.featuredVehicle && car.data.featuredVehicle === true &&
+  //         vehicle.data.featuredVehicle && vehicle.data.featuredVehicle === true &&
+  //         featuredCar.push({
+  //           id:vehicle.id,
+  //           data: vehicle.data
+  //         })
+  //       })
+
+
+  //       setNewArrivals(vehicles)
+  //      setFeaturedVehicle(featuredCar)
+
+
+  //       setLoading(false)
+       
+  //     } catch (error) {
+      
+  //       toast.error( 'Could not fetch cars')
+  //     }
+  //   }
+
+  //   fetchlatestArrivals()
+  // }, [])
+
+
+
+
+
+
+      // Fetch for sale cars
+
    useEffect(() =>{
         const fetchlatestArrivals = async () => {
       try {
@@ -50,8 +119,8 @@ function Home() {
         // Create a query
         const q = query(
           carsRef,
-          // where('sold', '==', false),
-          orderBy('timestamp', 'desc'),
+           where('sold', '==', false),
+           orderBy('timestamp', 'desc'),
           
         )
 
@@ -69,34 +138,82 @@ function Home() {
          
           })
         })
-   
+        
        
-        const featuredCar = []
+       const vehicles1 = vehicles.filter((vehicle) =>{
+         return !vehicle.data.featuredVehicle
+       })
 
-        vehicles !== null && vehicles.length > 0 && vehicles.forEach((vehicle) =>{
-          // car.data.featuredVehicle && car.data.featuredVehicle === true &&
-          vehicle.data.featuredVehicle && vehicle.data.featuredVehicle === true &&
-          featuredCar.push({
-            id:vehicle.id,
-            data: vehicle.data
-          })
-        })
+     
 
-
-        setNewArrivals(vehicles)
-       setFeaturedVehicle(featuredCar)
-
-
+        setNewArrivals(vehicles1)
         setLoading(false)
        
       } catch (error) {
-      
-        toast.error( 'Could not fetch cars')
+        console.log(error)
+        toast.error( 'Could Not Fetch Cars in Stock')
       }
     }
 
     fetchlatestArrivals()
   }, [])
+
+
+
+
+
+
+
+   // Fetch featured car
+  
+  useEffect(() =>{
+    const fetchlatestArrivals = async () => {
+  try {
+
+    // Get reference
+    const carsRef = collection(db, 'cars')
+
+    // Create a query
+    const q = query(
+      carsRef,
+      where('featuredVehicle', '==', true),
+      orderBy('timestamp', 'desc'),
+      
+    )
+
+    // Execute query
+    const querySnap = await getDocs(q)
+  
+  
+    const featuredCar = []
+   
+
+    querySnap.forEach((doc) => {
+        return featuredCar.push({
+        id: doc.id,
+        data: doc.data(),
+     
+      })
+    })
+
+   
+   
+   
+   setFeaturedVehicle(featuredCar)
+
+
+    setLoading(false)
+   
+  } catch (error) {
+   
+    toast.error( 'Could Not Fetch Featured Vehicle')
+  }
+}
+
+fetchlatestArrivals()
+}, [])
+
+
 
 
 

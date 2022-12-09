@@ -25,7 +25,8 @@ import Fade from '@mui/material/Fade';
 import audi  from '../assets/stockPagePhotos/audi-r83.jpg'
 
 
-
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 
 
 
@@ -113,7 +114,7 @@ function Stock() {
         // Create a query
         const q = query(
           carsRef,
-         // where('sold', '==', false),
+         where('sold', '==', false),
           orderBy('timestamp', 'desc'),
           limit(3)
         )
@@ -156,7 +157,7 @@ function Stock() {
       // Create a query
       const q = query(
         carsRef,
-        // where('sold', '==', false),
+        where('sold', '==', false),
         orderBy('timestamp', 'desc'),
         startAfter(lastFetchedListing),
         limit(3)
@@ -431,11 +432,17 @@ function Stock() {
           timeout: 500,
         }}
       >
+        
         <Fade in={open}>
           <Box sx={style}>
-            <div>
+            {/* <div>
               <button onClick={handleClose}>X</button>
-            </div>      
+            </div>       */}
+
+          
+        
+
+
             {selectSearchResults && (
               <div className='stock-card-main ' style={{ display:'flex', justifyContent:'center' }}>
                   <ul className='stock-card-ul' style={{display:'flex',  flexWrap:'wrap', listStyle:'none', paddingTop:'2.5%', width:'100%', paddingBottom:'2.5%'}} >
@@ -455,10 +462,41 @@ function Stock() {
 
           </Box>
         </Fade>
+     
       </Modal>
+
+ 
     </div>
 
+      {open === true &&
 
+        <div >
+          <IconButton
+            aria-label="close"
+              onClick={handleClose}
+              sx={{
+                position: 'absolute',
+                zIndex: '1500 !important',
+            
+              
+                // color: (theme) => theme.palette.error.light,
+                
+              }}
+              style={{backgroundColor:'black', top:'3.9vh', right:'0.55%' }}
+              className='modal-close-on-mobile'
+            >
+          <CloseIcon
+          sx={{  color:'white' }}
+          style={{fontSize:'2.0rem'}}
+          />
+          </IconButton>
+
+
+        </div>
+      
+      }
+          
+     
 
 
 
@@ -481,12 +519,13 @@ function Stock() {
           
 
           <div className='select-search-div-background-photo' style={{"backgroundImage": "url(" +audi+ ") ", }}>
-
-
-
+                      <div style={{textAlign:'center', paddingTop:'3.3%'}}>
+                      <p style={{fontSize:'2.0rem', color:'white', fontWeight:'bold', letterSpacing: '0.2rem'}}>Our Stock</p>
+                      </div>
+                    
 
                                           
-                        <div  style={{display: 'flex' , justifyContent:'space-around', paddingTop:'8.7%', }}>
+                        <div  style={{display: 'flex' , justifyContent:'space-around', paddingTop:'1.7%', }}>
                           <div  style={{ width :'20%'}}>
                             <label className='formLabel'></label>
                             <Select
@@ -562,11 +601,13 @@ function Stock() {
 
 <div className='select-search-div-background-photo-on-mobile' style={{"backgroundImage": "url(" +audi+ ") ", }}>
 
-
+                      <div style={{textAlign:'center', paddingTop:'5.3%'}}>
+                      <p style={{fontSize:'1.4rem', color:'white', fontWeight:'bold', letterSpacing: '0.2rem'}}>Our Stock</p>
+                      </div>
 
 
                                 
-              <div  style={{paddingTop:'16.7%',  zIndex:'300'}} >
+              <div  style={{paddingTop:'7.7%',  zIndex:'300'}} >
 
                   <div style={{display:'flex', justifyContent:'space-around'}}>
 

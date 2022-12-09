@@ -220,7 +220,10 @@
   background-color:black !important;
 }
 
-
+.modal-close-on-mobile{
+  top: 1.0vh !important;
+  right: 2.0% !important;
+}
 
 
 
