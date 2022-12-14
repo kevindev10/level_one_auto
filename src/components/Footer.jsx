@@ -28,32 +28,32 @@ function Footer() {
             <Grid item xs={12} sm={4}>
               <Box className ='footer-heading'>Quick Links</Box>
               <Box>
-                <Link to="/" color="inherit" className ='footer-navlinks'  underline="none" >
+                <Link to="/"  onClick={() => window.scrollTo(0, 0)} color="inherit" className ='footer-navlinks'  underline="none" >
                   Home
                 </Link>
               </Box>
               <Box>
-                <Link to="/stock" color="inherit" className ='footer-navlinks'  underline="none">
+                <Link to="/stock"  onClick={() => window.scrollTo(0, 0)} color="inherit" className ='footer-navlinks'  underline="none">
                   Stock
                 </Link>
               </Box>
               <Box>
-                <Link to="/previously-sold" color="inherit" className ='footer-navlinks'  underline="none">
+                <Link to="/previously-sold"   onClick={() => window.scrollTo(0, 0)} color="inherit" className ='footer-navlinks'  underline="none">
                   Previously Sold
                 </Link>
               </Box>
               <Box>
-                <Link to="/sell-your-car" color="inherit" className ='footer-navlinks'  underline="none">
+                <Link to="/sell-your-car"  onClick={() => window.scrollTo(0, 0)} color="inherit" className ='footer-navlinks'  underline="none">
                   Sell Your Car
                 </Link>
               </Box>
               <Box>
-                <Link to="/frequently-asked-questions" color="inherit" className ='footer-navlinks'  underline="none">
+                <Link to="/frequently-asked-questions"  onClick={() => window.scrollTo(0, 0)} color="inherit" className ='footer-navlinks'  underline="none">
                   Frequently Asked Questions
                 </Link>
               </Box>
               <Box>
-                <Link to="/contact-us" color="inherit" className ='footer-navlinks'  underline="none">
+                <Link to="/contact-us"  onClick={() => window.scrollTo(0, 0)}  color="inherit" className ='footer-navlinks'  underline="none">
                   Contact Us
                 </Link>
               </Box>

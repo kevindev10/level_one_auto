@@ -99,6 +99,7 @@
 
 .newArrivalImages{
   object-fit: cover;
+ 
 }
 
 
@@ -497,7 +498,7 @@
 
   .newArrivalImageDiv{
     width: 48vw;
-    height: 120px;
+    height: 18.264vh;
    
    
    }

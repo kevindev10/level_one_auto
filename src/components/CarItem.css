@@ -95,7 +95,18 @@
 
 
 @media screen and (max-width: 960px) {
+.car-item-li-on-mobile{
+		
+		padding: 0% !important;
+}
+.car-item-img-div-on-mobile{
+	height: 32.724vh !important ;
+}
 
+.car-item-img-on-mobile{
+	height: 32.724vh !important ;
+	
+}
 
 	 
 	.btn-stock-card{

@@ -235,6 +235,7 @@ fetchlatestArrivals()
 
 
   const settings = {
+    arrows:false,
     dots: false,
     infinite: true,
     slidesToShow: 4,
@@ -250,7 +251,8 @@ fetchlatestArrivals()
             slidesToShow: 2,
             slidesToScroll: 1,
             infinite: true,
-            dots: false
+            dots: false,
+            arrows:false,
           }
         },
        

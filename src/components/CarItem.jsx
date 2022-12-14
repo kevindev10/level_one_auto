@@ -12,9 +12,9 @@ function CarItem({ car, id, onEdit, onDelete }) {
 
             
 
-            <li style={{ height:'80%', padding:'3%'}}>
-            <div style={{width:'100%', height:'215px'}}>
-              <img src={car.imageUrls[0]} alt={car.title}  width='100%' height='215px' style={{objectFit:'cover'}}/>
+            <li className='car-item-li-on-mobile' style={{ height:'80%', padding:'3%'}}>
+            <div className='car-item-img-div-on-mobile' style={{width:'100%', height:'215px'}}>
+              <img className='car-item-img-on-mobile' src={car.imageUrls[0]} alt={car.title}  width='100%' height='215px' style={{objectFit:'cover'}}/>
  
 
  

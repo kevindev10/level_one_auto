@@ -84,6 +84,8 @@
 }
 
 
+
+
 @media screen and (min-width: 961px) {
   .btn-load-more-stock-card:hover {
     color: white;
@@ -102,9 +104,9 @@
     background: var(--inv);
     transition-delay: .35s;
   }
+  
 
 }
-
 
 
 
@@ -232,4 +234,12 @@
 
 
 
+}
+
+
+@supports (-webkit-touch-callout: none) {
+  .modal-close-on-mobile{
+    top: 40vh !important;
+    right: 1.25% !important;
+  }
 }
