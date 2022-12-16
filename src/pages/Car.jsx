@@ -16,6 +16,7 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { maxWidth } from '@mui/system'
 
 
 function Car() {
@@ -23,7 +24,7 @@ function Car() {
   const [car, setCar] = useState(null)
   const [loading, setLoading] = useState(true)
   const [shareLinkCopied, setShareLinkCopied] = useState(false)
-
+  
   const navigate = useNavigate()
   const params = useParams()
   const auth = getAuth()
@@ -77,14 +78,16 @@ function Car() {
   // };
 
   const settingsMain1 = {
-    arrows:false,
+   
     dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+    fade: true,
+    // nextArrow: <SampleNextArrow />,
+    // prevArrow: <SamplePrevArrow />
+
   };
 
   const settingsMain2 = {
@@ -129,84 +132,66 @@ function Car() {
 // }
 
 
-
-
-
-const getCarPics1 = () => {
+const getCarPics = () => {
+  let carImageUrls = car.imageUrls
   
-  return car.imageUrls.map((imageUrl, i)=>{
+  return carImageUrls.map((imageUrl)=>{
     
     return <div key={params.carId}>
-              <h3 style={{marginTop:'0.35%', marginBottom:'0.35%'}}>
-
-                    <div>
-
-
-                              <div >
-                               
-                                  <img src={imageUrl} alt={car.title}  width='100%'   style={{objectFit:'cover', height:'62.861vh'}}/>
+             
+                                  <img src={imageUrl} alt={car.title}  width='620px' height='413px'  style={{objectFit:'cover', maxWidth:'100%'}}/>
 
 
-                              </div>
-
-
-
-                    </div>
-
-
-              </h3>
+                             
             </div>
   })
 }
+
+
+
+
+
+
+
+
+
 
 const getCarPics2 = () => {
-  
-  return car.imageUrls.map((imageUrl, i)=>{
-    
-    return <div key={params.carId}>
-              <h3 style={{margin:'1.35%'}}>
+ 
+  const carImageUrls = car.imageUrls;
+  const index = Math.round(carImageUrls.length/3)
 
-                    <div>
-
-
-                              <div>
-                               
-                                  <img src={imageUrl} alt={car.title}  width='295px' height ='197px' />
-
-
-                              </div>
-
+  // Change Array Iteration Start point to index
+  const getArray = (carImageUrls, index) => {
+    const result = [];
+    const length = carImageUrls.length;
+    for (let i = 0; i < length; i++) {
+     
+      result.push(carImageUrls[(index + i) % length]);
+    }
+    return result;
+  };
 
 
-                    </div>
+const imageArrayLeft = getArray(carImageUrls , index)
+ 
+      
+      return imageArrayLeft.map((imageUrl)=>{
+        
+        return <div key={params.carId}>
+                
+                                  
+                                      <img src={imageUrl} alt={car.title}  width='295px' height='201px'   style={{objectFit:'cover', maxWidth:'100%', marginLeft:'2.7%'}} />
 
 
-              </h3>
-            </div>
-  })
-}
+                </div>
 
-function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "red"}}
-      onClick={onClick}
-    />
-  );
-}
+      })
 
 
-function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "green" }}
-      onClick={onClick}
-    />
-  );
+   
+
+
 }
 
 
@@ -214,6 +199,60 @@ function SamplePrevArrow(props) {
 
 
 
+const getCarPics3 = () => {
+ 
+  const carImageUrls3 = car.imageUrls;
+  const index3 = (Math.round(carImageUrls3.length/3))*2
+
+  // Change Array Iteration Start point to index3
+  const getArray = (carImageUrls3, index3) => {
+    const result3 = [];
+    const length3 = carImageUrls3.length;
+    for (let i = 0; i < length3; i++) {
+     
+      result3.push(carImageUrls3[(index3 + i) % length3]);
+    }
+    return result3;
+  };
+
+
+const imageArrayRight = getArray(carImageUrls3 , index3)
+ 
+      
+      return imageArrayRight.map((imageUrl)=>{
+        
+        return <div key={params.carId}>
+                 
+                                  
+                                      <img src={imageUrl} alt={car.title}  width='295px'  height='201px'  style={{objectFit:'cover', maxWidth:'100%', marginLeft:'-2.7%'}} />
+
+
+                </div>
+
+      })
+
+
+   
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -223,7 +262,9 @@ function SamplePrevArrow(props) {
 
 
   return (
-    <main style={{padding:'2.5%'}}>
+    <main
+     style={{padding:'2.5%'}} 
+     >
 
 
 
@@ -232,63 +273,77 @@ function SamplePrevArrow(props) {
 
         <div>
 
-            <div>
+          
+         
+        <div  >
 
-{console.log(car.imageUrls, car)}
+        <div style={{display:'flex', justifyContent:'space-between'}} >
+            <h3 style={{fontSize:'1.45rem', fontWeight:'bold', }}>{car.title}</h3>
+            <h3  style={{fontSize:'1.6rem', fontWeight:'bold'
+                    , color:'maroon'}} className='new-arrival-price'>Ksh&nbsp; {car.discountedPrice?  car.discountedPrice.toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ',') : car.regularPrice.toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</h3>
+
+        </div>
+
+        <div style={{fontSize:'1.1rem', fontWeight:'100', marginBottom:'1.5%' }}>
+          <p>{car.description}</p>
+        </div>
+
+        </div>
+
+  
 
 
-
-
-
-
-                            {/* <div>
-                              <h2> Single Item</h2>
-                              <Slider {...settingsMain}>
-                                {getCarPics()}
-                              </Slider>
-                            </div> */}
+            <div
+             style={{ }}
+             >
 
 
                             
+                            
 
-                            <div style={{display:'flex' , justifyContent:'space-around', marginBottom:'2.5%'}}>
+                            <div style={{display:'flex' ,   height:'31.5rem' , justifyContent:'space-around' }}>
+                               
 
                                          
-                                  <div>
-                                    <div style={{width:'295px', height:'413px'}}>
-                                      <Slider
-                                        asNavFor={nav1 && nav2}
-                                        ref={(slider3) => setNav3(slider3)}
-                                        // slidesToShow={1}
-                                        // swipeToSlide={true}
-                                        // focusOnSelect={true}
-                                        {...settingsMain2}
-                                      >
-                                      {getCarPics2()}
-                                      </Slider>
-
+                                 
+                                    <div style={{width:'18.438rem', height:'12.563rem' }}>
+                                     
+                                        <Slider
+                                        
+                                          asNavFor={nav1 && nav2}
+                                          ref={(slider3) => setNav3(slider3)}
+                                          // slidesToShow={1}
+                                          // swipeToSlide={true}
+                                          // focusOnSelect={true}
+                                          {...settingsMain2}
+                                        >
+                                        {getCarPics2()}
+                                        </Slider>
+                                   
                                     </div>
-                                  </div>
+                                
 
                                 
-                                  <div>
-                                    <div style={{width:'620px', height:'62.861vh'}} >
+                                  
+                                    <div  style={{width:'38.75rem', height:'14.313rem' ,  marginLeft:'1.5vw', marginRight:'1.5vw' }} >
                                       <Slider
+                                      className='car-page-slick-slider'
                                       asNavFor={nav2 && nav3} 
                                       ref={(slider1) => 
                                       setNav1(slider1)} 
                                       {...settingsMain1}
                                       >
-                                        {getCarPics1()}
+                                        {getCarPics()}
                                       </Slider>
                                     </div>
-                                  </div>
-
+                                
 
 
                                  
-                                  <div>
-                                    <div style={{width:'295px', height:'413px'}}>
+                                 
+                                    <div style={{width:'18.438rem', height:'12.563rem',   }}>
                                       <Slider
                                         asNavFor={nav1 && nav3}
                                         ref={(slider2) => setNav2(slider2)}
@@ -297,10 +352,10 @@ function SamplePrevArrow(props) {
                                         // focusOnSelect={true}
                                         {...settingsMain2}
                                       >
-                                      {getCarPics2()}
+                                      {getCarPics3()}
                                       </Slider>
                                     </div>
-                                  </div>
+                                
 
 
 
@@ -323,8 +378,6 @@ function SamplePrevArrow(props) {
             </div>
 
         </div>
-
-
 
 
 

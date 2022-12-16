@@ -1,14 +1,40 @@
 
 
 
-.slick-prev {
-  left: 3% !important;
+.car-page-slick-slider .slick-prev {
+  margin-left: 4.5% !important;
+  margin-top: -2.25% !important;
   z-index: 1;
 }
 
-.slick-next {
-  right: 3% !important;
+.car-page-slick-slider .slick-next {
+  margin-right: 9.4% !important;
+  margin-top: -2.25% !important;
   z-index: 1;
   
 }
+
+.car-page-slick-slider .slick-prev:before{
+
+  color:maroon !important;
+  font-size: 50px !important;
+ 
+ 
+}
+.car-page-slick-slider .slick-next:before{
+  color:maroon !important;
+  font-size: 50px !important;
+
+
+}
+
+
+
+
+/* .slick-prev:before, .slick-next:before {
+  color:red !important;
+  font-size: 30px !important;
+
+} */
+
 
