@@ -253,8 +253,10 @@ fetchlatestArrivals()
             infinite: true,
             dots: false,
             arrows:false,
+           
           }
         },
+     
        
       ]
   
@@ -272,7 +274,7 @@ fetchlatestArrivals()
 
                     <div className='newArrivalImageDiv' >
                         
-                    <img src={newArrival.data.imageUrls[0]} alt={newArrival.data.title} width='100%' height='100%'  className='newArrivalImages' style={{paddingLeft :'1.5%'}} /> 
+                    <img src={newArrival.data.imageUrls[0]} alt={newArrival.data.title} width='327.84px' height='206px'  className='newArrivalImages' style={{maxWidth:'100%', marginLeft:'1.5%'}} /> 
                           <div className='background-cover-new-arrivals'></div>
                           <div className="centered1-new-arrivals">
                             <Link to={`/car/${newArrival.id}`}>

@@ -237,7 +237,7 @@ function Stock() {
            setLoading(false)
          
         } catch (error) {
-          console.log(error)
+        
           toast.error( 'Search Not Working!')
         }
       }
@@ -289,7 +289,7 @@ function Stock() {
            setLoading(false)
          
         } catch (error) {
-          console.log(error)
+        
           toast.error( 'Search Not Working!')
         }
       }
@@ -338,7 +338,7 @@ function Stock() {
            setLoading(false)
          
         } catch (error) {
-          console.log(error)
+        
           toast.error( 'Search Not Working!')
         }
       }
@@ -389,7 +389,7 @@ function Stock() {
         setLoading(false)
         
         } catch (error) {
-          console.log(error)
+         
           toast.error( 'Search Not Working')
         }
       }
@@ -446,7 +446,7 @@ function Stock() {
             {selectSearchResults && (
               <div className='stock-card-main ' style={{ display:'flex', justifyContent:'center' }}>
                   <ul className='stock-card-ul' style={{display:'flex',  flexWrap:'wrap', listStyle:'none', paddingTop:'2.5%', width:'100%', paddingBottom:'2.5%'}} >
-                    {/* {console.log(cars)} */}
+                  
                     {selectSearchResults.map((car) => (
                         <div className='stock-card-div' key={car.id} style={{flex:'43.33%', width:'100%', marginBottom:'7.5%', paddingLeft:'7.5%', paddingRight:'7.5%',   maxWidth:'50%'}}>
                           <CarItem
@@ -601,13 +601,13 @@ function Stock() {
 
 <div className='select-search-div-background-photo-on-mobile' style={{"backgroundImage": "url(" +audi+ ") ", }}>
 
-                      <div style={{textAlign:'center', paddingTop:'5.3%'}}>
+                      <div style={{textAlign:'center'}}>
                       <p style={{fontSize:'1.4rem', color:'white', fontWeight:'bold', letterSpacing: '0.2rem'}}>Our Stock</p>
                       </div>
 
 
                                 
-              <div  style={{paddingTop:'7.7%',  zIndex:'300'}} >
+              <div  style={{  zIndex:'300'}} >
 
                   <div style={{display:'flex', justifyContent:'space-around'}}>
 
@@ -720,7 +720,7 @@ function Stock() {
 
 
                             <ul className='stock-card-ul' style={{display:'flex',  flexWrap:'wrap', listStyle:'none', paddingTop:'2.5%', width:'100%', paddingBottom:'2.5%'}} >
-                              {/* {console.log(cars)} */}
+                            
                            
                               
                               {cars.map((car) => (

@@ -154,15 +154,21 @@
 
   .main-div-select-search-background-on-mobile{
     width: 100%;
-    height: 315px !important;
-    display: flex;
+    /* height: 315px !important; */
+    display: unset;
+    height: 335px !important;
+   
   }
 
   .select-search-div-background-photo-on-mobile{
     background: no-repeat center;
     background-size: cover;
     width: 100%  !important;
-    max-height: 100% !important;
+    /* max-height: 100% !important; */
+    height: 335px !important;
+    padding-top: 10% !important;
+    padding-bottom: 10% !important;
+    
   }
 
 

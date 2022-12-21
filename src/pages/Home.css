@@ -93,8 +93,8 @@
 }
 
 .newArrivalImageDiv{
- width: 24vw;
- height: 206px;
+ width: 24.000vw !important;
+ height:  31.354vh !important;
 }
 
 .newArrivalImages{
@@ -114,14 +114,15 @@
 
 .centered1-new-arrivals{
   position: relative;
-	top: -50%;
+	top: -6.5rem;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 2.6rem;
 	z-index: 105;
-	
-  padding-left: 11%;
+	padding-left: 10%;
   padding-right: 10%;
+
+
 }
 
 
@@ -129,6 +130,8 @@
 /* ~~~~~~~ INIT. BTN ~~~~~~~ */
 
 .btn-new-arrivals{
+  margin-left: 1.5%;
+  width: 100%;
   position: relative;	
   padding: 10%;
  	font-size: 0.7rem;
@@ -496,31 +499,64 @@
     padding-right: 1.5%;
   }
 
+
+
+
+ 
   .newArrivalImageDiv{
-    width: 48vw;
-    height: 18.264vh;
    
+    /* width:11.35rem !important;
+    height: 7.25rem !important;
+    */
+
+   width: 100% !important;
+   height: 7.75rem !important;
+ 
    
    }
 
 
    .newArrivalImages{
-    object-fit: cover;
-   padding-left: 4.0% !important;
+   /* width: 177px !important;
+   height: 114.66px !important;
+   padding-left: 3.5% !important;
+   
+   object-fit: cover !important; */
+ 
+
+  width: 96.5% !important;
+  height: 7.75rem !important;
+
+   object-fit: cover !important;
+ 
+   
+   
+  
   }
 
-
+  .centered1-new-arrivals{
+    position: relative;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.6rem;
+    z-index: 105;
+    
+  
+  }
+  
 
   .btn-new-arrivals {		
-
+    margin-left: 0%  !important;
+    margin-right: 0% !important;
     font-size: 0.6rem;
     color: white;
     letter-spacing: 0.3rem;
     background-color: rgba(118, 116, 116, 0.18);
-    
-    padding-left: 40%;
-    padding-right: 40%;
- 
+  
+   padding-left: 0%!important;
+   padding-right: 0%!important;
+   text-align: center;
     overflow: hidden !important;
     
   }
@@ -713,3 +749,15 @@ display: none;
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+

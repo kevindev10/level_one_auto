@@ -33,12 +33,15 @@ function Navbar() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+  
+
+
 
   return (
     <>
       <nav className="navbar">
         <Link to="/" className="navbar-logo" onClick={() => setSidebar(false)}>
-         <img src={logo} alt="Company logo" width= '100%'  />
+         <img src={logo} alt="Company logo" width= '382px' height='100%' />
         </Link>
       
         {!mobile && (

@@ -28,13 +28,147 @@
 
 }
 
+.car-page-title-price-mobile{
+  display: none !important;
+}
 
 
 
-/* .slick-prev:before, .slick-next:before {
-  color:red !important;
-  font-size: 30px !important;
-
-} */
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 960px) {
+  
+  .car-page-flex-title{
+    display: block !important;
+    padding-left: 2.5% !important;
+    padding-right: 2.5% !important;
+    text-align: center;
+  }
+
+  .car-page-title-description{
+    padding-left: 2.5% !important;
+    padding-right: 2.5% !important;
+    text-align: center;
+    font-size: 1.0rem !important;
+    padding-top: 1.5%;
+  
+   
+  }
+ .car-page-title-heading{
+  padding-top: 2.5%;
+  padding-bottom: 1.5%;
+  font-weight: 100 !important ;
+ }
+ .car-page-title-price-desktop{
+    display: none !important;
+ }
+ .car-page-title-price-mobile{
+  display: block !important;
+  text-align: center;
+  padding-top: 1.5%;
+  padding-bottom: 3.5%;
+  
+
+ }
+ .car-page-title-price-mobile-font{
+  font-size: 1.4rem !important;
+  font-weight: 100 !important;
+
+ }
+
+  .car-page-flex-main-sliders{
+    display: block !important;
+     height:auto !important;
+     margin-bottom:auto !important;
+    padding: auto !important;
+    
+
+  }
+  .car-page-slider-on-mobile{
+    display: none !important;
+   
+  }
+  .car-page-div-slick-slider{
+    /* width: 21.25rem !important;
+   
+    height: 14.188rem !important; */
+    /* display: flex !important;
+    justify-content: center !important;
+    align-items: center !important; */
+    width: 100% !important;
+    
+    margin-left:0vw !important;
+    margin-right:0vw !important;
+    height: 100% !important;
+  
+  }
+
+  .car-page-slider-image-on-mobile{
+    /* width:  21.25rem  !important;
+    height: 14.188rem  !important; */
+    max-width: none !important;
+  
+   width: 100% !important;
+    height: 226.5px !important;
+    padding: auto !important;
+    object-fit: cover !important;
+    margin-left: 0% !important;
+    margin-right: 0% !important;
+    
+
+
+  }
+
+
+  .car-page-slick-slider .slick-prev {
+    margin-left: 8.5% !important;
+    margin-top: -2.25% !important;
+   
+  }
+
+  .car-page-slick-slider .slick-next {
+    margin-right: 10.7% !important;
+    margin-top: -2.25% !important;
+   
+    
+  }
+
+  .car-page-slick-slider .slick-prev:before{
+
+    
+    font-size:27px !important;
+   
+   
+  }
+  .car-page-slick-slider .slick-next:before{
+    
+    font-size: 27px !important;
+  
+  
+  }
+
+  .car-page-main-div{
+    box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75) inset;
+  }
+
+}

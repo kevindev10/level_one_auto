@@ -2,7 +2,7 @@
 
 
 .slick-initialized {
-	overflow: hidden;
+	overflow: hidden !important;
 	}
 
 

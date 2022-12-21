@@ -13,7 +13,8 @@
   font-size: 2.3rem;
   display: flex;
   align-items: center;
-  width: 22rem;
+  width: 25.769vw;
+  height: 23.135vh;
   justify-content: center;
   object-fit: cover;
   
@@ -21,10 +22,11 @@
 }
 
 .nav-items {
-  width: 60vw;
+  width: 64vw;
   display: flex;
   justify-content: flex-end;
-  margin-right: 2rem;
+  /* margin-right: 2rem; */
+  margin-left:2rem;
 
 }
 
@@ -164,16 +166,16 @@
   }
 
   .navbar-logo {
-   font-size: 2.3rem;
-   width: 19rem;
-   margin-left: 1.2rem;
-  
+   /* font-size: 2.3rem; */
+
+   margin-left: 12vh;
+   height: 11.8vh;
 
 }
 
 .sidebar-toggle-logo {
   font-size: 1.8rem;
-  margin-right: 1.5rem;
+  margin-right: 3vh;
 
   
 }

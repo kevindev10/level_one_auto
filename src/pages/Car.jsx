@@ -16,7 +16,11 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { maxWidth } from '@mui/system'
+
+import {EmailShareButton, FacebookShareButton, TwitterShareButton, WhatsappShareButton} from "react-share";
+import {EmailIcon, FacebookIcon, TwitterIcon, WhatsappIcon,  PinterestIcon, LinkedinIcon} from "react-share";
+import ContactForm from '../components/ContactForm'
+
 
 
 function Car() {
@@ -139,7 +143,7 @@ const getCarPics = () => {
     
     return <div key={params.carId}>
              
-                                  <img src={imageUrl} alt={car.title}  width='620px' height='413px'  style={{objectFit:'cover', maxWidth:'100%'}}/>
+                                  <img src={imageUrl} alt={car.title} className='car-page-slider-image-on-mobile'  width='620px' height='413px'  style={{objectFit:'cover', maxWidth:'100%'}}/>
 
 
                              
@@ -224,7 +228,7 @@ const imageArrayRight = getArray(carImageUrls3 , index3)
         return <div key={params.carId}>
                  
                                   
-                                      <img src={imageUrl} alt={car.title}  width='295px'  height='201px'  style={{objectFit:'cover', maxWidth:'100%', marginLeft:'-2.7%'}} />
+                                      <img  src={imageUrl} alt={car.title}  width='295px'  height='201px'  style={{objectFit:'cover', maxWidth:'100%', marginLeft:'-2.7%'}} />
 
 
                 </div>
@@ -248,6 +252,13 @@ const imageArrayRight = getArray(carImageUrls3 , index3)
 
 
 
+// Share Url
+
+const shareUrl = 'window.location.href';
+
+console.log(window.location.href)
+
+
 
 
 
@@ -263,7 +274,8 @@ const imageArrayRight = getArray(carImageUrls3 , index3)
 
   return (
     <main
-     style={{padding:'2.5%'}} 
+    className='car-page-main-div'
+     style={{padding:'2.5%', }} 
      >
 
 
@@ -277,17 +289,25 @@ const imageArrayRight = getArray(carImageUrls3 , index3)
          
         <div  >
 
-        <div style={{display:'flex', justifyContent:'space-between'}} >
-            <h3 style={{fontSize:'1.45rem', fontWeight:'bold', }}>{car.title}</h3>
-            <h3  style={{fontSize:'1.6rem', fontWeight:'bold'
-                    , color:'maroon'}} className='new-arrival-price'>Ksh&nbsp; {car.discountedPrice?  car.discountedPrice.toString()
+        <div className='car-page-flex-title' style={{display:'flex', justifyContent:'space-between'}} >
+            <h3 className='car-page-title-heading' style={{fontSize:'1.45rem', fontWeight:'bold', }}>{car.title}</h3>
+            <h3 className='car-page-title-price-desktop' style={{fontSize:'1.6rem', fontWeight:'bold'
+                    , color:'maroon'}} >Ksh&nbsp; {car.discountedPrice?  car.discountedPrice.toString()
                   .replace(/\B(?=(\d{3})+(?!\d))/g, ',') : car.regularPrice.toString()
                   .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</h3>
 
         </div>
 
-        <div style={{fontSize:'1.1rem', fontWeight:'100', marginBottom:'1.5%' }}>
+        <div className='car-page-title-description' style={{fontSize:'1.1rem', fontWeight:'100', marginBottom:'1.5%' }}>
           <p>{car.description}</p>
+        </div>
+
+        <div  className='car-page-title-price-mobile'>
+        <h3  className='car-page-title-price-mobile-font' style={{fontSize:'1.6rem', fontWeight:'bold'
+                    , color:'maroon'}} >Ksh&nbsp; {car.discountedPrice?  car.discountedPrice.toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ',') : car.regularPrice.toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</h3>
+
         </div>
 
         </div>
@@ -296,19 +316,19 @@ const imageArrayRight = getArray(carImageUrls3 , index3)
 
 
             <div
-             style={{ }}
+            
              >
 
 
                             
                             
 
-                            <div style={{display:'flex' ,   height:'31.5rem' , justifyContent:'space-around' }}>
+                            <div className='car-page-flex-main-sliders' style={{display:'flex' ,   height:'31.5rem' , justifyContent:'space-around' , }}>
                                
 
                                          
                                  
-                                    <div style={{width:'18.438rem', height:'12.563rem' }}>
+                                    <div className='car-page-slider-on-mobile' style={{width:'18.438rem', height:'12.563rem' }}>
                                      
                                         <Slider
                                         
@@ -327,7 +347,7 @@ const imageArrayRight = getArray(carImageUrls3 , index3)
 
                                 
                                   
-                                    <div  style={{width:'38.75rem', height:'14.313rem' ,  marginLeft:'1.5vw', marginRight:'1.5vw' }} >
+                                    <div className='car-page-div-slick-slider' style={{width:'38.75rem', height:'14.313rem' ,  marginLeft:'1.5vw', marginRight:'1.5vw'  }} >
                                       <Slider
                                       className='car-page-slick-slider'
                                       asNavFor={nav2 && nav3} 
@@ -343,7 +363,7 @@ const imageArrayRight = getArray(carImageUrls3 , index3)
 
                                  
                                  
-                                    <div style={{width:'18.438rem', height:'12.563rem',   }}>
+                                    <div className='car-page-slider-on-mobile' style={{width:'18.438rem', height:'12.563rem',   }}>
                                       <Slider
                                         asNavFor={nav1 && nav3}
                                         ref={(slider2) => setNav2(slider2)}
@@ -391,6 +411,166 @@ const imageArrayRight = getArray(carImageUrls3 , index3)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div className='share-enquire-print-main' style={{backgroundColor:'black', color:'white' , padding:'2.5%'}}>
+
+      <div className='share-enquire-print'>
+
+                  <div className='share-main' >
+
+                    <div className='share' style={{display:'flex', }}>
+                        <p className="" style={{fontSize: "1.0rem", lineHeight: "30px", marginRight:'2.5%' }}>Share this vehicle </p>
+                        <span className=''>
+                        <FacebookShareButton className='' url={shareUrl} quote={'Level One Auto'} >
+                            <FacebookIcon size ={30} round={true} style={{marginRight:'2.5%'}}/>
+                        </FacebookShareButton>&nbsp;&nbsp;&nbsp;
+
+                        <TwitterShareButton className=''  url={shareUrl} quote={'Level One Auto'}>
+                            <TwitterIcon size ={30} round={true}/>
+                        </TwitterShareButton>&nbsp;&nbsp;&nbsp;
+
+                        <WhatsappShareButton className=''  url={shareUrl} quote={'Level One Auto'}>
+                            <WhatsappIcon size ={30} round={true}/>
+                        </WhatsappShareButton>&nbsp;&nbsp;&nbsp;
+
+                        <EmailShareButton className=''  url={shareUrl} quote={'Level One Auto'} >
+                            <EmailIcon size ={30} round={true}/>
+                        </EmailShareButton>&nbsp;&nbsp;&nbsp;  
+                        </span> 
+                    </div>
+
+                      <div className='car-page-contactus' style={{display:'flex', marginTop:'2.5%'  }}>
+                        <div className='car-page-call-us'  style={{display:'flex', }}> 
+                           <p>Call Us : </p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                          <a href="tel:+000000000" className=''>
+                            <i className="fas fa-phone-alt fa-1x " style={{fontSize:'150%', color:'gray' ,  }}></i>
+                          </a>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>0000 000 000 </p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                        </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+                        <div className='car-page-email-us'  style={{display:'flex', }}> 
+                        <p>Email Us : </p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                          <a href="mailto:leveloneauto@email.com" target="blank" rel="noreferrer" className=''>
+                            <i className="fas fa-envelope  fa-1x footer-email" style={{fontSize:'150%'}}></i>
+                          </a>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>leveloneauto@email.com</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                        </div>
+
+                      </div>
+
+
+
+                  </div>
+
+                  <div className='enquire-main'>
+                   
+
+                  </div>
+
+                  <div className='print-main'>
+
+                  </div> 
+
+
+
+
+
+
+      </div>
+
+
+
+</div>
+
+
+<div>
+<ContactForm/>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* 
         <div
           className='shareIconDiv'
           onClick={() => {
@@ -402,10 +582,10 @@ const imageArrayRight = getArray(carImageUrls3 , index3)
           }}
         >
           <img src={shareIcon} alt='' />
-        </div>
+        </div> */}
 
 
-        <div className='listingDetails'>
+        <div  className='listingDetails' >
             <p className='listingName'>
               {car.name}  Ksh &nbsp;
               {car.offer
