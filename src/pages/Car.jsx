@@ -254,7 +254,7 @@ const imageArrayRight = getArray(carImageUrls3 , index3)
 
 // Share Url
 
-const shareUrl = 'window.location.href';
+const shareUrl = window.location.href;
 
 console.log(window.location.href)
 
@@ -517,7 +517,7 @@ console.log(window.location.href)
 
 
 <div>
-<ContactForm/>
+<ContactForm car={car} carUrl={window.location.href} toast={`bread`}/>
 </div>
 
 
