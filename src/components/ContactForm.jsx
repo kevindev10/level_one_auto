@@ -4,8 +4,7 @@ import CompanyLogo from '../assets/Logos/Logo.jpg'
 import { Form, Field } from "react-final-form";
 import Button from '@mui/material/Button';
 import ReCAPTCHA from "react-google-recaptcha";
-import Spinner from './Spinner'
-
+import './ContactForm.css'
 
 
 
@@ -34,7 +33,7 @@ function ContactForm({car, carUrl}) {
 
   let captchaRef = useRef();
   let captchaMsgResRef = useRef();
-
+  let captchaMsgResRef2 = useRef();
 
 
 
@@ -88,8 +87,10 @@ function ContactForm({car, carUrl}) {
       setSent(true)
       setApiResponseMessage(data.msg)
        
-
-       captchaMsgResRef.current.scrollIntoView({ behavior: 'smooth',block: 'center',	inline: 'center'})
+        setTimeout(() =>{
+          captchaMsgResRef2.current.scrollIntoView({ behavior: 'smooth',block: 'center',	inline: 'center'})
+        }, 500)
+   
     }
     
     })
@@ -149,10 +150,10 @@ function ContactForm({car, carUrl}) {
 
 
                           
-                  <article  style={{'backgroundColor':'#FBFBFB'}} >
+                  <article  style={{'backgroundColor':'#FBFBFB', padding:'5.5%'}} >
                                                     <main >
 
-                                                    <span> Name </span><span style={{color:'red'}}> * </span>
+                                                    <span style={{paddingLeft:'2.5%', marginTop:'2.5%'}}> Name </span><span style={{color:'red'}}> * </span>
                                                         <Form
                                                       
                                                       onSubmit={handleSubmit}
@@ -165,7 +166,7 @@ function ContactForm({car, carUrl}) {
                                                     
                                                           <Field name="name" validate={required}  >
                                                             {({ input, meta }) => (
-                                                              <div >
+                                                              <div  style={{paddingLeft:'2.5%', paddingRight:'2.5%', paddingTop:'1.0%', paddingBottom:'2.5%'}}>
                                   
                                                                 <label
                                                                 htmlFor="yourName"
@@ -176,18 +177,18 @@ function ContactForm({car, carUrl}) {
                                                                 <input {...input} 
                                                                 type="text" 
                                                                 
-                                                                
-                                                                style={{ 'fontSize':'1.0rem'}}
+                                                                className='input-box-styling'
+                                                                style={{ 'fontSize':'1.0rem', width:'85%', padding:'0.8%', boxShadow: '4px 4px 8px 0px rgba( 0, 0, 0, 0.2 )'}}
                                                                 />
                                                                 {meta.error && meta.touched && <span className='meta-era'>{meta.error}</span>}
                                                               </div>
                                                             )}
                                                           </Field>
                                   
-                                                          <span>Email </span><span style={{color:'red'}}> * </span>
+                                                          <span style={{paddingLeft:'2.5%', marginTop:'2.5%'}}>Email </span><span style={{color:'red'}}> * </span>
                                                           <Field name="email" validate={required}  >
                                                             {({ input, meta }) => (
-                                                              <div>
+                                                              <div style={{paddingLeft:'2.5%', paddingRight:'2.5%', paddingTop:'1.0%', paddingBottom:'2.5%'}}>
                                   
                                                                 <label 
                                                                 htmlFor="email-address" 
@@ -197,7 +198,8 @@ function ContactForm({car, carUrl}) {
                                   
                                                                 <input {...input} 
                                                                 type="text" 
-                                                                
+                                                                className='input-box-styling'
+                                                                style={{ 'fontSize':'1.0rem', width:'85%', padding:'0.8%', boxShadow: '4px 4px 8px 0px rgba( 0, 0, 0, 0.2 )'}}
                                                                 
                                                                 />
                                                                 {meta.error && meta.touched && <span className='meta-era'>{meta.error}</span>}
@@ -208,12 +210,12 @@ function ContactForm({car, carUrl}) {
                                   
                                   
                                   
-                                                          <span>Phone Number</span> <span style={{color:'red'}}> * </span>      
+                                                          <span style={{paddingLeft:'2.5%', marginTop:'2.5%'}}>Phone Number</span> <span style={{color:'red'}}> * </span>      
                                                         <Field  name="phone" validate={composeValidators(required, mustBeNumber)}
                                                         >
                                   
                                                           {({ input, meta }) => (
-                                                            <div  >
+                                                            <div style={{paddingLeft:'2.5%', paddingRight:'2.5%', paddingTop:'1.0%', paddingBottom:'2.5%'}} >
                                   
                                                               <label
                                                               
@@ -223,7 +225,8 @@ function ContactForm({car, carUrl}) {
                                                               </label>
                                                               <input {...input}
                                                               type="text" 
-                                                              
+                                                              className='input-box-styling'
+                                                              style={{ 'fontSize':'1.0rem', width:'85%', padding:'0.8%', boxShadow: '4px 4px 8px 0px rgba( 0, 0, 0, 0.2 )'}}
                                                             
                                                               />
                                                               {meta.error && meta.touched && <span className='meta-era'>{meta.error}</span>}
@@ -235,10 +238,10 @@ function ContactForm({car, carUrl}) {
 
 
 
-                                                        <span>Message</span> <span style={{color:'red'}}> * </span>
+                                                        <span style={{paddingLeft:'2.5%', marginTop:'2.5%'}}>Message</span> <span style={{color:'red'}}> * </span>
                                                         <Field name="message" validate={required}>
                                                           {({ input, meta }) => (
-                                                            <div   >
+                                                            <div  style={{paddingLeft:'2.5%', paddingRight:'2.5%', paddingTop:'1.0%', paddingBottom:'2.5%'}} >
                                   
                                                               <label 
                                                               htmlFor="message" 
@@ -248,8 +251,9 @@ function ContactForm({car, carUrl}) {
                                                             <textarea {...input}
                                                               type="text"
                                                               placeholder="Your message"
-                                                            
-                                                              rows="15" 
+                                                              className='input-box-styling'
+                                                              style={{ 'fontSize':'1.0rem', width:'85%', padding:'0.8%', boxShadow: '4px 4px 8px 0px rgba( 0, 0, 0, 0.2 )'}}
+                                                              rows="10" 
                                                               cols="50" />
                                                               {meta.error && meta.touched && <span className='meta-era'>{meta.error}</span>}
                                                             </div>
@@ -265,10 +269,10 @@ function ContactForm({car, carUrl}) {
                             
                             
                                                         
-                                                        <p  style={{ 'fontSize':'1.0rem'}}>* Fill in all details before sending.</p>
-                                                        <h2 ref={captchaMsgResRef}   style={{'fontSize':'1.0rem'}}>{apiResponseMessage}</h2>	
+                                                        <p  style={{ 'fontSize':'1.0rem', paddingLeft:'2.5%', marginTop:'2.5%', color:'red',fontWeight:'bold' }}>* Fill in all details before sending.</p>
+                                                        <h2 ref={captchaMsgResRef}   style={{'fontSize':'1.0rem', paddingLeft:'2.5%', marginTop:'2.5%', color:'orange',fontWeight:'bold'}}>{apiResponseMessage}</h2>	
                                                         
-                                                        <div   >
+                                                        <div style={{  paddingLeft:'2.5%', marginTop:'2.5%'}}  >
                                                             <ReCAPTCHA
                                                               key="normal-recaptcha"
                                                               size="normal"
@@ -285,7 +289,7 @@ function ContactForm({car, carUrl}) {
                             
                             
                                       
-                                                            <div >
+                                                            <div style={{  paddingLeft:'2.5%', marginTop:'2.5%'}}>
                                                               <Button variant="contained"  
                                                               type="submit"
                                                               disabled={submitting}
@@ -317,11 +321,12 @@ function ContactForm({car, carUrl}) {
                   
 
                    
-                  <div>
-                      <h2 ref={captchaMsgResRef}   style={{'fontSize':'1.2rem'}}>{apiResponseMessage}</h2>
-                      <div >
+                  <div style={{'backgroundColor':'#FBFBFB', padding:'5.5%'}}>
+                      <div style={{paddingLeft:'2.5%', paddingRight:'2.5%', paddingTop:'1.0%', paddingBottom:'2.5%'}}>
+                      <h2 ref={captchaMsgResRef2}   style={{'fontSize':'1.2rem', color:'orange',fontWeight:'bold'}}>{apiResponseMessage}</h2>
+                      </div >
                     
-
+                      <div style={{paddingLeft:'2.5%', paddingRight:'2.5%', paddingTop:'1.0%', paddingBottom:'2.5%'}}>
                         <Button  variant="contained"
                       
                         style={{'backgroundColor':'black', 'color':'white', 'fontSize':'1.0rem', 'padding':'10px 30px 10px 30px', }}
