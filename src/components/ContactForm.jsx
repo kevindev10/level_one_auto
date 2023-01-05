@@ -113,31 +113,35 @@ function ContactForm({car, carUrl}) {
 
 
   return (
-    <div style={{padding:'2.5%'}}>
+    <div style={{paddingLeft:'2.5%', paddingRight:'2.5%', paddingBottom:'2.5%'}}>
 
 
-        <div style={{textAlign:'center'}}>
+        <div style={{textAlign:'center', fontSize:'1.6rem', marginBottom:'2.5%'}} className='contact-form-page-heading-on-mobile'>
           <h3>Vehicle Enquiries</h3>
         </div>
 
 
-        <div style={{ display:'flex' }}>
+        <div style={{ display:'flex' }}  className='contact-form-main-flex'>
 
-            <div style={{width:'35%'}}>
-                <p>{car.title}</p>
-                <p>{car.description}</p>
-                <div>
-                  <img src={car.imageUrls[0]} alt="Maserati mc20" width='173px'  height='115px' style={{objectFit:'cover'}}/>
+            <div style={{width:'35%',  paddingRight:'2.5%'}} className='contact-form-car-section-main'>
+                <p style={{fontWeight:'bold', fontSize:'1.1rem'}} className='contact-form-page-title-on-mobile'>{car.title}</p>
+                <p className='contact-form-page-description-on-mobile'>{car.description}</p>
+                <div style={{
+                   width:'19.94vw', marginTop:'2.5%' , marginBottom:'2.5%' }} className='contact-form-page-image-div-on-mobile'>
+                  <img src={car.imageUrls[0]} alt="Maserati mc20"   style={{objectFit:'cover', maxWidth:'100%' }} className='contact-form-page-image-on-mobile'/>
                 </div>
-                <div style={{display:'flex', }}>
-                  <img src={CompanyLogo} alt="Company Logo"  width='104px' style={{objectFit:'cover'}}/>
+          
+                <div style={{ width:'11.94vw', }} className='contact-form-page-logo-div-on-mobile'>
+                  <img src={CompanyLogo} alt="Company Logo"    style={{objectFit:'cover',maxWidth:'100%' }}/>
                 </div>
               
+  
+               
 
             </div>
 
 
-            <div style={{width:'65%'}}>
+            <div style={{width:'65%', marginLeft:'2.5%'}}  className='contact-form-form-section-main'>
            
 
 
@@ -150,10 +154,10 @@ function ContactForm({car, carUrl}) {
 
 
                           
-                  <article  style={{'backgroundColor':'#FBFBFB', padding:'5.5%'}} >
+                  <article  style={{'backgroundColor':'#FBFBFB', padding:'5.5%', }} className='contact-form-form-section-bgcolor' >
                                                     <main >
 
-                                                    <span style={{paddingLeft:'2.5%', marginTop:'2.5%'}}> Name </span><span style={{color:'red'}}> * </span>
+                                                    <span style={{paddingLeft:'2.5%', marginTop:'2.5%'}} className='form-label-on-mobile'> Name </span><span style={{color:'red', fontWeight:'bold'}}  className='form-label-on-mobile'> * </span>
                                                         <Form
                                                       
                                                       onSubmit={handleSubmit}
@@ -166,7 +170,7 @@ function ContactForm({car, carUrl}) {
                                                     
                                                           <Field name="name" validate={required}  >
                                                             {({ input, meta }) => (
-                                                              <div  style={{paddingLeft:'2.5%', paddingRight:'2.5%', paddingTop:'1.0%', paddingBottom:'2.5%'}}>
+                                                              <div  style={{paddingLeft:'2.5%', paddingRight:'2.5%', paddingTop:'1.0%', paddingBottom:'2.5%'}} className='form-field-div-padding-on-mobile'>
                                   
                                                                 <label
                                                                 htmlFor="yourName"
@@ -178,17 +182,17 @@ function ContactForm({car, carUrl}) {
                                                                 type="text" 
                                                                 
                                                                 className='input-box-styling'
-                                                                style={{ 'fontSize':'1.0rem', width:'85%', padding:'0.8%', boxShadow: '4px 4px 8px 0px rgba( 0, 0, 0, 0.2 )'}}
+                                                                style={{ 'fontSize':'1.0rem', width:'80%', padding:'2.0%', boxShadow: '4px 4px 8px 0px rgba( 0, 0, 0, 0.2 )'}}
                                                                 />
                                                                 {meta.error && meta.touched && <span className='meta-era'>{meta.error}</span>}
                                                               </div>
                                                             )}
                                                           </Field>
                                   
-                                                          <span style={{paddingLeft:'2.5%', marginTop:'2.5%'}}>Email </span><span style={{color:'red'}}> * </span>
+                                                          <span style={{paddingLeft:'2.5%', marginTop:'2.5%'}} className='form-label-on-mobile'>Email </span><span style={{color:'red', fontWeight:'bold'}} className='form-label-on-mobile'> * </span>
                                                           <Field name="email" validate={required}  >
                                                             {({ input, meta }) => (
-                                                              <div style={{paddingLeft:'2.5%', paddingRight:'2.5%', paddingTop:'1.0%', paddingBottom:'2.5%'}}>
+                                                              <div style={{paddingLeft:'2.5%', paddingRight:'2.5%', paddingTop:'1.0%', paddingBottom:'2.5%'}} className='form-field-div-padding-on-mobile'>
                                   
                                                                 <label 
                                                                 htmlFor="email-address" 
@@ -199,7 +203,7 @@ function ContactForm({car, carUrl}) {
                                                                 <input {...input} 
                                                                 type="text" 
                                                                 className='input-box-styling'
-                                                                style={{ 'fontSize':'1.0rem', width:'85%', padding:'0.8%', boxShadow: '4px 4px 8px 0px rgba( 0, 0, 0, 0.2 )'}}
+                                                                style={{ 'fontSize':'1.0rem', width:'80%', padding:'2.0%', boxShadow: '4px 4px 8px 0px rgba( 0, 0, 0, 0.2 )'}}
                                                                 
                                                                 />
                                                                 {meta.error && meta.touched && <span className='meta-era'>{meta.error}</span>}
@@ -210,12 +214,12 @@ function ContactForm({car, carUrl}) {
                                   
                                   
                                   
-                                                          <span style={{paddingLeft:'2.5%', marginTop:'2.5%'}}>Phone Number</span> <span style={{color:'red'}}> * </span>      
+                                                          <span style={{paddingLeft:'2.5%', marginTop:'2.5%'}} className='form-label-on-mobile'>Phone Number</span> <span style={{color:'red', fontWeight:'bold'}} className='form-label-on-mobile'> * </span>      
                                                         <Field  name="phone" validate={composeValidators(required, mustBeNumber)}
                                                         >
                                   
                                                           {({ input, meta }) => (
-                                                            <div style={{paddingLeft:'2.5%', paddingRight:'2.5%', paddingTop:'1.0%', paddingBottom:'2.5%'}} >
+                                                            <div style={{paddingLeft:'2.5%', paddingRight:'2.5%', paddingTop:'1.0%', paddingBottom:'2.5%'}} className='form-field-div-padding-on-mobile' >
                                   
                                                               <label
                                                               
@@ -226,7 +230,7 @@ function ContactForm({car, carUrl}) {
                                                               <input {...input}
                                                               type="text" 
                                                               className='input-box-styling'
-                                                              style={{ 'fontSize':'1.0rem', width:'85%', padding:'0.8%', boxShadow: '4px 4px 8px 0px rgba( 0, 0, 0, 0.2 )'}}
+                                                              style={{ 'fontSize':'1.0rem', width:'80%', padding:'2.0%', boxShadow: '4px 4px 8px 0px rgba( 0, 0, 0, 0.2 )'}}
                                                             
                                                               />
                                                               {meta.error && meta.touched && <span className='meta-era'>{meta.error}</span>}
@@ -238,10 +242,10 @@ function ContactForm({car, carUrl}) {
 
 
 
-                                                        <span style={{paddingLeft:'2.5%', marginTop:'2.5%'}}>Message</span> <span style={{color:'red'}}> * </span>
-                                                        <Field name="message" validate={required}>
+                                                        <span style={{paddingLeft:'2.5%', marginTop:'2.5%'}} className='form-label-on-mobile'>Message</span> <span style={{color:'red', fontWeight:'bold'}} className='form-label-on-mobile'> * </span>
+                                                        <Field name="message" validate={required} >
                                                           {({ input, meta }) => (
-                                                            <div  style={{paddingLeft:'2.5%', paddingRight:'2.5%', paddingTop:'1.0%', paddingBottom:'2.5%'}} >
+                                                            <div  style={{paddingLeft:'2.5%', paddingRight:'2.5%', paddingTop:'1.0%', paddingBottom:'2.5%'}} className='form-field-div-padding-on-mobile'>
                                   
                                                               <label 
                                                               htmlFor="message" 
@@ -249,10 +253,11 @@ function ContactForm({car, carUrl}) {
                                                             
                                                               </label>
                                                             <textarea {...input}
+                                                             
                                                               type="text"
                                                               placeholder="Your message"
                                                               className='input-box-styling'
-                                                              style={{ 'fontSize':'1.0rem', width:'85%', padding:'0.8%', boxShadow: '4px 4px 8px 0px rgba( 0, 0, 0, 0.2 )'}}
+                                                              style={{ 'fontSize':'1.0rem', width:'80%', padding:'2.0%', boxShadow: '4px 4px 8px 0px rgba( 0, 0, 0, 0.2 )'}}
                                                               rows="10" 
                                                               cols="50" />
                                                               {meta.error && meta.touched && <span className='meta-era'>{meta.error}</span>}
@@ -272,7 +277,7 @@ function ContactForm({car, carUrl}) {
                                                         <p  style={{ 'fontSize':'1.0rem', paddingLeft:'2.5%', marginTop:'2.5%', color:'red',fontWeight:'bold' }}>* Fill in all details before sending.</p>
                                                         <h2 ref={captchaMsgResRef}   style={{'fontSize':'1.0rem', paddingLeft:'2.5%', marginTop:'2.5%', color:'orange',fontWeight:'bold'}}>{apiResponseMessage}</h2>	
                                                         
-                                                        <div style={{  paddingLeft:'2.5%', marginTop:'2.5%'}}  >
+                                                        <div style={{  paddingLeft:'2.5%', marginTop:'2.5%'}} className='reCaptcha-on-mobile' >
                                                             <ReCAPTCHA
                                                               key="normal-recaptcha"
                                                               size="normal"

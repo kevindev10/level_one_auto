@@ -23,6 +23,18 @@ import ContactForm from '../components/ContactForm'
 
 
 
+
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Modal from '@mui/material/Modal';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+import Fade from '@mui/material/Fade';
+
+
+
+
+
 function Car() {
 
   const [car, setCar] = useState(null)
@@ -39,7 +51,7 @@ function Car() {
   const [nav2, setNav2] = useState();
   const [nav3, setNav3] = useState();
 
-
+  const [open, setOpen] = useState(false);
 
 
 
@@ -256,17 +268,36 @@ const imageArrayRight = getArray(carImageUrls3 , index3)
 
 const shareUrl = window.location.href;
 
-console.log(window.location.href)
 
 
 
 
 
 
+ // Enquire Modal styling 
+
+const style2 = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: "80%",
+  height: "95%",
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 0,
+  overflowY: "auto"
+};
 
 
 
-
+// Enqire  Modal  methods
+// const handleOpen = () => setOpen(true);
+const handleClose = () =>{
+  setOpen(false)
+  window.location.reload()
+} ;
 
 
 
@@ -446,65 +477,176 @@ console.log(window.location.href)
 
 
 
-<div className='share-enquire-print-main' style={{backgroundColor:'black', color:'white' , padding:'2.5%'}}>
+<div className='share-contact-enquire-print-main' style={{backgroundColor:'black', color:'white' , padding:'2.5%'}}>
 
-      <div className='share-enquire-print'>
+      <div className='share-contact-enquire-print'  style={{display:'flex', justifyContent:"space-between"}}>
 
-                  <div className='share-main' >
 
-                    <div className='share' style={{display:'flex', }}>
-                        <p className="" style={{fontSize: "1.0rem", lineHeight: "30px", marginRight:'2.5%' }}>Share this vehicle </p>
-                        <span className=''>
-                        <FacebookShareButton className='' url={shareUrl} quote={'Level One Auto'} >
-                            <FacebookIcon size ={30} round={true} style={{marginRight:'2.5%'}}/>
-                        </FacebookShareButton>&nbsp;&nbsp;&nbsp;
 
-                        <TwitterShareButton className=''  url={shareUrl} quote={'Level One Auto'}>
-                            <TwitterIcon size ={30} round={true}/>
-                        </TwitterShareButton>&nbsp;&nbsp;&nbsp;
+                  <div className='share-contactUs'>
 
-                        <WhatsappShareButton className=''  url={shareUrl} quote={'Level One Auto'}>
-                            <WhatsappIcon size ={30} round={true}/>
-                        </WhatsappShareButton>&nbsp;&nbsp;&nbsp;
 
-                        <EmailShareButton className=''  url={shareUrl} quote={'Level One Auto'} >
-                            <EmailIcon size ={30} round={true}/>
-                        </EmailShareButton>&nbsp;&nbsp;&nbsp;  
-                        </span> 
-                    </div>
+                          <div className='share-main' >
 
-                      <div className='car-page-contactus' style={{display:'flex', marginTop:'2.5%'  }}>
-                        <div className='car-page-call-us'  style={{display:'flex', }}> 
-                           <p>Call Us : </p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-                          <a href="tel:+000000000" className=''>
-                            <i className="fas fa-phone-alt fa-1x " style={{fontSize:'150%', color:'gray' ,  }}></i>
-                          </a>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>0000 000 000 </p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-                        </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
-                        <div className='car-page-email-us'  style={{display:'flex', }}> 
-                        <p>Email Us : </p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-                          <a href="mailto:leveloneauto@email.com" target="blank" rel="noreferrer" className=''>
-                            <i className="fas fa-envelope  fa-1x footer-email" style={{fontSize:'150%'}}></i>
-                          </a>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>leveloneauto@email.com</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-                        </div>
+                            <div className='share' style={{display:'flex', }}>
+                                <p className="Share-this-vehicle" style={{fontSize: "1.0rem", lineHeight: "30px", marginRight:'2.5%' }}>Share this vehicle </p>
+                                <span className=''>
+                                <FacebookShareButton className='' url={shareUrl} quote={'Level One Auto'} >
+                                    <FacebookIcon size ={30} round={true} style={{marginRight:'2.5%'}}/>
+                                </FacebookShareButton>&nbsp;&nbsp;&nbsp;
+
+                                <TwitterShareButton className=''  url={shareUrl} quote={'Level One Auto'}>
+                                    <TwitterIcon size ={30} round={true}/>
+                                </TwitterShareButton>&nbsp;&nbsp;&nbsp;
+
+                                <WhatsappShareButton className=''  url={shareUrl} quote={'Level One Auto'}>
+                                    <WhatsappIcon size ={30} round={true}/>
+                                </WhatsappShareButton>&nbsp;&nbsp;&nbsp;
+
+                                <EmailShareButton className=''  url={shareUrl} quote={'Level One Auto'} >
+                                    <EmailIcon size ={30} round={true}/>
+                                </EmailShareButton>&nbsp;&nbsp;&nbsp;  
+                                </span> 
+                            </div>
+
+                              <div className='car-page-contactus' style={{display:'flex', marginTop:'1.5%'  }}>
+                                <div className='car-page-call-us'  style={{display:'flex', }}> 
+                                  <p className='car-page-call-us-paragraph'>Call Us : </p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                                  <a href="tel:+000000000" className='car-page-call-us-paragraph'>
+                                    <i className="fas fa-phone-alt fa-1x " style={{fontSize:'150%', color:'gray' ,  }}></i>
+                                  </a>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p className='car-page-call-us-paragraph'>0000 000 000 </p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                                </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+                                <div className='car-page-email-us'  style={{display:'flex', }}> 
+                                <p className='car-page-call-us-paragraph'>Email Us : </p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                                  <a href="mailto:leveloneauto@email.com" target="blank" rel="noreferrer" className='car-page-call-us-paragraph'>
+                                    <i className="fas fa-envelope  fa-1x footer-email" style={{fontSize:'150%'}}></i>
+                                  </a>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p className='car-page-call-us-paragraph'>leveloneauto@email.com</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                                </div>
+
+                              </div>
+
+
+
+                          </div>
+
+
+
+                  </div>                         
+
+
+
+
+
+
+                  <div className='enquire-print' style={{display:'flex', width:'40%', justifyContent:'space-around' }}>
+
+                      <div   className='enquire-main'>
+
+                        <div >
+
+
+
+
+
+
+                                  <Button 
+                                    variant="contained"
+                                    // onClick={handleOpen}
+
+                                    onClick={() =>{
+                                      setTimeout(() =>{
+                                        setOpen(true) 
+                                      }, 500)
+                                    }}
+                                    style={{'backgroundColor':'black', 'color':'white', 'fontSize':'1.0rem', 'padding':'10px 50px 10px 50px',  border:'4px solid maroon', letterSpacing:'0.15rem'}} 
+                                    className='enquire-button-on-mobile'
+
+                                   
+                                  >
+                                    Enqiure
+                                  </Button>
+                                  <Modal
+                                    open={open}
+                                    onClose={handleClose}
+                                    aria-labelledby="modal-modal-title"
+                                    aria-describedby="modal-modal-description"
+                                  >
+                                    <Fade in={open}>
+                                      <Box sx={style2} className='modal-size-on-mobile'>
+
+
+
+
+
+
+
+                                      {open === true &&
+
+                                        <div style={{textAlign:'right'}}>
+                                            <IconButton
+                                              aria-label="close"
+                                                onClick={handleClose}
+                                                sx={{
+                                                  position: '',
+                                                  zIndex: '1800 !important',
+                                              
+                                                
+                                                  // color: (theme) => theme.palette.error.light,
+                                                  
+                                                }}
+                                                style={{ marginTop:'2.5%', marginRight:'2.5%' }}
+                                                className=''
+                                              >
+                                            <CloseIcon
+                                            sx={{  color:'black' }}
+                                            style={{fontSize:'2.5rem'}}
+                                            className='modal-x-icon-on-mobile'
+                                            />
+                                            </IconButton>
+
+
+                                          </div>
+
+                                        } 
+
+
+
+
+
+
+                                      <ContactForm car={car} carUrl={window.location.href} />
+                                      </Box>
+                                    </Fade>
+                                  </Modal>
+
+
+
+
+
+                         </div>
+
+                      
 
                       </div>
 
+                      <div className='print-main' >
+                                          <Button
+                                             variant="contained"
+                                             style={{'backgroundColor':'black', 'color':'white', 'fontSize':'1.0rem', 'padding':'10px 50px 10px 50px',  border:'4px solid maroon', letterSpacing:'0.15rem',}} 
+                                             className='print-button-on-mobile'
+                                             onClick={() => window.print()}
+                                          >
+                                            
+                                            Print Details
+                                            
+                                          </Button>
+                      </div> 
+
 
 
                   </div>
-
-                  <div className='enquire-main'>
-                   
-
-                  </div>
-
-                  <div className='print-main'>
-
-                  </div> 
-
-
 
 
 
@@ -516,15 +658,23 @@ console.log(window.location.href)
 </div>
 
 
-<div>
-<ContactForm car={car} carUrl={window.location.href} toast={`bread`}/>
-</div>
 
 
 
 
 
 
+ 
+
+
+
+
+
+
+
+   
+
+ 
 
 
 
