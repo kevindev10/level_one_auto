@@ -30,9 +30,9 @@ import Modal from '@mui/material/Modal';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Fade from '@mui/material/Fade';
-
-
-
+import audi  from '../assets/photos/audi_r8_x.jpg'
+import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
+import Footer from '../components/Footer'
 
 
 function Car() {
@@ -304,9 +304,10 @@ const handleClose = () =>{
 
 
   return (
+  <>
     <main
     className='car-page-main-div'
-     style={{padding:'2.5%', }} 
+    
      >
 
 
@@ -314,7 +315,7 @@ const handleClose = () =>{
 
 
 
-        <div>
+        <div  style={{padding:'2.5%', }} >
 
           
          
@@ -720,192 +721,323 @@ const handleClose = () =>{
 
 
 
-{/* 
-        <div
-          className='shareIconDiv'
-          onClick={() => {
-            navigator.clipboard.writeText(window.location.href)
-            setShareLinkCopied(true)
-            setTimeout(() => {
-              setShareLinkCopied(false)
-            }, 2000)
-          }}
-        >
-          <img src={shareIcon} alt='' />
-        </div> */}
 
 
-        <div  className='listingDetails' >
-            <p className='listingName'>
-              {car.name}  Ksh &nbsp;
-              {car.offer
-                ? car.discountedPrice
-                    .toString()
-                    .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-                : car.regularPrice
-                    .toString()
-                    .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-            </p>
+        <div style={{backgroundColor:'white', padding:'2.5%'}}   >
+   
             {/* <p className='listingLocation'>{listing.location}</p> */}
-            <p className='listingType'>
+            {/* <p className='listingType'>
               {car.sold === true ? 'Sold' : 'For Sale'}
             </p>
             {car.offer && (
               <p className='discountPrice'>
                 Ksh {parseInt(car.regularPrice) - parseInt(car.discountedPrice)} discount
               </p>
-            )}
+            )} */}
 
-       <div>  
-          
-           <p className='listingLocationTitle'>Vehicle Overview</p> 
+       
+          <div style={{fontSize:'1.6rem', color:'maroon', textAlign:'center'}}>
+           <p >Vehicle Overview</p> 
+          </div>
+        
            
 
 
+                       <div style={{display:'flex', }}>
+                                        <div style={{width:'50%', paddingRight:'5%', paddingTop:'2.5%', paddingBottom:'2.5%'}}>
 
-              <div >  
+                                                        <div  style={{display:'flex', backgroundColor:'rgb(220,220,220)', padding:' 1.5%' }}>
+                                                          <div style={{display:'flex', justifyContent:'flex-start', width:'50%',marginLeft:'2.5%' }}>
 
-                                          <div>
-                                                    <div>
+                                                              <p >
+                                                                Make
+                                                              </p>
 
-                                                    <div className='categoryListingInfoDiv '>
-                                                            <p className='categoryListingInfoText'>
-                                                              Make
-                                                            </p>
-                                                            <p className='categoryListingInfoText'>
-                                                              {car.make }
-                                                            </p>
-                                                        </div>
-
-                                                        <div className='categoryListingInfoDiv '>
-                                                            <p className='categoryListingInfoText'>
-                                                              Model
-                                                            </p>
-                                                            <p className='categoryListingInfoText'>
-                                                              {car.model }
-                                                            </p>
-                                                        </div>
-
-                                                      <div className='categoryListingInfoDiv '>
-                                                            <p className='categoryListingInfoText'>
-                                                              Year
-                                                            </p>
-                                                            <p className='categoryListingInfoText'>
-                                                              {car.year }
-                                                            </p>
-                                                        </div>
-
-                                                        <div className='categoryListingInfoDiv'>
-                                                            <p className='categoryListingInfoText'>
-                                                            Exterior Color
-                                                            </p>
-                                                            <p className='categoryListingInfoText'>
-                                                              {car.exteriorColor}
-                                                            </p>
-                                                        </div>
-
-                                                      <div className='categoryListingInfoDiv'>
-                                                            <p className='categoryListingInfoText'>
-                                                            Interior Trim
-                                                            </p>
-                                                            <p className='categoryListingInfoText'>
-                                                              {car.interiorTrim }
-                                                            </p>
-                                                      </div>
-
-                                                  </div>
-
-
-
-
-              
-                                                  <div>
-
-                                                          <div className='categoryListingInfoDiv '>
-                                                                <p className='categoryListingInfoText'>
-                                                                Body Type
-                                                                </p>
-                                                                <p className='categoryListingInfoText'>
-                                                                  {car.bodyType }
-                                                                </p>
-                                                            </div>
-
-                                                            <div className='categoryListingInfoDiv'>
-                                                                <p className='categoryListingInfoText'>
-                                                                Fuel Type
-                                                                </p>
-                                                                <p className='categoryListingInfoText'>
-                                                                  {car.fuelType}
-                                                                </p>
-                                                            </div>
-
-                                                          <div className='categoryListingInfoDiv'>
-                                                                <p className='categoryListingInfoText'>
-                                                                Engine Capacity
-                                                                </p>
-                                                                <p className='categoryListingInfoText'>
-                                                                  {car.engineCapacity }
-                                                                </p>
                                                           </div>
 
-                                                          <div className='categoryListingInfoDiv '>
-                                                                    <p className='categoryListingInfoText'>
-                                                                    Gearbox
-                                                                    </p>
-                                                                    <p className='categoryListingInfoText'>
-                                                                      {car.gearbox }
-                                                                    </p>
-                                                                </div>
+                                                          <div style={{display:'flex', justifyContent:'flex-end', width:'50%', marginRight:'2.5%'}}>
 
+                                                                <p >
+                                                                  {car.make }
+                                                                </p>
+
+                                                          </div>
+                                                          
                                                         </div>
 
 
 
 
-                                                      
-                                                  </div>   
-
-                                          </div>
-
-
-           
-
-                </div>
-
-
-
-
-
+                                                         <div style={{display:'flex', backgroundColor:'white', padding:' 1.5%' }}>
+                                                            <div style={{display:'flex', justifyContent:'flex-start', width:'50%',marginLeft:'2.5%' }}>
+                                                                  <p>
+                                                                    Model
+                                                                  </p>
+                                                              </div>
+                                                              <div style={{display:'flex', justifyContent:'flex-end', width:'50%', marginRight:'2.5%'}}>
+                                                                  <p >
+                                                                    {car.model }
+                                                                  </p>
+                                                              </div>
+                                                         </div>
 
 
 
 
-      <p className='listingLocationTitle'>Vehicle Details</p> 
 
+
+                                                         <div style={{display:'flex', backgroundColor:'rgb(220,220,220)', padding:' 1.5%' }}>
+                                                          <div style={{display:'flex', justifyContent:'flex-start', width:'50%',marginLeft:'2.5%' }}>
+                                                              <p >
+                                                                Year
+                                                              </p>
+                                                            </div>
+                                                            <div style={{display:'flex', justifyContent:'flex-end', width:'50%', marginRight:'2.5%'}}>
+                                                                <p >
+                                                                  {car.year }
+                                                                </p>
+                                                            </div>
+                                                        </div>
+
+
+
+
+                                                          <div style={{display:'flex', backgroundColor:'white', padding:' 1.5%' }} >
+                                                              <div style={{display:'flex', justifyContent:'flex-start', width:'50%',marginLeft:'2.5%' }}>
+                                                                  <p>
+                                                                  Exterior Color
+                                                                  </p>
+                                                              </div>
+                                                              <div style={{display:'flex', justifyContent:'flex-end', width:'50%', marginRight:'2.5%'}}>
+                                                                  <p>
+                                                                    {car.exteriorColor}
+                                                                  </p>
+                                                              </div>
+                                                          </div>
+
+
+
+
+                                                          <div style={{display:'flex', backgroundColor:'rgb(220,220,220)', padding:' 1.5%' }}>  
+                                                          <div style={{display:'flex', justifyContent:'flex-start', width:'50%',marginLeft:'2.5%' }}>
+                                                              <p >
+                                                              Interior Trim
+                                                              </p>
+
+                                                          </div>
+                                                              <div style={{display:'flex', justifyContent:'flex-end', width:'50%', marginRight:'2.5%'}}>
+                                                                <p >
+                                                                  {car.interiorTrim }
+                                                                </p>
+                                                              </div>
+                                                          </div>
+
+                                        </div>         
+
+
+
+
+                                        <div style={{width:'50%', paddingLeft:'5%', paddingTop:'2.5%', paddingBottom:'2.5%'}}>
+                                                
+
+                                                            <div style={{display:'flex', backgroundColor:'rgb(220,220,220)', padding:' 1.5%' }} >
+                                                              
+                                                                <div style={{display:'flex', justifyContent:'flex-start', width:'50%', marginLeft:'2.5%' }}>
+
+                                                                        <p >
+                                                                        Body Type
+                                                                        </p>
+
+                                                                 </div>
+
+                                                                    <div style={{display:'flex', justifyContent:'flex-end', width:'50%', marginRight:'2.5%'}}>
+
+                                                                        <p>
+                                                                          {car.bodyType }
+                                                                        </p>
+
+                                                                    </div> 
+
+                                                             </div>
+
+
+
+
+
+                                                              <div style={{display:'flex', backgroundColor:'white', padding:' 1.5%' }}>
+                                                                  <div style={{display:'flex', justifyContent:'flex-start', width:'50%',marginLeft:'2.5%' }}>
+                                                                      <p >
+                                                                      Fuel Type
+                                                                      </p>
+                                                                  </div>
+                                                                  <div style={{display:'flex', justifyContent:'flex-end', width:'50%', marginRight:'2.5%'}}>
+                                                                        <p >
+                                                                          {car.fuelType}
+                                                                        </p>
+                                                                  </div>
+                                                              </div>
+
+
+
+
+                                                               <div style={{display:'flex', backgroundColor:'rgb(220,220,220)', padding:' 1.5%' }} >
+                                                                  <div style={{display:'flex', justifyContent:'flex-start', width:'50%',marginLeft:'2.5%' }}>
+                                                                        <p >
+                                                                        Engine Capacity
+                                                                        </p>
+                                                                  </div>
+                                                                  <div style={{display:'flex', justifyContent:'flex-end', width:'50%', marginRight:'2.5%'}}>
+                                                                      <p >
+                                                                        {car.engineCapacity }
+                                                                      </p>
+                                                                  </div>
+                                                               </div>
+
+
+
+
+                                                                <div style={{display:'flex', backgroundColor:'white', padding:' 1.5%' }}>
+                                                                  <div style={{display:'flex', justifyContent:'flex-start', width:'50%',marginLeft:'2.5%' }}>
+                                                                      <p >
+                                                                      Gearbox
+                                                                      </p>
+                                                                  </div>
+                                                                  <div style={{display:'flex', justifyContent:'flex-end', width:'50%', marginRight:'2.5%'}}>
+                                                                      <p >
+                                                                        {car.gearbox }
+                                                                      </p>
+                                                                    </div>
+                                                                </div>
+
+                                        </div>            
+
+                       </div>
+
+
+                                               
+
+
+
+
+
+
+
+      <div style={{fontSize:'1.6rem', color:'maroon', textAlign:'center'}}>
+        <p className='' >Vehicle Details</p> 
+      </div>
               
-        <ul className='listingDetailsList'>
-          <li>{car.vdOverview}</li>
-          <li>{car.vd1}</li>
-          <li>{car.vd2}</li>
-          <li>{car.vd3}</li>
-          <li>{car.vd4}</li>
-          <li>{car.vd5}</li>
-        </ul>
-
-
-
-
-
-
-
-
-
-
-
+        <div style={{textAlign:'center'}}>
+          <ul className='' style={{listStyle:'none'}}>
+            <li style={{padding:'2.5% 5% 2.5% 5%'}}>{car.vdOverview}</li>
+            <li style={{padding:'2.5% 5% 2.5% 5%'}}>{car.vd1}</li>
+            <li style={{padding:'2.5% 5% 2.5% 5%'}}>{car.vd2}</li>
+            <li style={{padding:'2.5% 5% 2.5% 5%'}}>{car.vd3}</li>
+            <li style={{padding:'2.5% 5% 2.5% 5%'}}>{car.vd4}</li>
+            <li style={{padding:'2.5% 5% 2.5% 5%'}}>{car.vd5}</li>
+          </ul>
         </div>
+
+
+
+
+     </div>
+
+
+
+
+
+     
+
+            
+     <div className='main-div-lastBannerHome'>
+
+
+<div className='lastBannerHome' style={{"backgroundImage": "url(" +audi+ ") ", }}>
+      <div className='lastBannerHome-background-cover'>
+
+            {console.log(car.imageUrls[0])}
+
+
+            <div className='lastBannerHome-card-width'>
+              <div className='lastBannerHome-card-background'>
+
+                    <div className='lastBannerHome-card-flex-column'>
+                      <h4 style={{color:'rgb(178,34,34)', fontSize:'2.2rem', flex:'1'}}>Finance</h4>
+                      <p  style={{color:'white', flex:'1', paddingBottom: '25%'}}>No matter what your requirements we have finance options that will suit you</p>
+                      <div>
+                        <p  style={{color:'white' , flex:'1'}}>More Info</p>
+                        <DoubleArrowIcon style={{color:'rgb(178,34,34)'}}/>
+                      </div>
+                  </div>
+
+              </div>
+
+          </div>
+
+
+
+          
+        
+          <div className='lastBannerHome-card-width'>
+              <div className='lastBannerHome-card-background'>
+
+                    <div className='lastBannerHome-card-flex-column'>
+                      <h4 style={{color:'rgb(178,34,34)', fontSize:'2.2rem', flex:'1'}}>Sell Your Car</h4>
+                      <p  style={{color:'white', flex:'1', paddingBottom: '25%'}}>A better offer than any other car buying service guaranteed.A lower sale on return commission fee than any other dealership guaranteed.A quick, secure and no hassle process whichever option you choose.</p>
+                      <div>
+                        <p  style={{color:'white' , flex:'1'}}>More Info</p>
+                        <DoubleArrowIcon style={{color:'rgb(178,34,34)'}}/>
+                      </div>
+                  </div>
+
+              </div>
+
+          </div>
+
+
+      
+
+
+
+      
+        
+          <div className='lastBannerHome-card-width'>
+              <div className='lastBannerHome-card-background'>
+
+                    <div className='lastBannerHome-card-flex-column'>
+                      <h4 style={{color:'rgb(178,34,34)', fontSize:'2.2rem', flex:'1'}}>Preparation</h4>
+                      <p  style={{color:'white', flex:'1', paddingBottom: '25%'}}>We prepare all vehicles to our exacting standards using only the best products. We offer a ceramic coat service to ensure that your new car stays protected and looks it’s best for years to come.</p>
+                      <div>
+                        <p  style={{color:'white' , flex:'1'}}>More Info</p>
+                        <DoubleArrowIcon style={{color:'rgb(178,34,34)'}}/>
+                      </div>
+                  </div>
+
+              </div>
+
+          </div>
+
+
+
+      </div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
 
    
   </main>
+  <Footer/>
+</>
   )
 }
 
