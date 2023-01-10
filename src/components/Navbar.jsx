@@ -41,7 +41,7 @@ function Navbar() {
     <>
       <nav className="navbar">
         <Link to="/" className="navbar-logo" onClick={() => setSidebar(false)}>
-         <img src={logo} alt="Company logo" width= '382px' height='100%' />
+         <img className="logo-img-ios" src={logo} alt="Company logo" width= '382px' height='100%' />
         </Link>
       
         {!mobile && (

@@ -90,7 +90,6 @@ function CarItem({ car, id, onEdit, onDelete }) {
                     
                     :
                     <div style={{textAlign:'right', paddingTop:'1.5%', paddingBottom:'1.5%',}}>
-                            <p style={{fontSize:'1.05rem', fontWeight:'bold', color:'rgb(128,0,0)' }}></p>
                             <p style={{fontSize:'1.05rem', fontWeight:'bold', color:'rgb(128,0,0)' }}>
                               Ksh &nbsp; 
                                 { car.regularPrice
@@ -98,6 +97,15 @@ function CarItem({ car, id, onEdit, onDelete }) {
                                   .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
 
                             </p>
+
+                            {/* eslint-disable-next-line */}
+                            <p style={{height: 'auto !important', height: '26px', }}></p>
+
+
+
+
+
+                            
                     </div>
                 
 
@@ -107,24 +115,64 @@ function CarItem({ car, id, onEdit, onDelete }) {
             </li>
 
 
+             {/* <div style={{display:'flex', justifyContent:' space-around', }}>
+                <div style={{ display:'flex',justifyContent:' space-around', backgroundColor:'gray', padding:'3%', width:'95%'}}>
+                    {onDelete && (
+                    
+                      <DeleteIcon
+                        style ={{cursor:'pointer'}}
+                        className=''
+                        fill='rgb(231, 76,60)'
+                        onClick={() => onDelete(car.id, car.name)}
+                      />
+                  
+                    )}
+
+
+          
+
+                  {onEdit && <EditIcon style ={{cursor:'pointer', }} className='' onClick={() => onEdit(id)} />}
+
+                </div>
+
+              </div> */}
 
 
 
-              {onDelete && (
-                <DeleteIcon
-                  className='removeIcon'
-                  fill='rgb(231, 76,60)'
-                  onClick={() => onDelete(car.id, car.name)}
-                />
-              )}
-
-              {onEdit && <EditIcon className='editIcon' onClick={() => onEdit(id)} />}
 
 
+             
+                    {onDelete && onEdit && (
+
+                    <div style={{display:'flex', justifyContent:' space-around', marginBottom:'15%', }}>
+                        <div style={{ display:'flex',justifyContent:' space-around', backgroundColor:'rgb(220,220,220)', padding:'3%', width:'95%', border:'1px solid orange '}}>
+                          
+                            <DeleteIcon
+                              style ={{cursor:'pointer'}}
+                              className=''
+                              fill='rgb(231, 76,60)'
+                              onClick={() => onDelete(car.id, car.name)}
+                            />
 
 
+                            <EditIcon 
+                            style ={{cursor:'pointer', }} 
+                            className=''
+                            onClick={() => onEdit(id)}
+                            />
+
+                         </div>
+
+                    </div>
+                                      
+                    )}
 
 
+          
+
+                
+
+             
 
 
 

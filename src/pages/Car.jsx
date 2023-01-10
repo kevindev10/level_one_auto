@@ -736,15 +736,15 @@ const handleClose = () =>{
             )} */}
 
        
-          <div style={{fontSize:'1.6rem', color:'maroon', textAlign:'center'}}>
+          <div className='vehicle-ovwerview'  style={{fontSize:'1.6rem', color:'maroon', textAlign:'center'}}>
            <p >Vehicle Overview</p> 
           </div>
         
            
 
 
-                       <div style={{display:'flex', }}>
-                                        <div style={{width:'50%', paddingRight:'5%', paddingTop:'2.5%', paddingBottom:'2.5%'}}>
+                       <div className='vehicle-ovwerview-flex' style={{display:'flex', }}>
+                                        <div className='vehicle-ovwerview-first-col' style={{width:'50%', paddingRight:'5%', paddingTop:'2.5%', paddingBottom:'2.5%'}}>
 
                                                         <div  style={{display:'flex', backgroundColor:'rgb(220,220,220)', padding:' 1.5%' }}>
                                                           <div style={{display:'flex', justifyContent:'flex-start', width:'50%',marginLeft:'2.5%' }}>
@@ -837,10 +837,10 @@ const handleClose = () =>{
 
 
 
-                                        <div style={{width:'50%', paddingLeft:'5%', paddingTop:'2.5%', paddingBottom:'2.5%'}}>
+                                        <div className='vehicle-ovwerview-second-col' style={{width:'50%', paddingLeft:'5%', paddingTop:'2.5%', paddingBottom:'2.5%'}}>
                                                 
 
-                                                            <div style={{display:'flex', backgroundColor:'rgb(220,220,220)', padding:' 1.5%' }} >
+                                                            <div style={{display:'flex', backgroundColor:'white', padding:' 1.5%' }} >
                                                               
                                                                 <div style={{display:'flex', justifyContent:'flex-start', width:'50%', marginLeft:'2.5%' }}>
 
@@ -864,7 +864,7 @@ const handleClose = () =>{
 
 
 
-                                                              <div style={{display:'flex', backgroundColor:'white', padding:' 1.5%' }}>
+                                                              <div style={{display:'flex', backgroundColor:'rgb(220,220,220)', padding:' 1.5%' }}>
                                                                   <div style={{display:'flex', justifyContent:'flex-start', width:'50%',marginLeft:'2.5%' }}>
                                                                       <p >
                                                                       Fuel Type
@@ -880,7 +880,7 @@ const handleClose = () =>{
 
 
 
-                                                               <div style={{display:'flex', backgroundColor:'rgb(220,220,220)', padding:' 1.5%' }} >
+                                                               <div style={{display:'flex', backgroundColor:'white', padding:' 1.5%' }} >
                                                                   <div style={{display:'flex', justifyContent:'flex-start', width:'50%',marginLeft:'2.5%' }}>
                                                                         <p >
                                                                         Engine Capacity
@@ -896,7 +896,7 @@ const handleClose = () =>{
 
 
 
-                                                                <div style={{display:'flex', backgroundColor:'white', padding:' 1.5%' }}>
+                                                                <div style={{display:'flex', backgroundColor:'rgb(220,220,220)', padding:' 1.5%' }}>
                                                                   <div style={{display:'flex', justifyContent:'flex-start', width:'50%',marginLeft:'2.5%' }}>
                                                                       <p >
                                                                       Gearbox
@@ -923,7 +923,7 @@ const handleClose = () =>{
 
 
       <div style={{fontSize:'1.6rem', color:'maroon', textAlign:'center'}}>
-        <p className='' >Vehicle Details</p> 
+        <p className='vehicle-details' >Vehicle Details</p> 
       </div>
               
         <div style={{textAlign:'center'}}>
@@ -955,7 +955,7 @@ const handleClose = () =>{
 <div className='lastBannerHome' style={{"backgroundImage": "url(" +audi+ ") ", }}>
       <div className='lastBannerHome-background-cover'>
 
-            {console.log(car.imageUrls[0])}
+      
 
 
             <div className='lastBannerHome-card-width'>

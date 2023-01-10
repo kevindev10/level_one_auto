@@ -369,23 +369,30 @@ useEffect(() =>{
                   
                 {!loading && cars?.length > 0 && (
                   
-                  <>
-                      
-                    <p className='listingText'>Your Car Listings</p>
-                    <ul className='listingsList'>
+                  <main>
+
+                      <div style={{fontSize :'1.6rem', fontWeight:'bold', paddingLeft:'3.3%'}}>
+                           <p >Your Car Listings</p>
+                      </div>
+                  
+                    <ul className='stock-card-ul' style={{display:'flex',  flexWrap:'wrap', listStyle:'none', paddingTop:'2.5%', width:'100%', paddingBottom:'2.5%'}} >
                       {cars.map((car) => (
                         car.data.sold === false && ! car.data.featuredVehicle &&
                         // car.data.featuredVehicle && car.data.featuredVehicle === true &&
-                        <CarItem
-                          key={car.id}
-                          car={car.data}
-                          id={car.id}
-                          onDelete={() => onDelete(car.id)}
-                          onEdit={() => onEdit(car.id)}
-                        />
+                        <div className='stock-card-div' key={car.id} style={{flex:'33.33%', width:'100%', marginBottom:'2.5%', paddingLeft:'2.5%', paddingRight:'2.5%', maxWidth:'33.33%'}}>
+                            <CarItem
+                              key={car.id}
+                              car={car.data}
+                              id={car.id}
+                              onDelete={() => onDelete(car.id)}
+                              onEdit={() => onEdit(car.id)}
+                            />
+                        </div>
                       ))}
                     </ul>
-                  </>
+
+
+                  </main>
                 )} 
 
 

@@ -188,3 +188,9 @@
 
 
 
+@supports (-webkit-touch-callout: none) {
+  .logo-img-ios{
+    width: auto !important;
+ 
+ }
+}

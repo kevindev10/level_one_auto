@@ -230,4 +230,34 @@
   .print-button-on-mobile{
     font-size: 0.75rem !important;
   }
+
+  .vehicle-ovwerview{
+    padding-top: 5% !important;
+  }
+
+  .vehicle-ovwerview-flex{
+    display: block !important;
+  }
+  .vehicle-ovwerview-first-col{
+    width: 100% !important;
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+    padding-top:  5% !important;
+    padding-bottom:  0% !important;
+    
+  }
+
+  .vehicle-ovwerview-second-col{
+    width: 100% !important;
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+    padding-top:  0% !important;
+    padding-bottom:  5% !important;
+  }
+
+  .vehicle-details{
+    padding-top: 5% !important;
+  }
+
+
 }
