@@ -371,7 +371,7 @@ useEffect(() =>{
                   
                   <main>
 
-                      <div style={{fontSize :'1.6rem', fontWeight:'bold', paddingLeft:'3.3%'}}>
+                      <div style={{fontSize :'1.6rem', textAlign:'center', color:'maroon', letterSpacing:'0.25rem'}}>
                            <p >Your Car Listings</p>
                       </div>
                   

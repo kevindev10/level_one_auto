@@ -64,7 +64,7 @@ button {
   border-radius: 1rem;
 }
 
-.primaryButton {
+/* .primaryButton {
   cursor: pointer;
   background: #00cc66;
   border-radius: 1rem;
@@ -77,7 +77,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
 .removeIcon {
   cursor: pointer;
@@ -611,16 +611,16 @@ button {
   padding: 0;
 }
 
-.formLabel {
+/* .formLabel {
   font-weight: 600;
   margin-top: 1rem;
   display: block;
-}
+} */
 
 .formButtons {
   display: flex;
 }
-
+/* 
 .formButton,
 .formInput,
 .formInputLargeData,
@@ -641,12 +641,10 @@ button {
 .formButtonActive {
   background-color: #00cc66;
   color: #ffffff;
-}
+} */
 
-.flex {
-  display: flex;
-}
 
+/* 
 .formInput,
 .formInputLargeData,
 .formInputName,
@@ -655,42 +653,42 @@ button {
   border: none;
   outline: none;
   font-family: 'Montserrat', sans-serif;
-}
-.formInputSmall,
+} */
+/* .formInputSmall,
 .formInputFile {
   margin-right: 3rem;
   padding: 0.9rem 0.7rem;
   text-align: center;
-}
+} */
 
-.formInputName {
+/* .formInputName {
   padding: 0.9rem 1rem;
   width: 90%;
   max-width: 326px;
-}
+} */
 
-.formInputLargeData {
+/* .formInputLargeData {
   padding: 0.9rem 1rem;
   width: 90%;
   max-width: 326px;
-}
+} */
 
-.formPriceDiv {
+/* .formPriceDiv {
   display: flex;
   align-items: center;
-}
+} */
 
-.formPriceText {
+/* .formPriceText {
   margin-left: -1.5rem;
   font-weight: 600;
-}
+} */
 
-.imagesInfo {
+/* .imagesInfo {
   font-size: 0.9rem;
   opacity: 0.75;
-}
+} */
 
-.formInputFile {
+/* .formInputFile {
   width: 100%;
 }
 .formInputFile::-webkit-file-upload-button {
@@ -701,7 +699,7 @@ button {
   padding: 0.5rem 0.75rem;
   border-radius: 1rem;
   margin-right: 1rem;
-}
+} */
 
 .createListingButton {
   margin-top: 5rem;

@@ -1,0 +1,207 @@
+
+
+.formLabel {
+  margin-top: 1.0rem;
+  display: block;
+  font-size: 1.4rem;
+}
+
+
+.formButton,
+.formInput,
+.formInputLargeData,
+.formInputName,
+.formInputSmall,
+.formInputFile,
+.formButtonActive {
+  padding: 0.8rem 9rem;
+  background-color: #ffffff;
+  font-weight: 100;
+  font-size: 1.1rem;
+  margin: 0.5rem 1.5rem 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 27.818vw;
+}
+.formButtonActive {
+  background-color: maroon;
+  color: #ffffff;
+}
+
+
+
+.formInput,
+.formInputLargeData,
+.formInputName,
+.formInputSmall,
+.formInputFile {
+  border: none;
+  outline: none;
+
+}
+
+
+
+.formInputName {
+  padding: 0.9rem 1rem;
+  width: 31.186vw;
+}
+
+
+.formInputLargeData {
+  padding: 0.9rem 1rem;
+  width: 90vw;
+}
+
+
+.formPriceDiv {
+  display: flex;
+  align-items: center;
+}
+
+
+.formInputSmall,
+.formInputFile {
+  margin-right: 3rem;
+  padding: 0.9rem 0.7rem;
+  text-align: center;
+  width: 31.186vw;
+}
+
+.imagesInfo {
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+
+.formInputFile {
+  width: 90vw;
+}
+.formInputFile::-webkit-file-upload-button {
+  background-color: maroon;
+  border: none;
+  color: #ffffff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 1rem;
+  margin-right: 1rem;
+}
+
+.primaryButton {
+  cursor: pointer;
+  background: maroon;
+  padding: 0.85rem 2rem;
+  color: #ffffff;
+  font-size: 1.4rem;
+  width: 90vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 960px) {
+.add-car{
+  font-size: 1.4rem !important;
+}
+.formLabel {
+ 
+  font-size: 1.2rem !important;
+  margin-left: 5% !important;
+  padding-right: 2.5% !important;
+}
+
+.forSale-sold{
+  display: block !important;
+ 
+ 
+}
+
+.formButtons{
+  display: block !important;
+
+}
+
+
+.formButton,
+.formInput,
+.formInputLargeData,
+.formInputName,
+.formInputSmall,
+.formInputFile,
+.formButtonActive {
+  padding: 2.5% !important;
+  background-color: #ffffff;
+  font-size: 0.9rem;
+  margin-right: 5% !important;
+  margin-left: 5% !important;
+  margin-bottom: 5% !important;
+  display: block !important;
+ 
+  width: 90% !important;
+}
+.formButtonActive {
+  background-color: maroon;
+  color: #ffffff;
+}
+
+
+.year-engineCapacity{
+  display: block !important;
+}
+
+
+
+
+.imagesInfo{
+  font-size: 0.7rem;
+  margin-left: 5% !important;
+}
+
+
+
+.primaryButton {
+  
+  padding: 2.5% !important;
+  color: #ffffff;
+  font-size: 1.2rem;
+  width:  90% !important;
+  display: block !important;
+  margin-right: 5% !important;
+  margin-left: 5% !important;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+
+
+}
+
+
+
+@supports (-webkit-touch-callout: none) {
+
+  select,
+  textarea,
+  input {
+    font-size: 16px !important;
+  }
+
+
+}
+

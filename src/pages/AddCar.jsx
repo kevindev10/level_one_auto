@@ -1,4 +1,5 @@
 
+import './AddCar.css'
 import { useState, useEffect, useRef } from 'react'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import {
@@ -13,7 +14,7 @@ import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { v4 as uuidv4 } from 'uuid'
 import Spinner from '../components/Spinner'
-
+import Footer from '../components/Footer'
 
 
 
@@ -287,15 +288,19 @@ function AddCar() {
 
 
   return (
-    <div className='profile' style={{padding:'5%'}}>
-    <header>
-      <p className='pageHeader'>Add Car</p>
+    <div>
+
+
+
+    <div className='ios-overflow' style={{padding:'2.5%'}}>
+    <header style={{fontSize:'1.8rem', textAlign:'center', color:'maroon', letterSpacing:'0.25rem'}}>
+      <p className='add-car'>Add Car</p>
     </header>
 
     <main>
       <form onSubmit={onSubmit}>
         <label className='formLabel'> For Sale / Sold</label>
-        <div className='formButtons'>
+        <div className='forSale-sold' style={{display:'flex'}}>
           <button
             type='button'
             className={sold=== false ? 'formButtonActive' : 'formButton'}
@@ -320,6 +325,7 @@ function AddCar() {
 
         <label className='formLabel'>Title</label>
         <input
+         
           className='formInputName'
           type='text'
           id='title'
@@ -338,6 +344,8 @@ function AddCar() {
           value={description}
           onChange={onMutate}
           required
+          rows="1" 
+         
         />
 
 
@@ -379,7 +387,7 @@ function AddCar() {
             max='750000000'
             required
           />
-          {sold === 'sold' && <p className='formPriceText'>$ / Month</p>}
+       
         </div>
 
         {offer && (
@@ -425,7 +433,7 @@ function AddCar() {
 
 
           
-        <div className='formRooms flex'>
+        <div className='year-engineCapacity' style={{display:'flex'}}>
           <div>
             <label className='formLabel'>Year</label>
             <input
@@ -515,7 +523,7 @@ function AddCar() {
 
 
 
-        <label className='formLabel'>Vehicle Descirpion Overview</label>
+        <label className='formLabel'>Vehicle Description Overview</label>
         <textarea
           className='formInputLargeData'
           type='text'
@@ -523,6 +531,7 @@ function AddCar() {
           value={vdOverview}
           onChange={onMutate}
           required
+          rows="10" 
         />
 
        <label className='formLabel'>Vehicle Description One</label>
@@ -533,6 +542,7 @@ function AddCar() {
           value={vd1}
           onChange={onMutate}
           required
+          rows="5" 
         />
 
         <label className='formLabel'>Vehicle Description Two</label>
@@ -543,6 +553,7 @@ function AddCar() {
           value={vd2}
           onChange={onMutate}
           required
+          rows="5" 
         />
 
 
@@ -554,6 +565,7 @@ function AddCar() {
           value={vd3}
           onChange={onMutate}
           required
+          rows="5" 
         />
 
         <label className='formLabel'>Vehicle Description Four</label>
@@ -564,6 +576,7 @@ function AddCar() {
           value={vd4}
           onChange={onMutate}
           required
+          rows="5" 
         />
 
         <label className='formLabel'>Vehicle Description Five</label>
@@ -574,6 +587,7 @@ function AddCar() {
           value={vd5}
           onChange={onMutate}
           required
+          rows="5" 
         />
   
 
@@ -599,147 +613,21 @@ function AddCar() {
 
 
 
-{/* 
-
-        <div className='formRooms flex'>
-          <div>
-            <label className='formLabel'>Bedrooms</label>
-            <input
-              className='formInputSmall'
-              type='number'
-              id='bedrooms'
-              value={bedrooms}
-              onChange={onMutate}
-              min='1'
-              max='50'
-              required
-            />
-          </div>
-          <div>
-            <label className='formLabel'>Bathrooms</label>
-            <input
-              className='formInputSmall'
-              type='number'
-              id='bathrooms'
-              value={bathrooms}
-              onChange={onMutate}
-              min='1'
-              max='50'
-              required
-            />
-          </div>
-        </div>
-
-        <label className='formLabel'>Parking spot</label>
-        <div className='formButtons'>
-          <button
-            className={parking ? 'formButtonActive' : 'formButton'}
-            type='button'
-            id='parking'
-            value={true}
-            onClick={onMutate}
-            min='1'
-            max='50'
-          >
-            Yes
-          </button>
-          <button
-            className={
-              !parking && parking !== null ? 'formButtonActive' : 'formButton'
-            }
-            type='button'
-            id='parking'
-            value={false}
-            onClick={onMutate}
-          >
-            No
-          </button>
-        </div>
-
-        <label className='formLabel'>Furnished</label>
-        <div className='formButtons'>
-          <button
-            className={furnished ? 'formButtonActive' : 'formButton'}
-            type='button'
-            id='furnished'
-            value={true}
-            onClick={onMutate}
-          >
-            Yes
-          </button>
-          <button
-            className={
-              !furnished && furnished !== null
-                ? 'formButtonActive'
-                : 'formButton'
-            }
-            type='button'
-            id='furnished'
-            value={false}
-            onClick={onMutate}
-          >
-            No
-          </button>
-        </div>
-
-        <label className='formLabel'>Address</label>
-        <textarea
-          className='formInputAddress'
-          type='text'
-          id='address'
-          value={address}
-          onChange={onMutate}
-          required
-        />
-
-        {!geolocationEnabled && (
-          <div className='formLatLng flex'>
-            <div>
-              <label className='formLabel'>Latitude</label>
-              <input
-                className='formInputSmall'
-                type='number'
-                id='latitude'
-                value={latitude}
-                onChange={onMutate}
-                required
-              />
-            </div>
-            <div>
-              <label className='formLabel'>Longitude</label>
-              <input
-                className='formInputSmall'
-                type='number'
-                id='longitude'
-                value={longitude}
-                onChange={onMutate}
-                required
-              />
-            </div>
-          </div>
-        )}
-
-
-        <label className='formLabel'>Images</label>
-        <p className='imagesInfo'>
-          The first image will be the cover (max 6).
-        </p>
-        <input
-          className='formInputFile'
-          type='file'
-          id='images'
-          onChange={onMutate}
-          max='6'
-          accept='.jpg,.png,.jpeg'
-          multiple
-          required
-        /> */}
         <button type='submit' className='primaryButton createListingButton'>
           Create Car Listing
         </button>
       </form>
     </main>
+
+   
+
   </div>
+
+
+   <Footer/>
+
+
+   </div>
   )
 }
 
