@@ -13,6 +13,11 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { v4 as uuidv4 } from 'uuid'
 import Spinner from '../components/Spinner'
+import './AddCar.css'
+import Footer from '../components/Footer'
+
+
+
 
 
 
@@ -250,16 +255,22 @@ function EditCar() {
     }
   return (
 
+    <div>
 
-    <div className='profile'>
-        <header>
-          <p className='pageHeader'>Add Car</p>
+
+
+
+
+
+    <div className='ios-overflow' style={{padding:'2.5%'}}>
+        <header style={{fontSize:'1.8rem', textAlign:'center', color:'maroon', letterSpacing:'0.25rem'}}>
+          <p className='add-car'>Edit Car</p>
         </header>
 
         <main>
           <form onSubmit={onSubmit}>
             <label className='formLabel'> For Sale / Sold</label>
-            <div className='formButtons'>
+            <div className='forSale-sold' style={{display:'flex'}}>
               <button
                 type='button'
                 className={sold=== false ? 'formButtonActive' : 'formButton'}
@@ -302,6 +313,7 @@ function EditCar() {
               value={description}
               onChange={onMutate}
               required
+              rows="1" 
             />
 
 
@@ -389,7 +401,7 @@ function EditCar() {
 
 
               
-            <div className='formRooms flex'>
+            <div className='year-engineCapacity' style={{display:'flex'}}>
               <div>
                 <label className='formLabel'>Year</label>
                 <input
@@ -484,6 +496,7 @@ function EditCar() {
               value={vdOverview}
               onChange={onMutate}
               required
+              rows="10" 
             />
 
           <label className='formLabel'>Vehicle Description One</label>
@@ -494,6 +507,7 @@ function EditCar() {
               value={vd1}
               onChange={onMutate}
               required
+              rows="5" 
             />
 
             <label className='formLabel'>Vehicle Description Two</label>
@@ -504,6 +518,7 @@ function EditCar() {
               value={vd2}
               onChange={onMutate}
               required
+              rows="5" 
             />
 
 
@@ -515,6 +530,7 @@ function EditCar() {
               value={vd3}
               onChange={onMutate}
               required
+              rows="5" 
             />
 
             <label className='formLabel'>Vehicle Description Four</label>
@@ -525,6 +541,7 @@ function EditCar() {
               value={vd4}
               onChange={onMutate}
               required
+              rows="5" 
             />
 
             <label className='formLabel'>Vehicle Description Five</label>
@@ -535,6 +552,7 @@ function EditCar() {
               value={vd5}
               onChange={onMutate}
               required
+              rows="5" 
             />
       
 
@@ -566,6 +584,11 @@ function EditCar() {
           </form>
         </main>
       </div>
+
+    <Footer/>
+
+
+    </div>
 
   )
 }

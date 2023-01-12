@@ -52,7 +52,7 @@ function ContactForm({car, carUrl}) {
 
 
     setLoading(true)
-    fetch('http://localhost:3001/contactUs', {
+    fetch('http://192.168.100.4:3001/contactUs', {
       method:'post',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({
