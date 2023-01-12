@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { getAuth, sendPasswordResetEmail } from 'firebase/auth'
 import { toast } from 'react-toastify'
 import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg'
+import './SignUp.css'
+
 
 function ForgotPassword() {
   const [email, setEmail] = useState('')
@@ -21,9 +23,9 @@ function ForgotPassword() {
   }
 
   return (
-    <div className='pageContainer'>
-      <header>
-        <p className='pageHeader'>Forgot Password</p>
+    <div className='' style={{padding:'5%'}}>
+      <header  className='welcome-back' style={{textAlign:'center', fontSize:'1.6rem', paddingBottom:'2.5%', letterSpacing:'0.25rem'}}>
+        <p >Forgot Password</p>
       </header>
 
       <main>
@@ -37,7 +39,7 @@ function ForgotPassword() {
             onChange={onChange}
           />
           <Link className='forgotPasswordLink' to='/login'>
-            Sign In
+            Sign In Instead
           </Link>
 
           <div className='signInBar'>

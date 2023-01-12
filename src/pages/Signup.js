@@ -8,9 +8,12 @@ import {
 } from 'firebase/auth'
 import { setDoc, doc, serverTimestamp } from 'firebase/firestore'
 import { db } from '../firebase.config'
-import OAuth from '../components/OAuth'
+// import OAuth from '../components/OAuth'
 import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg'
 import visibilityIcon from '../assets/svg/visibilityIcon.svg'
+import './SignUp.css'
+
+
 
 function SignUp() {
   const [showPassword, setShowPassword] = useState(false)
@@ -62,9 +65,9 @@ function SignUp() {
 
   return (
     <>
-      <div className='pageContainer'>
-        <header>
-          <p className='pageHeader'>Welcome Back!</p>
+      <div className='' style={{padding:'5%'}}>
+        <header className='welcome-back' style={{textAlign:'center', fontSize:'1.6rem', paddingBottom:'2.5%', letterSpacing:'0.25rem'}}>
+          <p  >Welcome Back!</p>
         </header>
 
         <form onSubmit={onSubmit}>
@@ -115,7 +118,7 @@ function SignUp() {
           </div>
         </form>
 
-        <OAuth />
+        {/* <OAuth /> */}
 
         <Link to='/login' className='registerLink'>
           Sign In Instead

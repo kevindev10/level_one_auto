@@ -1,0 +1,154 @@
+
+
+
+.input,
+.passwordInput,
+.emailInput,
+.nameInput,
+.textarea {
+  box-shadow: rgba(0, 0, 0, 0.11);
+  border: none;
+  background: white;
+  margin-left: 22.5vw ;
+  margin-right: 22.5vw;
+  height: 3rem;
+  width: 44.949vw;
+  outline: none;
+  padding: 0 3rem;
+  font-size: 1.2rem;
+}
+
+
+
+
+.nameInput {
+  margin-bottom: 2rem;
+  background: url('../assets/svg/badgeIcon.svg') #ffffff 2.5% center no-repeat;
+}
+
+.emailInput {
+  margin-bottom: 2rem;
+  background: url('../assets/svg/personIcon.svg') #ffffff 2.5% center no-repeat;
+}
+
+.passwordInputDiv {
+  position: relative;
+}
+
+.passwordInput {
+  margin-bottom: 2rem;
+  background: url('../assets/svg/lockIcon.svg') #ffffff 2.5% center no-repeat;
+}
+
+
+.forgotPasswordLink {
+  cursor: pointer;
+  color: maroon;
+  font-weight: 600;
+  text-align: right;
+  margin-right:24.5vw ;
+}
+
+.showPassword {
+  cursor: pointer;
+  position: absolute;
+  top: -4%;
+  right: 22.5vw;
+  padding: 1rem;
+}
+
+.signInBar,
+.signUpBar {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+
+.signInButton,
+.signUpButton,
+.signInText,
+.signUpText {
+  cursor: pointer;
+}
+
+.signInText,
+.signUpText {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.15rem;
+}
+
+
+.signInButton,
+.signUpButton {
+  margin-left: 1.0vw !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: maroon;
+  border-radius: 50%;
+}
+
+
+.registerLink {
+  margin-top: 3rem;
+  color: maroon;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 960px) {
+
+.welcome-back{
+  padding-bottom: 5% !important;
+}
+  
+.input,
+.passwordInput,
+.emailInput,
+.nameInput,
+.textarea {
+  margin-left: 5% !important ;
+  margin-right: 5% !important ;
+  width: 90% !important;
+  font-size: 1.0rem;
+}
+
+
+.showPassword {
+  right: 5% !important;
+ 
+}
+
+
+.forgotPasswordLink {
+
+  text-align: center !important;
+  margin-right:0% !important ;
+}
+
+
+
+.signInText,
+.signUpText {
+  font-size: 1.4rem;
+ 
+}
+
+
+.signUpButton {
+
+  width: 2.0rem !important;
+  height: 2.0rem !important;
+
+}
+
+
+}
