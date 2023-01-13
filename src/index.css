@@ -510,17 +510,17 @@ button {
   margin-bottom: 0.5rem;
 }
 
-.profile {
+/* .profile {
   margin-bottom: 10rem;
-}
+} */
 
-.profileHeader {
+/* .profileHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+} */
 
-.logOut {
+/* .logOut {
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
@@ -529,13 +529,13 @@ button {
   background-color: #00cc66;
   padding: 0.25rem 0.75rem;
   border-radius: 1rem;
-}
+} */
 
-.profileDetailsHeader {
+/* .profileDetailsHeader {
   display: flex;
   justify-content: space-between;
   max-width: 500px;
-}
+} */
 
 .personalDetailsText {
   font-weight: 600;
@@ -547,20 +547,20 @@ button {
   color: #00cc66;
 }
 
-.profileCard {
+/* .profileCard {
   background-color: #ffffff;
   border-radius: 1rem;
   padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.2);
   max-width: 500px;
-}
+} */
 
 .profileDetails {
   display: flex;
   flex-direction: column;
 }
 
-.profileName,
+/* .profileName,
 .profileEmail,
 .profileAddress,
 .profileAddressActive,
@@ -587,9 +587,9 @@ button {
 
 .profileAddressActive {
   background-color: rgba(44, 44, 44, 0.1);
-}
+} */
 
-.createListing {
+/* .createListing {
   background-color: #ffffff;
   border-radius: 1rem;
   padding: 0.25rem 1rem;
@@ -600,7 +600,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+} */
 
 .listingText {
   margin-top: 3rem;
@@ -701,9 +701,9 @@ button {
   margin-right: 1rem;
 } */
 
-.createListingButton {
+/* .createListingButton {
   margin-top: 5rem;
-}
+} */
 
 .offers {
   margin-bottom: 10rem;

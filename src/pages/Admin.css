@@ -1,0 +1,99 @@
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+
+.logOut {
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: #ffffff;
+  background-color: maroon;
+  padding: 0.25rem 0.75rem;
+ 
+}
+
+
+/* .profileDetailsHeader {
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+} */
+
+
+.profileCard {
+  background-color: #ffffff;
+ 
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  margin-left: 5%;
+  margin-top: 0.5%;
+}
+
+.profileName,
+.profileEmail,
+.profileAddress,
+.profileAddressActive,
+.profileEmailActive,
+.profileNameActive {
+  all: unset;
+  margin: 0.3rem 0;
+  font-weight: 600;
+  width: 100%;
+}
+.profileNameActive {
+  background-color: rgba(44, 44, 44, 0.1);
+}
+
+.profileEmail,
+.profileAddress,
+.profileAddressActive,
+.profileEmailActive {
+  font-weight: 500;
+}
+.profileEmailActive {
+  background-color: rgba(44, 44, 44, 0.1);
+}
+
+.profileAddressActive {
+  background-color: rgba(44, 44, 44, 0.1);
+}
+
+
+.createListing {
+  background-color: #ffffff;
+  font-size: 1.4rem;
+  color: maroon;
+  padding: 0.25rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.2);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 5%;
+}
+
+
+.createListingButton {
+  margin-top: 5rem;
+}
+
+
+.cars-in-stock{
+  background-color: #ffffff;
+  padding: 0.25rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+}
+
+
+.MuiTab-root{
+  color: maroon !important;
+}

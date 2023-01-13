@@ -18,18 +18,14 @@ import { toast } from 'react-toastify'
 import arrowRight from '../assets/svg/keyboardArrowRightIcon.svg'
 import { IoCarSportSharp } from "react-icons/io5";
 import CarItem from '../components/CarItem'
-
-
-
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { async } from '@firebase/util'
-
-
-
+import './Admin.css'
+import Footer from '../components/Footer'
 
 
 
@@ -279,17 +275,24 @@ useEffect(() =>{
 
 
   return (
-    <div className='profile'>
+    <div>
+    <div  className='' style={{paddingTop:'5%', }}>
     <header className='profileHeader'>
-      <p className='pageHeader'>Admin</p>
-      <button type='button' className='logOut' onClick={onLogout}>
+      <div style={{display:'flex', justifyContent:'flex-start', width:'50%'}}>
+        <p className='' style={{ fontSize:'1.6rem', paddingBottom:'2.5%', letterSpacing:'0.25rem'}}>Admin</p>
+      </div>
+     
+     <div style={{display:'flex', justifyContent:'flex-end', width:'50%'}}>
+     <button type='button' className='logOut' onClick={onLogout}>
         Logout
       </button>
+     </div>
+   
     </header>
 
     <main>
       <div className='profileDetailsHeader'>
-        <p className='profileDetailsText'>Personal Details</p>
+        <p className=''  style={{ fontSize:'1.0rem', paddingLeft:'5%', paddingRight:'5%'}}>Personal Details</p>
         {/* <p
           className='changePersonalDetails'
           onClick={() => {
@@ -335,16 +338,19 @@ useEffect(() =>{
 
 
 
+        <div className='cars-in-stock' style={{marginLeft:'5%', marginBottom:'5%'}}>
+          <h3>Cars In Stock</h3>
+          <p className='' style={{backgroundColor:'rgba(220,220,220, 0.6)', marginBottom:'1.5%'}}>Total Cars: {collectionCount} </p>
+          <p className='' style={{backgroundColor:'rgba(220,220,220, 0.6)', marginBottom:'1.5%'}}>Total Cars For Sale: {totalCarsForSale} </p>
+          <p className='' style={{backgroundColor:'rgba(220,220,220, 0.6)', marginBottom:'1.5%'}}>Total Cars Sold: {totalCarsSold} </p>
+          {/* <p className='pageHeader'>Featured Car: {featuredVehicle[0].data.title} </p> */}
+          {featuredVehicle !== null && 
+            <p className='' style={{backgroundColor:'rgba(220,220,220, 0.6)', marginBottom:'6%'}}>Featured Car: {featuredVehicle[0].data.title} </p>
+          
+          }
 
-
-      <p className='pageHeader'>Total Cars: {collectionCount} </p>
-      <p className='pageHeader'>Total Cars For Sale: {totalCarsForSale} </p>
-      <p className='pageHeader'>Total Cars Sold: {totalCarsSold} </p>
-      {/* <p className='pageHeader'>Featured Car: {featuredVehicle[0].data.title} </p> */}
-      {featuredVehicle !== null && 
-         <p className='pageHeader'>Featured Car: {featuredVehicle[0].data.title} </p>
+        </div>
       
-      }
 
 
 
@@ -357,9 +363,9 @@ useEffect(() =>{
 
 
 
-                <Box sx={{ width: '100%' }}>
+                <Box sx={{ width: '100%'}}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                  <Tabs value={value} onChange={(event, newValue) => {setValue(newValue)}} aria-label="basic tabs example">
+                  <Tabs sx={{marginLeft:'5%' }} value={value} onChange={(event, newValue) => {setValue(newValue)}} aria-label="for sale, sold and featured tab"  TabIndicatorProps={{style: {background:'maroon'}}}>
                     <Tab label="For Sale" {...a11yProps(0)} />
                     <Tab label="Sold" {...a11yProps(1)} />
                     <Tab label="FEATURED" {...a11yProps(2)} />
@@ -474,6 +480,8 @@ useEffect(() =>{
 
     </main>
   </div>
+                        <Footer/>
+</div>
   )
 }
 
